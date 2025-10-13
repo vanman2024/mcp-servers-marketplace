@@ -1,0 +1,47 @@
+{
+  "tools": [
+    "create_v0_session",
+    "generate_with_v0", 
+    "continue_v0_session",
+    "get_v0_session_files",
+    "create_v0_frame_preview",
+    "list_v0_sessions",
+    "generate_component",
+    "generate_and_create_component",
+    "create_v0_project",
+    "list_v0_projects", 
+    "get_v0_project_by_id",
+    "assign_project_to_chat",
+    "initialize_chat_from_repo",
+    "initialize_chat_from_files",
+    "create_v0_deployment",
+    "get_deployment_status",
+    "get_deployment_logs",
+    "fork_v0_chat",
+    "update_chat_metadata",
+    "favorite_chat"
+  ],
+  "new_platform_api_tools": {
+    "projects_management": [
+      "create_v0_project",
+      "list_v0_projects", 
+      "get_v0_project_by_id",
+      "assign_project_to_chat"
+    ],
+    "repository_context": [
+      "initialize_chat_from_repo",
+      "initialize_chat_from_files"
+    ],
+    "deployment_management": [
+      "create_v0_deployment",
+      "get_deployment_status", 
+      "get_deployment_logs"
+    ],
+    "chat_management": [
+      "fork_v0_chat",
+      "update_chat_metadata",
+      "favorite_chat"
+    ]
+  }
+}
+EOF < /dev/null

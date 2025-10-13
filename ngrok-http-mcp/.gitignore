@@ -1,0 +1,173 @@
+# ===================================================================
+# ngrok HTTP MCP Server - Git Ignore Patterns
+# ===================================================================
+
+# Environment and Configuration
+.env
+.env.local
+.env.production
+.env.staging
+*.env
+config.local.json
+secrets.json
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+share/python-wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+MANIFEST
+
+# Virtual Environments
+venv/
+env/
+ENV/
+env.bak/
+venv.bak/
+.venv/
+.conda/
+pipenv/
+
+# IDE and Editor Files
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.DS_Store
+Thumbs.db
+
+# Logs and Debugging
+*.log
+logs/
+debug.log
+error.log
+access.log
+ngrok.log
+server.log
+mcp.log
+
+# Testing
+.coverage
+.pytest_cache/
+htmlcov/
+.tox/
+.cache
+nosetests.xml
+coverage.xml
+*.cover
+*.py,cover
+.hypothesis/
+
+# Jupyter Notebooks
+.ipynb_checkpoints
+
+# Temporary Files
+*.tmp
+*.temp
+temp/
+tmp/
+.temp/
+.tmp/
+
+# API Keys and Secrets (CRITICAL SECURITY)
+*api_key*
+*secret*
+*token*
+*credentials*
+*.pem
+*.key
+*.crt
+*.p12
+*.pfx
+auth.json
+ngrok-credentials.json
+
+# ngrok Specific
+ngrok
+ngrok.exe
+.ngrok/
+ngrok.yml
+ngrok.yaml
+
+# Database Files
+*.db
+*.sqlite
+*.sqlite3
+
+# Backup Files
+*.bak
+*.backup
+*.old
+*.orig
+
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+Icon?
+._*
+.DocumentRevisions-V100
+.fseventsd
+.Spotlight-V100
+.TemporaryItems
+.Trashes
+.VolumeIcon.icns
+.com.apple.timemachine.donotpresent
+
+# Windows
+Thumbs.db
+Thumbs.db:encryptable
+ehthumbs.db
+ehthumbs_vista.db
+*.stackdump
+[Dd]esktop.ini
+$RECYCLE.BIN/
+*.cab
+*.msi
+*.msix
+*.msm
+*.msp
+*.lnk
+
+# Linux
+*~
+.fuse_hidden*
+.directory
+.Trash-*
+.nfs*
+
+# Package Managers
+node_modules/
+bower_components/
+jspm_packages/
+.npm
+.yarn/
+.pnp.*
+
+# Miscellaneous
+*.orig
+*.rej
+*.patch
+*.diff
+.sass-cache/
+.connect.lock
+.coverage
+.nyc_output

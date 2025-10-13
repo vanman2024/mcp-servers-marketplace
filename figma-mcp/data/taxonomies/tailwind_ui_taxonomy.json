@@ -1,0 +1,131 @@
+{
+  "taxonomy": {
+    "Application Shells": {
+      "description": "Complete application layout structures",
+      "components": []
+    },
+    "Stacked Layouts": {
+      "description": "Vertically stacked content layouts",
+      "components": []
+    },
+    "Sidebar Layouts": {
+      "description": "Layouts with sidebar navigation",
+      "components": []
+    },
+    "Multi-Column Layouts": {
+      "description": "Multi-column content arrangements",
+      "components": []
+    },
+    "Headings": {
+      "description": "Various heading and title components",
+      "subcategories": {
+        "Page Headings": [],
+        "Card Headings": [],
+        "Section Headings": []
+      }
+    },
+    "Data Display": {
+      "description": "Components for displaying structured data",
+      "subcategories": {
+        "Description Lists": [],
+        "Stats": [],
+        "Calendars": [],
+        "Lists": [],
+        "Stacked Lists": [],
+        "Tables": [],
+        "Grid Lists": [],
+        "Feeds": []
+      }
+    },
+    "Forms": {
+      "description": "Form elements and input components",
+      "subcategories": {
+        "Form Layouts": [],
+        "Input Groups": [],
+        "Select Menus": [],
+        "Sign-in and Registration": [],
+        "Textareas": [],
+        "Radio Groups": [],
+        "Checkboxes": [],
+        "Toggles": [],
+        "Action Panels": [],
+        "Comboboxes": []
+      }
+    },
+    "Feedback": {
+      "description": "User feedback and status components",
+      "subcategories": {
+        "Alerts": [],
+        "Empty States": []
+      }
+    },
+    "Navigation": {
+      "description": "Navigation and wayfinding components",
+      "subcategories": {
+        "Navbars": [],
+        "Pagination": [],
+        "Tabs": [],
+        "Vertical Navigation": [],
+        "Sidebar Navigation": [],
+        "Breadcrumbs": [],
+        "Progress Bars": [],
+        "Command Palettes": []
+      }
+    },
+    "Overlays": {
+      "description": "Modal and overlay components",
+      "subcategories": {
+        "Modal Dialogs": [],
+        "Drawers": [],
+        "Notifications": []
+      }
+    },
+    "Elements": {
+      "description": "Individual UI elements and components",
+      "subcategories": {
+        "Avatars": [],
+        "Badges": [],
+        "Dropdowns": [],
+        "Buttons": [],
+        "Button Groups": []
+      }
+    },
+    "Layout": {
+      "description": "Basic layout and structural components",
+      "subcategories": {
+        "Containers": [],
+        "Cards": [],
+        "List containers": [],
+        "Media Objects": [],
+        "Dividers": []
+      }
+    },
+    "Page Examples": {
+      "description": "Complete page layouts and examples",
+      "subcategories": {
+        "Home Screens": [],
+        "Detail Screens": [],
+        "Settings Screens": []
+      }
+    }
+  },
+  "component_template": {
+    "name": "",
+    "category": "",
+    "subcategory": "",
+    "tags": [],
+    "source": "tailwind-ui-manual",
+    "code": "",
+    "description": "",
+    "components_used": [],
+    "props": {},
+    "variants": {},
+    "dependencies": [],
+    "responsive": true,
+    "accessibility": {
+      "aria_labels": true,
+      "keyboard_navigation": true,
+      "screen_reader_support": true
+    }
+  }
+}

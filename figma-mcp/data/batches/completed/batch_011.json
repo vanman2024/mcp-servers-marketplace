@@ -1,0 +1,1653 @@
+[
+  {
+    "figma_id": "4:5135",
+    "name": "icon/file-input",
+    "description": "",
+    "category_id": "36ba3882-188b-4ee6-8cde-0e746f24331e",
+    "figma_url": "https://www.figma.com/file/JGMQqO02q6wLSyk29RDsgh?node-id=4%3A5135",
+    "component_type": "input",
+    "tags": [
+      "input"
+    ],
+    "complexity_score": 1,
+    "popularity_score": 0,
+    "props": {
+      "fills": [
+        {
+          "blendMode": "NORMAL",
+          "visible": false,
+          "type": "SOLID",
+          "color": {
+            "r": 1.0,
+            "g": 1.0,
+            "b": 1.0,
+            "a": 1.0
+          }
+        }
+      ]
+    },
+    "figma_node_type": "COMPONENT",
+    "width": 24.0,
+    "height": 24.0,
+    "status": "active",
+    "last_synced": "2025-07-14T01:37:30.764289+00:00"
+  },
+  {
+    "figma_id": "4:5136",
+    "name": "icon/file-json-2",
+    "description": "",
+    "category_id": "baf047c3-c1e5-4885-bab2-9c7e636f629b",
+    "figma_url": "https://www.figma.com/file/JGMQqO02q6wLSyk29RDsgh?node-id=4%3A5136",
+    "component_type": "icon",
+    "tags": [
+      "icon"
+    ],
+    "complexity_score": 1,
+    "popularity_score": 0,
+    "props": {
+      "fills": [
+        {
+          "blendMode": "NORMAL",
+          "visible": false,
+          "type": "SOLID",
+          "color": {
+            "r": 1.0,
+            "g": 1.0,
+            "b": 1.0,
+            "a": 1.0
+          }
+        }
+      ]
+    },
+    "figma_node_type": "COMPONENT",
+    "width": 24.0,
+    "height": 24.0,
+    "status": "active",
+    "last_synced": "2025-07-14T01:37:30.764300+00:00"
+  },
+  {
+    "figma_id": "4:5137",
+    "name": "icon/file-json",
+    "description": "",
+    "category_id": "baf047c3-c1e5-4885-bab2-9c7e636f629b",
+    "figma_url": "https://www.figma.com/file/JGMQqO02q6wLSyk29RDsgh?node-id=4%3A5137",
+    "component_type": "icon",
+    "tags": [
+      "icon"
+    ],
+    "complexity_score": 1,
+    "popularity_score": 0,
+    "props": {
+      "fills": [
+        {
+          "blendMode": "NORMAL",
+          "visible": false,
+          "type": "SOLID",
+          "color": {
+            "r": 1.0,
+            "g": 1.0,
+            "b": 1.0,
+            "a": 1.0
+          }
+        }
+      ]
+    },
+    "figma_node_type": "COMPONENT",
+    "width": 24.0,
+    "height": 24.0,
+    "status": "active",
+    "last_synced": "2025-07-14T01:37:30.764311+00:00"
+  },
+  {
+    "figma_id": "4:5138",
+    "name": "icon/file-key-2",
+    "description": "",
+    "category_id": "baf047c3-c1e5-4885-bab2-9c7e636f629b",
+    "figma_url": "https://www.figma.com/file/JGMQqO02q6wLSyk29RDsgh?node-id=4%3A5138",
+    "component_type": "icon",
+    "tags": [
+      "icon"
+    ],
+    "complexity_score": 1,
+    "popularity_score": 0,
+    "props": {
+      "fills": [
+        {
+          "blendMode": "NORMAL",
+          "visible": false,
+          "type": "SOLID",
+          "color": {
+            "r": 1.0,
+            "g": 1.0,
+            "b": 1.0,
+            "a": 1.0
+          }
+        }
+      ]
+    },
+    "figma_node_type": "COMPONENT",
+    "width": 24.0,
+    "height": 24.0,
+    "status": "active",
+    "last_synced": "2025-07-14T01:37:30.764324+00:00"
+  },
+  {
+    "figma_id": "4:5139",
+    "name": "icon/file-key",
+    "description": "",
+    "category_id": "baf047c3-c1e5-4885-bab2-9c7e636f629b",
+    "figma_url": "https://www.figma.com/file/JGMQqO02q6wLSyk29RDsgh?node-id=4%3A5139",
+    "component_type": "icon",
+    "tags": [
+      "icon"
+    ],
+    "complexity_score": 1,
+    "popularity_score": 0,
+    "props": {
+      "fills": [
+        {
+          "blendMode": "NORMAL",
+          "visible": false,
+          "type": "SOLID",
+          "color": {
+            "r": 1.0,
+            "g": 1.0,
+            "b": 1.0,
+            "a": 1.0
+          }
+        }
+      ]
+    },
+    "figma_node_type": "COMPONENT",
+    "width": 24.0,
+    "height": 24.0,
+    "status": "active",
+    "last_synced": "2025-07-14T01:37:30.764335+00:00"
+  },
+  {
+    "figma_id": "4:5140",
+    "name": "icon/file-line-chart",
+    "description": "",
+    "category_id": "baf047c3-c1e5-4885-bab2-9c7e636f629b",
+    "figma_url": "https://www.figma.com/file/JGMQqO02q6wLSyk29RDsgh?node-id=4%3A5140",
+    "component_type": "icon",
+    "tags": [
+      "icon"
+    ],
+    "complexity_score": 1,
+    "popularity_score": 0,
+    "props": {
+      "fills": [
+        {
+          "blendMode": "NORMAL",
+          "visible": false,
+          "type": "SOLID",
+          "color": {
+            "r": 1.0,
+            "g": 1.0,
+            "b": 1.0,
+            "a": 1.0
+          }
+        }
+      ]
+    },
+    "figma_node_type": "COMPONENT",
+    "width": 24.0,
+    "height": 24.0,
+    "status": "active",
+    "last_synced": "2025-07-14T01:37:30.764346+00:00"
+  },
+  {
+    "figma_id": "4:5141",
+    "name": "icon/file-lock-2",
+    "description": "",
+    "category_id": "baf047c3-c1e5-4885-bab2-9c7e636f629b",
+    "figma_url": "https://www.figma.com/file/JGMQqO02q6wLSyk29RDsgh?node-id=4%3A5141",
+    "component_type": "icon",
+    "tags": [
+      "icon"
+    ],
+    "complexity_score": 1,
+    "popularity_score": 0,
+    "props": {
+      "fills": [
+        {
+          "blendMode": "NORMAL",
+          "visible": false,
+          "type": "SOLID",
+          "color": {
+            "r": 1.0,
+            "g": 1.0,
+            "b": 1.0,
+            "a": 1.0
+          }
+        }
+      ]
+    },
+    "figma_node_type": "COMPONENT",
+    "width": 24.0,
+    "height": 24.0,
+    "status": "active",
+    "last_synced": "2025-07-14T01:37:30.764360+00:00"
+  },
+  {
+    "figma_id": "4:5142",
+    "name": "icon/file-lock",
+    "description": "",
+    "category_id": "baf047c3-c1e5-4885-bab2-9c7e636f629b",
+    "figma_url": "https://www.figma.com/file/JGMQqO02q6wLSyk29RDsgh?node-id=4%3A5142",
+    "component_type": "icon",
+    "tags": [
+      "icon"
+    ],
+    "complexity_score": 1,
+    "popularity_score": 0,
+    "props": {
+      "fills": [
+        {
+          "blendMode": "NORMAL",
+          "visible": false,
+          "type": "SOLID",
+          "color": {
+            "r": 1.0,
+            "g": 1.0,
+            "b": 1.0,
+            "a": 1.0
+          }
+        }
+      ]
+    },
+    "figma_node_type": "COMPONENT",
+    "width": 24.0,
+    "height": 24.0,
+    "status": "active",
+    "last_synced": "2025-07-14T01:37:30.764371+00:00"
+  },
+  {
+    "figma_id": "4:5143",
+    "name": "icon/file-minus-2",
+    "description": "",
+    "category_id": "baf047c3-c1e5-4885-bab2-9c7e636f629b",
+    "figma_url": "https://www.figma.com/file/JGMQqO02q6wLSyk29RDsgh?node-id=4%3A5143",
+    "component_type": "icon",
+    "tags": [
+      "icon"
+    ],
+    "complexity_score": 1,
+    "popularity_score": 0,
+    "props": {
+      "fills": [
+        {
+          "blendMode": "NORMAL",
+          "visible": false,
+          "type": "SOLID",
+          "color": {
+            "r": 1.0,
+            "g": 1.0,
+            "b": 1.0,
+            "a": 1.0
+          }
+        }
+      ]
+    },
+    "figma_node_type": "COMPONENT",
+    "width": 24.0,
+    "height": 24.0,
+    "status": "active",
+    "last_synced": "2025-07-14T01:37:30.764385+00:00"
+  },
+  {
+    "figma_id": "4:5144",
+    "name": "icon/file-minus",
+    "description": "",
+    "category_id": "baf047c3-c1e5-4885-bab2-9c7e636f629b",
+    "figma_url": "https://www.figma.com/file/JGMQqO02q6wLSyk29RDsgh?node-id=4%3A5144",
+    "component_type": "icon",
+    "tags": [
+      "icon"
+    ],
+    "complexity_score": 1,
+    "popularity_score": 0,
+    "props": {
+      "fills": [
+        {
+          "blendMode": "NORMAL",
+          "visible": false,
+          "type": "SOLID",
+          "color": {
+            "r": 1.0,
+            "g": 1.0,
+            "b": 1.0,
+            "a": 1.0
+          }
+        }
+      ]
+    },
+    "figma_node_type": "COMPONENT",
+    "width": 24.0,
+    "height": 24.0,
+    "status": "active",
+    "last_synced": "2025-07-14T01:37:30.764395+00:00"
+  },
+  {
+    "figma_id": "4:5145",
+    "name": "icon/file-output",
+    "description": "",
+    "category_id": "baf047c3-c1e5-4885-bab2-9c7e636f629b",
+    "figma_url": "https://www.figma.com/file/JGMQqO02q6wLSyk29RDsgh?node-id=4%3A5145",
+    "component_type": "icon",
+    "tags": [
+      "icon"
+    ],
+    "complexity_score": 1,
+    "popularity_score": 0,
+    "props": {
+      "fills": [
+        {
+          "blendMode": "NORMAL",
+          "visible": false,
+          "type": "SOLID",
+          "color": {
+            "r": 1.0,
+            "g": 1.0,
+            "b": 1.0,
+            "a": 1.0
+          }
+        }
+      ]
+    },
+    "figma_node_type": "COMPONENT",
+    "width": 24.0,
+    "height": 24.0,
+    "status": "active",
+    "last_synced": "2025-07-14T01:37:30.764406+00:00"
+  },
+  {
+    "figma_id": "4:5146",
+    "name": "icon/file-pie-chart",
+    "description": "",
+    "category_id": "baf047c3-c1e5-4885-bab2-9c7e636f629b",
+    "figma_url": "https://www.figma.com/file/JGMQqO02q6wLSyk29RDsgh?node-id=4%3A5146",
+    "component_type": "icon",
+    "tags": [
+      "icon"
+    ],
+    "complexity_score": 1,
+    "popularity_score": 0,
+    "props": {
+      "fills": [
+        {
+          "blendMode": "NORMAL",
+          "visible": false,
+          "type": "SOLID",
+          "color": {
+            "r": 1.0,
+            "g": 1.0,
+            "b": 1.0,
+            "a": 1.0
+          }
+        }
+      ]
+    },
+    "figma_node_type": "COMPONENT",
+    "width": 24.0,
+    "height": 24.0,
+    "status": "active",
+    "last_synced": "2025-07-14T01:37:30.764417+00:00"
+  },
+  {
+    "figma_id": "4:5147",
+    "name": "icon/file-plus-2",
+    "description": "",
+    "category_id": "baf047c3-c1e5-4885-bab2-9c7e636f629b",
+    "figma_url": "https://www.figma.com/file/JGMQqO02q6wLSyk29RDsgh?node-id=4%3A5147",
+    "component_type": "icon",
+    "tags": [
+      "icon"
+    ],
+    "complexity_score": 1,
+    "popularity_score": 0,
+    "props": {
+      "fills": [
+        {
+          "blendMode": "NORMAL",
+          "visible": false,
+          "type": "SOLID",
+          "color": {
+            "r": 1.0,
+            "g": 1.0,
+            "b": 1.0,
+            "a": 1.0
+          }
+        }
+      ]
+    },
+    "figma_node_type": "COMPONENT",
+    "width": 24.0,
+    "height": 24.0,
+    "status": "active",
+    "last_synced": "2025-07-14T01:37:30.764428+00:00"
+  },
+  {
+    "figma_id": "4:5148",
+    "name": "icon/file-plus",
+    "description": "",
+    "category_id": "baf047c3-c1e5-4885-bab2-9c7e636f629b",
+    "figma_url": "https://www.figma.com/file/JGMQqO02q6wLSyk29RDsgh?node-id=4%3A5148",
+    "component_type": "icon",
+    "tags": [
+      "icon"
+    ],
+    "complexity_score": 1,
+    "popularity_score": 0,
+    "props": {
+      "fills": [
+        {
+          "blendMode": "NORMAL",
+          "visible": false,
+          "type": "SOLID",
+          "color": {
+            "r": 1.0,
+            "g": 1.0,
+            "b": 1.0,
+            "a": 1.0
+          }
+        }
+      ]
+    },
+    "figma_node_type": "COMPONENT",
+    "width": 24.0,
+    "height": 24.0,
+    "status": "active",
+    "last_synced": "2025-07-14T01:37:30.764440+00:00"
+  },
+  {
+    "figma_id": "4:5149",
+    "name": "icon/file-question",
+    "description": "",
+    "category_id": "baf047c3-c1e5-4885-bab2-9c7e636f629b",
+    "figma_url": "https://www.figma.com/file/JGMQqO02q6wLSyk29RDsgh?node-id=4%3A5149",
+    "component_type": "icon",
+    "tags": [
+      "icon"
+    ],
+    "complexity_score": 1,
+    "popularity_score": 0,
+    "props": {
+      "fills": [
+        {
+          "blendMode": "NORMAL",
+          "visible": false,
+          "type": "SOLID",
+          "color": {
+            "r": 1.0,
+            "g": 1.0,
+            "b": 1.0,
+            "a": 1.0
+          }
+        }
+      ]
+    },
+    "figma_node_type": "COMPONENT",
+    "width": 24.0,
+    "height": 24.0,
+    "status": "active",
+    "last_synced": "2025-07-14T01:37:30.764477+00:00"
+  },
+  {
+    "figma_id": "4:5150",
+    "name": "icon/file-scan",
+    "description": "",
+    "category_id": "baf047c3-c1e5-4885-bab2-9c7e636f629b",
+    "figma_url": "https://www.figma.com/file/JGMQqO02q6wLSyk29RDsgh?node-id=4%3A5150",
+    "component_type": "icon",
+    "tags": [
+      "icon"
+    ],
+    "complexity_score": 2,
+    "popularity_score": 0,
+    "props": {
+      "fills": [
+        {
+          "blendMode": "NORMAL",
+          "visible": false,
+          "type": "SOLID",
+          "color": {
+            "r": 1.0,
+            "g": 1.0,
+            "b": 1.0,
+            "a": 1.0
+          }
+        }
+      ]
+    },
+    "figma_node_type": "COMPONENT",
+    "width": 24.0,
+    "height": 24.0,
+    "status": "active",
+    "last_synced": "2025-07-14T01:37:30.764493+00:00"
+  },
+  {
+    "figma_id": "4:5151",
+    "name": "icon/file-search-2",
+    "description": "",
+    "category_id": "baf047c3-c1e5-4885-bab2-9c7e636f629b",
+    "figma_url": "https://www.figma.com/file/JGMQqO02q6wLSyk29RDsgh?node-id=4%3A5151",
+    "component_type": "icon",
+    "tags": [
+      "icon"
+    ],
+    "complexity_score": 1,
+    "popularity_score": 0,
+    "props": {
+      "fills": [
+        {
+          "blendMode": "NORMAL",
+          "visible": false,
+          "type": "SOLID",
+          "color": {
+            "r": 1.0,
+            "g": 1.0,
+            "b": 1.0,
+            "a": 1.0
+          }
+        }
+      ]
+    },
+    "figma_node_type": "COMPONENT",
+    "width": 24.0,
+    "height": 24.0,
+    "status": "active",
+    "last_synced": "2025-07-14T01:37:30.764506+00:00"
+  },
+  {
+    "figma_id": "4:5152",
+    "name": "icon/file-search",
+    "description": "",
+    "category_id": "baf047c3-c1e5-4885-bab2-9c7e636f629b",
+    "figma_url": "https://www.figma.com/file/JGMQqO02q6wLSyk29RDsgh?node-id=4%3A5152",
+    "component_type": "icon",
+    "tags": [
+      "icon"
+    ],
+    "complexity_score": 1,
+    "popularity_score": 0,
+    "props": {
+      "fills": [
+        {
+          "blendMode": "NORMAL",
+          "visible": false,
+          "type": "SOLID",
+          "color": {
+            "r": 1.0,
+            "g": 1.0,
+            "b": 1.0,
+            "a": 1.0
+          }
+        }
+      ]
+    },
+    "figma_node_type": "COMPONENT",
+    "width": 24.0,
+    "height": 24.0,
+    "status": "active",
+    "last_synced": "2025-07-14T01:37:30.764517+00:00"
+  },
+  {
+    "figma_id": "4:5153",
+    "name": "icon/file-signature",
+    "description": "",
+    "category_id": "baf047c3-c1e5-4885-bab2-9c7e636f629b",
+    "figma_url": "https://www.figma.com/file/JGMQqO02q6wLSyk29RDsgh?node-id=4%3A5153",
+    "component_type": "icon",
+    "tags": [
+      "icon"
+    ],
+    "complexity_score": 1,
+    "popularity_score": 0,
+    "props": {
+      "fills": [
+        {
+          "blendMode": "NORMAL",
+          "visible": false,
+          "type": "SOLID",
+          "color": {
+            "r": 1.0,
+            "g": 1.0,
+            "b": 1.0,
+            "a": 1.0
+          }
+        }
+      ]
+    },
+    "figma_node_type": "COMPONENT",
+    "width": 24.0,
+    "height": 24.0,
+    "status": "active",
+    "last_synced": "2025-07-14T01:37:30.764528+00:00"
+  },
+  {
+    "figma_id": "4:5154",
+    "name": "icon/file-spreadsheet",
+    "description": "",
+    "category_id": "baf047c3-c1e5-4885-bab2-9c7e636f629b",
+    "figma_url": "https://www.figma.com/file/JGMQqO02q6wLSyk29RDsgh?node-id=4%3A5154",
+    "component_type": "icon",
+    "tags": [
+      "icon"
+    ],
+    "complexity_score": 2,
+    "popularity_score": 0,
+    "props": {
+      "fills": [
+        {
+          "blendMode": "NORMAL",
+          "visible": false,
+          "type": "SOLID",
+          "color": {
+            "r": 1.0,
+            "g": 1.0,
+            "b": 1.0,
+            "a": 1.0
+          }
+        }
+      ]
+    },
+    "figma_node_type": "COMPONENT",
+    "width": 24.0,
+    "height": 24.0,
+    "status": "active",
+    "last_synced": "2025-07-14T01:37:30.764539+00:00"
+  },
+  {
+    "figma_id": "4:5155",
+    "name": "icon/file-symlink",
+    "description": "",
+    "category_id": "baf047c3-c1e5-4885-bab2-9c7e636f629b",
+    "figma_url": "https://www.figma.com/file/JGMQqO02q6wLSyk29RDsgh?node-id=4%3A5155",
+    "component_type": "icon",
+    "tags": [
+      "icon",
+      "link"
+    ],
+    "complexity_score": 1,
+    "popularity_score": 0,
+    "props": {
+      "fills": [
+        {
+          "blendMode": "NORMAL",
+          "visible": false,
+          "type": "SOLID",
+          "color": {
+            "r": 1.0,
+            "g": 1.0,
+            "b": 1.0,
+            "a": 1.0
+          }
+        }
+      ]
+    },
+    "figma_node_type": "COMPONENT",
+    "width": 24.0,
+    "height": 24.0,
+    "status": "active",
+    "last_synced": "2025-07-14T01:37:30.764554+00:00"
+  },
+  {
+    "figma_id": "4:5156",
+    "name": "icon/file-terminal",
+    "description": "",
+    "category_id": "baf047c3-c1e5-4885-bab2-9c7e636f629b",
+    "figma_url": "https://www.figma.com/file/JGMQqO02q6wLSyk29RDsgh?node-id=4%3A5156",
+    "component_type": "icon",
+    "tags": [
+      "icon"
+    ],
+    "complexity_score": 1,
+    "popularity_score": 0,
+    "props": {
+      "fills": [
+        {
+          "blendMode": "NORMAL",
+          "visible": false,
+          "type": "SOLID",
+          "color": {
+            "r": 1.0,
+            "g": 1.0,
+            "b": 1.0,
+            "a": 1.0
+          }
+        }
+      ]
+    },
+    "figma_node_type": "COMPONENT",
+    "width": 24.0,
+    "height": 24.0,
+    "status": "active",
+    "last_synced": "2025-07-14T01:37:30.764566+00:00"
+  },
+  {
+    "figma_id": "4:5157",
+    "name": "icon/file-text",
+    "description": "",
+    "category_id": "baf047c3-c1e5-4885-bab2-9c7e636f629b",
+    "figma_url": "https://www.figma.com/file/JGMQqO02q6wLSyk29RDsgh?node-id=4%3A5157",
+    "component_type": "icon",
+    "tags": [
+      "icon"
+    ],
+    "complexity_score": 1,
+    "popularity_score": 0,
+    "props": {
+      "fills": [
+        {
+          "blendMode": "NORMAL",
+          "visible": false,
+          "type": "SOLID",
+          "color": {
+            "r": 1.0,
+            "g": 1.0,
+            "b": 1.0,
+            "a": 1.0
+          }
+        }
+      ]
+    },
+    "figma_node_type": "COMPONENT",
+    "width": 24.0,
+    "height": 24.0,
+    "status": "active",
+    "last_synced": "2025-07-14T01:37:30.764577+00:00"
+  },
+  {
+    "figma_id": "4:5158",
+    "name": "icon/file-type-2",
+    "description": "",
+    "category_id": "baf047c3-c1e5-4885-bab2-9c7e636f629b",
+    "figma_url": "https://www.figma.com/file/JGMQqO02q6wLSyk29RDsgh?node-id=4%3A5158",
+    "component_type": "icon",
+    "tags": [
+      "icon"
+    ],
+    "complexity_score": 1,
+    "popularity_score": 0,
+    "props": {
+      "fills": [
+        {
+          "blendMode": "NORMAL",
+          "visible": false,
+          "type": "SOLID",
+          "color": {
+            "r": 1.0,
+            "g": 1.0,
+            "b": 1.0,
+            "a": 1.0
+          }
+        }
+      ]
+    },
+    "figma_node_type": "COMPONENT",
+    "width": 24.0,
+    "height": 24.0,
+    "status": "active",
+    "last_synced": "2025-07-14T01:37:30.764591+00:00"
+  },
+  {
+    "figma_id": "4:5159",
+    "name": "icon/file-type",
+    "description": "",
+    "category_id": "baf047c3-c1e5-4885-bab2-9c7e636f629b",
+    "figma_url": "https://www.figma.com/file/JGMQqO02q6wLSyk29RDsgh?node-id=4%3A5159",
+    "component_type": "icon",
+    "tags": [
+      "icon"
+    ],
+    "complexity_score": 1,
+    "popularity_score": 0,
+    "props": {
+      "fills": [
+        {
+          "blendMode": "NORMAL",
+          "visible": false,
+          "type": "SOLID",
+          "color": {
+            "r": 1.0,
+            "g": 1.0,
+            "b": 1.0,
+            "a": 1.0
+          }
+        }
+      ]
+    },
+    "figma_node_type": "COMPONENT",
+    "width": 24.0,
+    "height": 24.0,
+    "status": "active",
+    "last_synced": "2025-07-14T01:37:30.764603+00:00"
+  },
+  {
+    "figma_id": "4:5160",
+    "name": "icon/file-up",
+    "description": "",
+    "category_id": "baf047c3-c1e5-4885-bab2-9c7e636f629b",
+    "figma_url": "https://www.figma.com/file/JGMQqO02q6wLSyk29RDsgh?node-id=4%3A5160",
+    "component_type": "icon",
+    "tags": [
+      "icon"
+    ],
+    "complexity_score": 1,
+    "popularity_score": 0,
+    "props": {
+      "fills": [
+        {
+          "blendMode": "NORMAL",
+          "visible": false,
+          "type": "SOLID",
+          "color": {
+            "r": 1.0,
+            "g": 1.0,
+            "b": 1.0,
+            "a": 1.0
+          }
+        }
+      ]
+    },
+    "figma_node_type": "COMPONENT",
+    "width": 24.0,
+    "height": 24.0,
+    "status": "active",
+    "last_synced": "2025-07-14T01:37:30.764614+00:00"
+  },
+  {
+    "figma_id": "4:5161",
+    "name": "icon/file-video-2",
+    "description": "",
+    "category_id": "baf047c3-c1e5-4885-bab2-9c7e636f629b",
+    "figma_url": "https://www.figma.com/file/JGMQqO02q6wLSyk29RDsgh?node-id=4%3A5161",
+    "component_type": "icon",
+    "tags": [
+      "icon"
+    ],
+    "complexity_score": 1,
+    "popularity_score": 0,
+    "props": {
+      "fills": [
+        {
+          "blendMode": "NORMAL",
+          "visible": false,
+          "type": "SOLID",
+          "color": {
+            "r": 1.0,
+            "g": 1.0,
+            "b": 1.0,
+            "a": 1.0
+          }
+        }
+      ]
+    },
+    "figma_node_type": "COMPONENT",
+    "width": 24.0,
+    "height": 24.0,
+    "status": "active",
+    "last_synced": "2025-07-14T01:37:30.764692+00:00"
+  },
+  {
+    "figma_id": "4:5162",
+    "name": "icon/file-video",
+    "description": "",
+    "category_id": "baf047c3-c1e5-4885-bab2-9c7e636f629b",
+    "figma_url": "https://www.figma.com/file/JGMQqO02q6wLSyk29RDsgh?node-id=4%3A5162",
+    "component_type": "icon",
+    "tags": [
+      "icon"
+    ],
+    "complexity_score": 1,
+    "popularity_score": 0,
+    "props": {
+      "fills": [
+        {
+          "blendMode": "NORMAL",
+          "visible": false,
+          "type": "SOLID",
+          "color": {
+            "r": 1.0,
+            "g": 1.0,
+            "b": 1.0,
+            "a": 1.0
+          }
+        }
+      ]
+    },
+    "figma_node_type": "COMPONENT",
+    "width": 24.0,
+    "height": 24.0,
+    "status": "active",
+    "last_synced": "2025-07-14T01:37:30.764705+00:00"
+  },
+  {
+    "figma_id": "4:5163",
+    "name": "icon/file-volume-2",
+    "description": "",
+    "category_id": "baf047c3-c1e5-4885-bab2-9c7e636f629b",
+    "figma_url": "https://www.figma.com/file/JGMQqO02q6wLSyk29RDsgh?node-id=4%3A5163",
+    "component_type": "icon",
+    "tags": [
+      "icon"
+    ],
+    "complexity_score": 1,
+    "popularity_score": 0,
+    "props": {
+      "fills": [
+        {
+          "blendMode": "NORMAL",
+          "visible": false,
+          "type": "SOLID",
+          "color": {
+            "r": 1.0,
+            "g": 1.0,
+            "b": 1.0,
+            "a": 1.0
+          }
+        }
+      ]
+    },
+    "figma_node_type": "COMPONENT",
+    "width": 24.0,
+    "height": 24.0,
+    "status": "active",
+    "last_synced": "2025-07-14T01:37:30.764716+00:00"
+  },
+  {
+    "figma_id": "4:5164",
+    "name": "icon/file-volume",
+    "description": "",
+    "category_id": "baf047c3-c1e5-4885-bab2-9c7e636f629b",
+    "figma_url": "https://www.figma.com/file/JGMQqO02q6wLSyk29RDsgh?node-id=4%3A5164",
+    "component_type": "icon",
+    "tags": [
+      "icon"
+    ],
+    "complexity_score": 1,
+    "popularity_score": 0,
+    "props": {
+      "fills": [
+        {
+          "blendMode": "NORMAL",
+          "visible": false,
+          "type": "SOLID",
+          "color": {
+            "r": 1.0,
+            "g": 1.0,
+            "b": 1.0,
+            "a": 1.0
+          }
+        }
+      ]
+    },
+    "figma_node_type": "COMPONENT",
+    "width": 24.0,
+    "height": 24.0,
+    "status": "active",
+    "last_synced": "2025-07-14T01:37:30.764729+00:00"
+  },
+  {
+    "figma_id": "4:5165",
+    "name": "icon/file-warning",
+    "description": "",
+    "category_id": "baf047c3-c1e5-4885-bab2-9c7e636f629b",
+    "figma_url": "https://www.figma.com/file/JGMQqO02q6wLSyk29RDsgh?node-id=4%3A5165",
+    "component_type": "icon",
+    "tags": [
+      "icon"
+    ],
+    "complexity_score": 1,
+    "popularity_score": 0,
+    "props": {
+      "fills": [
+        {
+          "blendMode": "NORMAL",
+          "visible": false,
+          "type": "SOLID",
+          "color": {
+            "r": 1.0,
+            "g": 1.0,
+            "b": 1.0,
+            "a": 1.0
+          }
+        }
+      ]
+    },
+    "figma_node_type": "COMPONENT",
+    "width": 24.0,
+    "height": 24.0,
+    "status": "active",
+    "last_synced": "2025-07-14T01:37:30.764740+00:00"
+  },
+  {
+    "figma_id": "4:5166",
+    "name": "icon/file-x-2",
+    "description": "",
+    "category_id": "baf047c3-c1e5-4885-bab2-9c7e636f629b",
+    "figma_url": "https://www.figma.com/file/JGMQqO02q6wLSyk29RDsgh?node-id=4%3A5166",
+    "component_type": "icon",
+    "tags": [
+      "icon"
+    ],
+    "complexity_score": 1,
+    "popularity_score": 0,
+    "props": {
+      "fills": [
+        {
+          "blendMode": "NORMAL",
+          "visible": false,
+          "type": "SOLID",
+          "color": {
+            "r": 1.0,
+            "g": 1.0,
+            "b": 1.0,
+            "a": 1.0
+          }
+        }
+      ]
+    },
+    "figma_node_type": "COMPONENT",
+    "width": 24.0,
+    "height": 24.0,
+    "status": "active",
+    "last_synced": "2025-07-14T01:37:30.764751+00:00"
+  },
+  {
+    "figma_id": "4:5167",
+    "name": "icon/file-x",
+    "description": "",
+    "category_id": "baf047c3-c1e5-4885-bab2-9c7e636f629b",
+    "figma_url": "https://www.figma.com/file/JGMQqO02q6wLSyk29RDsgh?node-id=4%3A5167",
+    "component_type": "icon",
+    "tags": [
+      "icon"
+    ],
+    "complexity_score": 1,
+    "popularity_score": 0,
+    "props": {
+      "fills": [
+        {
+          "blendMode": "NORMAL",
+          "visible": false,
+          "type": "SOLID",
+          "color": {
+            "r": 1.0,
+            "g": 1.0,
+            "b": 1.0,
+            "a": 1.0
+          }
+        }
+      ]
+    },
+    "figma_node_type": "COMPONENT",
+    "width": 24.0,
+    "height": 24.0,
+    "status": "active",
+    "last_synced": "2025-07-14T01:37:30.764762+00:00"
+  },
+  {
+    "figma_id": "4:5168",
+    "name": "icon/file",
+    "description": "",
+    "category_id": "baf047c3-c1e5-4885-bab2-9c7e636f629b",
+    "figma_url": "https://www.figma.com/file/JGMQqO02q6wLSyk29RDsgh?node-id=4%3A5168",
+    "component_type": "icon",
+    "tags": [
+      "icon"
+    ],
+    "complexity_score": 1,
+    "popularity_score": 0,
+    "props": {
+      "fills": [
+        {
+          "blendMode": "NORMAL",
+          "visible": false,
+          "type": "SOLID",
+          "color": {
+            "r": 1.0,
+            "g": 1.0,
+            "b": 1.0,
+            "a": 1.0
+          }
+        }
+      ]
+    },
+    "figma_node_type": "COMPONENT",
+    "width": 24.0,
+    "height": 24.0,
+    "status": "active",
+    "last_synced": "2025-07-14T01:37:30.764774+00:00"
+  },
+  {
+    "figma_id": "4:5169",
+    "name": "icon/files",
+    "description": "",
+    "category_id": "baf047c3-c1e5-4885-bab2-9c7e636f629b",
+    "figma_url": "https://www.figma.com/file/JGMQqO02q6wLSyk29RDsgh?node-id=4%3A5169",
+    "component_type": "icon",
+    "tags": [
+      "icon"
+    ],
+    "complexity_score": 1,
+    "popularity_score": 0,
+    "props": {
+      "fills": [
+        {
+          "blendMode": "NORMAL",
+          "visible": false,
+          "type": "SOLID",
+          "color": {
+            "r": 1.0,
+            "g": 1.0,
+            "b": 1.0,
+            "a": 1.0
+          }
+        }
+      ]
+    },
+    "figma_node_type": "COMPONENT",
+    "width": 24.0,
+    "height": 24.0,
+    "status": "active",
+    "last_synced": "2025-07-14T01:37:30.764784+00:00"
+  },
+  {
+    "figma_id": "4:5170",
+    "name": "icon/film",
+    "description": "",
+    "category_id": "baf047c3-c1e5-4885-bab2-9c7e636f629b",
+    "figma_url": "https://www.figma.com/file/JGMQqO02q6wLSyk29RDsgh?node-id=4%3A5170",
+    "component_type": "icon",
+    "tags": [
+      "icon"
+    ],
+    "complexity_score": 2,
+    "popularity_score": 0,
+    "props": {
+      "fills": [
+        {
+          "blendMode": "NORMAL",
+          "visible": false,
+          "type": "SOLID",
+          "color": {
+            "r": 1.0,
+            "g": 1.0,
+            "b": 1.0,
+            "a": 1.0
+          }
+        }
+      ]
+    },
+    "figma_node_type": "COMPONENT",
+    "width": 24.0,
+    "height": 24.0,
+    "status": "active",
+    "last_synced": "2025-07-14T01:37:30.764796+00:00"
+  },
+  {
+    "figma_id": "4:5171",
+    "name": "icon/filter",
+    "description": "",
+    "category_id": "baf047c3-c1e5-4885-bab2-9c7e636f629b",
+    "figma_url": "https://www.figma.com/file/JGMQqO02q6wLSyk29RDsgh?node-id=4%3A5171",
+    "component_type": "icon",
+    "tags": [
+      "icon"
+    ],
+    "complexity_score": 1,
+    "popularity_score": 0,
+    "props": {
+      "fills": [
+        {
+          "blendMode": "NORMAL",
+          "visible": false,
+          "type": "SOLID",
+          "color": {
+            "r": 1.0,
+            "g": 1.0,
+            "b": 1.0,
+            "a": 1.0
+          }
+        }
+      ]
+    },
+    "figma_node_type": "COMPONENT",
+    "width": 24.0,
+    "height": 24.0,
+    "status": "active",
+    "last_synced": "2025-07-14T01:37:30.764808+00:00"
+  },
+  {
+    "figma_id": "4:5172",
+    "name": "icon/fingerprint",
+    "description": "",
+    "category_id": "baf047c3-c1e5-4885-bab2-9c7e636f629b",
+    "figma_url": "https://www.figma.com/file/JGMQqO02q6wLSyk29RDsgh?node-id=4%3A5172",
+    "component_type": "icon",
+    "tags": [
+      "icon"
+    ],
+    "complexity_score": 2,
+    "popularity_score": 0,
+    "props": {
+      "fills": [
+        {
+          "blendMode": "NORMAL",
+          "visible": false,
+          "type": "SOLID",
+          "color": {
+            "r": 1.0,
+            "g": 1.0,
+            "b": 1.0,
+            "a": 1.0
+          }
+        }
+      ]
+    },
+    "figma_node_type": "COMPONENT",
+    "width": 24.0,
+    "height": 24.0,
+    "status": "active",
+    "last_synced": "2025-07-14T01:37:30.764819+00:00"
+  },
+  {
+    "figma_id": "4:5173",
+    "name": "icon/fish",
+    "description": "",
+    "category_id": "baf047c3-c1e5-4885-bab2-9c7e636f629b",
+    "figma_url": "https://www.figma.com/file/JGMQqO02q6wLSyk29RDsgh?node-id=4%3A5173",
+    "component_type": "icon",
+    "tags": [
+      "icon"
+    ],
+    "complexity_score": 2,
+    "popularity_score": 0,
+    "props": {
+      "fills": [
+        {
+          "blendMode": "NORMAL",
+          "visible": false,
+          "type": "SOLID",
+          "color": {
+            "r": 1.0,
+            "g": 1.0,
+            "b": 1.0,
+            "a": 1.0
+          }
+        }
+      ]
+    },
+    "figma_node_type": "COMPONENT",
+    "width": 24.0,
+    "height": 24.0,
+    "status": "active",
+    "last_synced": "2025-07-14T01:37:30.764831+00:00"
+  },
+  {
+    "figma_id": "4:5174",
+    "name": "icon/flag-off",
+    "description": "",
+    "category_id": "baf047c3-c1e5-4885-bab2-9c7e636f629b",
+    "figma_url": "https://www.figma.com/file/JGMQqO02q6wLSyk29RDsgh?node-id=4%3A5174",
+    "component_type": "icon",
+    "tags": [
+      "icon"
+    ],
+    "complexity_score": 1,
+    "popularity_score": 0,
+    "props": {
+      "fills": [
+        {
+          "blendMode": "NORMAL",
+          "visible": false,
+          "type": "SOLID",
+          "color": {
+            "r": 1.0,
+            "g": 1.0,
+            "b": 1.0,
+            "a": 1.0
+          }
+        }
+      ]
+    },
+    "figma_node_type": "COMPONENT",
+    "width": 24.0,
+    "height": 24.0,
+    "status": "active",
+    "last_synced": "2025-07-14T01:37:30.764844+00:00"
+  },
+  {
+    "figma_id": "4:5175",
+    "name": "icon/flag-triangle-left",
+    "description": "",
+    "category_id": "baf047c3-c1e5-4885-bab2-9c7e636f629b",
+    "figma_url": "https://www.figma.com/file/JGMQqO02q6wLSyk29RDsgh?node-id=4%3A5175",
+    "component_type": "icon",
+    "tags": [
+      "icon"
+    ],
+    "complexity_score": 1,
+    "popularity_score": 0,
+    "props": {
+      "fills": [
+        {
+          "blendMode": "NORMAL",
+          "visible": false,
+          "type": "SOLID",
+          "color": {
+            "r": 1.0,
+            "g": 1.0,
+            "b": 1.0,
+            "a": 1.0
+          }
+        }
+      ]
+    },
+    "figma_node_type": "COMPONENT",
+    "width": 24.0,
+    "height": 24.0,
+    "status": "active",
+    "last_synced": "2025-07-14T01:37:30.764856+00:00"
+  },
+  {
+    "figma_id": "4:5176",
+    "name": "icon/flag-triangle-right",
+    "description": "",
+    "category_id": "baf047c3-c1e5-4885-bab2-9c7e636f629b",
+    "figma_url": "https://www.figma.com/file/JGMQqO02q6wLSyk29RDsgh?node-id=4%3A5176",
+    "component_type": "icon",
+    "tags": [
+      "icon"
+    ],
+    "complexity_score": 1,
+    "popularity_score": 0,
+    "props": {
+      "fills": [
+        {
+          "blendMode": "NORMAL",
+          "visible": false,
+          "type": "SOLID",
+          "color": {
+            "r": 1.0,
+            "g": 1.0,
+            "b": 1.0,
+            "a": 1.0
+          }
+        }
+      ]
+    },
+    "figma_node_type": "COMPONENT",
+    "width": 24.0,
+    "height": 24.0,
+    "status": "active",
+    "last_synced": "2025-07-14T01:37:30.764868+00:00"
+  },
+  {
+    "figma_id": "4:5177",
+    "name": "icon/flag",
+    "description": "",
+    "category_id": "baf047c3-c1e5-4885-bab2-9c7e636f629b",
+    "figma_url": "https://www.figma.com/file/JGMQqO02q6wLSyk29RDsgh?node-id=4%3A5177",
+    "component_type": "icon",
+    "tags": [
+      "icon"
+    ],
+    "complexity_score": 1,
+    "popularity_score": 0,
+    "props": {
+      "fills": [
+        {
+          "blendMode": "NORMAL",
+          "visible": false,
+          "type": "SOLID",
+          "color": {
+            "r": 1.0,
+            "g": 1.0,
+            "b": 1.0,
+            "a": 1.0
+          }
+        }
+      ]
+    },
+    "figma_node_type": "COMPONENT",
+    "width": 24.0,
+    "height": 24.0,
+    "status": "active",
+    "last_synced": "2025-07-14T01:37:30.764879+00:00"
+  },
+  {
+    "figma_id": "4:5178",
+    "name": "icon/flame",
+    "description": "",
+    "category_id": "baf047c3-c1e5-4885-bab2-9c7e636f629b",
+    "figma_url": "https://www.figma.com/file/JGMQqO02q6wLSyk29RDsgh?node-id=4%3A5178",
+    "component_type": "icon",
+    "tags": [
+      "icon"
+    ],
+    "complexity_score": 1,
+    "popularity_score": 0,
+    "props": {
+      "fills": [
+        {
+          "blendMode": "NORMAL",
+          "visible": false,
+          "type": "SOLID",
+          "color": {
+            "r": 1.0,
+            "g": 1.0,
+            "b": 1.0,
+            "a": 1.0
+          }
+        }
+      ]
+    },
+    "figma_node_type": "COMPONENT",
+    "width": 24.0,
+    "height": 24.0,
+    "status": "active",
+    "last_synced": "2025-07-14T01:37:30.764892+00:00"
+  },
+  {
+    "figma_id": "4:5179",
+    "name": "icon/flashlight-off",
+    "description": "",
+    "category_id": "baf047c3-c1e5-4885-bab2-9c7e636f629b",
+    "figma_url": "https://www.figma.com/file/JGMQqO02q6wLSyk29RDsgh?node-id=4%3A5179",
+    "component_type": "icon",
+    "tags": [
+      "icon"
+    ],
+    "complexity_score": 1,
+    "popularity_score": 0,
+    "props": {
+      "fills": [
+        {
+          "blendMode": "NORMAL",
+          "visible": false,
+          "type": "SOLID",
+          "color": {
+            "r": 1.0,
+            "g": 1.0,
+            "b": 1.0,
+            "a": 1.0
+          }
+        }
+      ]
+    },
+    "figma_node_type": "COMPONENT",
+    "width": 24.0,
+    "height": 24.0,
+    "status": "active",
+    "last_synced": "2025-07-14T01:37:30.764902+00:00"
+  },
+  {
+    "figma_id": "4:5180",
+    "name": "icon/flashlight",
+    "description": "",
+    "category_id": "baf047c3-c1e5-4885-bab2-9c7e636f629b",
+    "figma_url": "https://www.figma.com/file/JGMQqO02q6wLSyk29RDsgh?node-id=4%3A5180",
+    "component_type": "icon",
+    "tags": [
+      "icon"
+    ],
+    "complexity_score": 1,
+    "popularity_score": 0,
+    "props": {
+      "fills": [
+        {
+          "blendMode": "NORMAL",
+          "visible": false,
+          "type": "SOLID",
+          "color": {
+            "r": 1.0,
+            "g": 1.0,
+            "b": 1.0,
+            "a": 1.0
+          }
+        }
+      ]
+    },
+    "figma_node_type": "COMPONENT",
+    "width": 24.0,
+    "height": 24.0,
+    "status": "active",
+    "last_synced": "2025-07-14T01:37:30.764914+00:00"
+  },
+  {
+    "figma_id": "4:5181",
+    "name": "icon/flask-conical-off",
+    "description": "",
+    "category_id": "baf047c3-c1e5-4885-bab2-9c7e636f629b",
+    "figma_url": "https://www.figma.com/file/JGMQqO02q6wLSyk29RDsgh?node-id=4%3A5181",
+    "component_type": "icon",
+    "tags": [
+      "icon"
+    ],
+    "complexity_score": 2,
+    "popularity_score": 0,
+    "props": {
+      "fills": [
+        {
+          "blendMode": "NORMAL",
+          "visible": false,
+          "type": "SOLID",
+          "color": {
+            "r": 1.0,
+            "g": 1.0,
+            "b": 1.0,
+            "a": 1.0
+          }
+        }
+      ]
+    },
+    "figma_node_type": "COMPONENT",
+    "width": 24.0,
+    "height": 24.0,
+    "status": "active",
+    "last_synced": "2025-07-14T01:37:30.764926+00:00"
+  },
+  {
+    "figma_id": "4:5182",
+    "name": "icon/flask-conical",
+    "description": "",
+    "category_id": "baf047c3-c1e5-4885-bab2-9c7e636f629b",
+    "figma_url": "https://www.figma.com/file/JGMQqO02q6wLSyk29RDsgh?node-id=4%3A5182",
+    "component_type": "icon",
+    "tags": [
+      "icon"
+    ],
+    "complexity_score": 1,
+    "popularity_score": 0,
+    "props": {
+      "fills": [
+        {
+          "blendMode": "NORMAL",
+          "visible": false,
+          "type": "SOLID",
+          "color": {
+            "r": 1.0,
+            "g": 1.0,
+            "b": 1.0,
+            "a": 1.0
+          }
+        }
+      ]
+    },
+    "figma_node_type": "COMPONENT",
+    "width": 24.0,
+    "height": 24.0,
+    "status": "active",
+    "last_synced": "2025-07-14T01:37:30.764938+00:00"
+  },
+  {
+    "figma_id": "4:5183",
+    "name": "icon/flask-round",
+    "description": "",
+    "category_id": "baf047c3-c1e5-4885-bab2-9c7e636f629b",
+    "figma_url": "https://www.figma.com/file/JGMQqO02q6wLSyk29RDsgh?node-id=4%3A5183",
+    "component_type": "icon",
+    "tags": [
+      "icon"
+    ],
+    "complexity_score": 1,
+    "popularity_score": 0,
+    "props": {
+      "fills": [
+        {
+          "blendMode": "NORMAL",
+          "visible": false,
+          "type": "SOLID",
+          "color": {
+            "r": 1.0,
+            "g": 1.0,
+            "b": 1.0,
+            "a": 1.0
+          }
+        }
+      ]
+    },
+    "figma_node_type": "COMPONENT",
+    "width": 24.0,
+    "height": 24.0,
+    "status": "active",
+    "last_synced": "2025-07-14T01:37:30.764949+00:00"
+  },
+  {
+    "figma_id": "4:5184",
+    "name": "icon/flip-horizontal-2",
+    "description": "",
+    "category_id": "baf047c3-c1e5-4885-bab2-9c7e636f629b",
+    "figma_url": "https://www.figma.com/file/JGMQqO02q6wLSyk29RDsgh?node-id=4%3A5184",
+    "component_type": "icon",
+    "tags": [
+      "icon"
+    ],
+    "complexity_score": 2,
+    "popularity_score": 0,
+    "props": {
+      "fills": [
+        {
+          "blendMode": "NORMAL",
+          "visible": false,
+          "type": "SOLID",
+          "color": {
+            "r": 1.0,
+            "g": 1.0,
+            "b": 1.0,
+            "a": 1.0
+          }
+        }
+      ]
+    },
+    "figma_node_type": "COMPONENT",
+    "width": 24.0,
+    "height": 24.0,
+    "status": "active",
+    "last_synced": "2025-07-14T01:37:30.764961+00:00"
+  }
+]

@@ -1,0 +1,21 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "supabase-http-mcp"
+version = "0.1.0"
+description = "MCP server for Supabase database operations via HTTP"
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = [
+    "fastmcp>=0.1.0",
+    "python-dotenv>=1.0.0",
+    "uvicorn>=0.20.0",
+    "httpx>=0.24.0",
+    "supabase>=2.0.0",
+    "asyncpg>=0.29.0",
+]
+
+[project.scripts]
+supabase-http-mcp = "supabase_server:main"

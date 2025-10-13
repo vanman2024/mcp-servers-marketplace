@@ -1,0 +1,74 @@
+{
+  "name": "vercel-v0-enhanced-mcp",
+  "version": "1.0.0",
+  "description": "Enhanced V0 MCP Server Production Deployment",
+  "environment": "production",
+  "server": {
+    "port": 8015,
+    "host": "0.0.0.0",
+    "workers": 4,
+    "max_connections": 1000,
+    "timeout": 300,
+    "keepalive": 60
+  },
+  "health_check": {
+    "endpoint": "/health",
+    "interval": 30,
+    "timeout": 10,
+    "retries": 3
+  },
+  "logging": {
+    "level": "INFO",
+    "format": "%(asctime)s - %(name)s - %(levelname)s - %(message)s",
+    "file": "/var/log/mcp/v0-enhanced.log",
+    "max_size": "100MB",
+    "backup_count": 5
+  },
+  "monitoring": {
+    "metrics_enabled": true,
+    "prometheus_port": 9090,
+    "health_checks": [
+      "api_connectivity",
+      "persistence_layer",
+      "memory_usage",
+      "response_time"
+    ]
+  },
+  "security": {
+    "cors_enabled": true,
+    "allowed_origins": ["*"],
+    "rate_limiting": {
+      "requests_per_minute": 60,
+      "burst_size": 10
+    }
+  },
+  "persistence": {
+    "data_dir": "/var/mcp-data",
+    "backup_enabled": true,
+    "backup_interval": "1h",
+    "retention_days": 30
+  },
+  "dependencies": {
+    "python": ">=3.10",
+    "required": [
+      "fastmcp>=0.1.0",
+      "aiohttp>=3.8.0",
+      "python-dotenv>=1.0.0",
+      "uvicorn>=0.20.0",
+      "pydantic>=2.0.0"
+    ]
+  },
+  "environment_variables": {
+    "required": [
+      "V0_API_KEY",
+      "VERCEL_TOKEN"
+    ],
+    "optional": [
+      "MCP_PORT",
+      "MCP_HOST",
+      "LOG_LEVEL",
+      "PERSIST_DIR"
+    ]
+  }
+}
+EOF < /dev/null

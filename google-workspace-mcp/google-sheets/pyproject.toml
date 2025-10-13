@@ -1,0 +1,17 @@
+[project]
+name = "google-sheets-mcp"
+version = "1.0.0"
+description = "FastMCP server for Google Sheets with formulas and formatting"
+requires-python = ">=3.10"
+dependencies = [
+    "fastmcp>=0.5.0",
+    "google-auth>=2.29.0",
+    "google-auth-oauthlib>=1.2.0",
+    "google-auth-httplib2>=0.2.0",
+    "google-api-python-client>=2.122.0",
+    "python-dotenv>=1.0.0",
+]
+
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"

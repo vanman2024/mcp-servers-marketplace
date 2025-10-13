@@ -1,0 +1,55 @@
+{
+  "server": {
+    "name": "Figma Marketing MCP Server",
+    "version": "1.0.0",
+    "port": 8032,
+    "host": "localhost",
+    "environment": "development"
+  },
+  "database": {
+    "provider": "supabase",
+    "required_env_vars": [
+      "SUPABASE_URL",
+      "SUPABASE_SERVICE_KEY"
+    ],
+    "connection_pool": {
+      "min_connections": 2,
+      "max_connections": 20,
+      "connection_timeout": 30,
+      "idle_timeout": 300
+    }
+  },
+  "specialization": {
+    "focus": "marketing",
+    "primary_categories": [
+      "Hero Sections",
+      "Feature Highlights", 
+      "Testimonials",
+      "CTAs",
+      "Pricing Tables",
+      "Newsletter Signups",
+      "Contact Forms",
+      "Footer Sections"
+    ],
+    "advanced_features": [
+      "A/B testing variants",
+      "Conversion optimization",
+      "SEO-friendly markup",
+      "Performance analytics",
+      "Lead generation forms",
+      "Social proof integration"
+    ]
+  },
+  "performance": {
+    "cache_ttl": 3600,
+    "max_requests_per_minute": 100,
+    "response_compression": true,
+    "enable_cdn": true
+  },
+  "logging": {
+    "level": "INFO",
+    "format": "json",
+    "retention_days": 30,
+    "metrics_enabled": true
+  }
+}

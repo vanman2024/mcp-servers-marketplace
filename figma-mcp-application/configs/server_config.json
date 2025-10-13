@@ -1,0 +1,59 @@
+{
+  "server": {
+    "name": "Figma Application UI MCP Server",
+    "version": "1.0.0",
+    "port": 8042,
+    "host": "localhost",
+    "environment": "development"
+  },
+  "database": {
+    "provider": "supabase",
+    "required_env_vars": [
+      "SUPABASE_URL",
+      "SUPABASE_SERVICE_KEY"
+    ],
+    "connection_pool": {
+      "min_connections": 5,
+      "max_connections": 30,
+      "connection_timeout": 30,
+      "idle_timeout": 300
+    }
+  },
+  "specialization": {
+    "focus": "application_ui",
+    "primary_categories": [
+      "Application Shells",
+      "Data Display",
+      "Forms Inputs",
+      "Navigation",
+      "Overlays Interactions",
+      "Layout Structure",
+      "Stacked Layouts",
+      "Sidebar Layouts"
+    ],
+    "advanced_features": [
+      "Theme system integration",
+      "Responsive layout engine",
+      "Accessibility compliance",
+      "Form validation engine",
+      "Command palette system",
+      "Virtual scrolling",
+      "State management",
+      "Component composition"
+    ]
+  },
+  "performance": {
+    "cache_ttl": 7200,
+    "max_requests_per_minute": 200,
+    "response_compression": true,
+    "enable_cdn": true,
+    "component_preloading": true
+  },
+  "logging": {
+    "level": "INFO",
+    "format": "json",
+    "retention_days": 30,
+    "metrics_enabled": true,
+    "accessibility_auditing": true
+  }
+}

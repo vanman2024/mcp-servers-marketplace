@@ -1,0 +1,67 @@
+{
+  "taxonomy": {
+    "Components": {
+      "description": "E-commerce specific components and sections",
+      "subcategories": {
+        "Product Overviews": ["product-hero", "product-gallery", "product-details", "product-variants"],
+        "Product Lists": ["product-grid", "product-list", "product-carousel", "product-masonry"],
+        "Category Previews": ["category-grid", "category-cards", "category-banner", "category-featured"],
+        "Shopping Carts": ["cart-sidebar", "cart-modal", "cart-page", "cart-mini"],
+        "Category Filters": ["filter-sidebar", "filter-horizontal", "filter-modal", "filter-tags"],
+        "Product Quickviews": ["quickview-modal", "quickview-sidebar", "quickview-inline", "quickview-popup"],
+        "Product Features": ["feature-tabs", "feature-accordion", "feature-grid", "feature-timeline"],
+        "Store Navigation": ["nav-mega", "nav-categories", "nav-breadcrumbs", "nav-search"],
+        "Promo Sections": ["promo-banner", "promo-popup", "promo-inline", "promo-countdown"],
+        "Checkout Forms": ["checkout-single", "checkout-multi-step", "checkout-guest", "checkout-express"],
+        "Reviews": ["review-list", "review-summary", "review-form", "review-stars"],
+        "Order Summaries": ["summary-card", "summary-sidebar", "summary-inline", "summary-detailed"],
+        "Order History": ["history-list", "history-cards", "history-timeline", "history-detailed"],
+        "Incentives": ["incentive-banner", "incentive-popup", "incentive-badge", "incentive-countdown"]
+      }
+    },
+    "Page Examples": {
+      "description": "Complete e-commerce page layouts",
+      "subcategories": {
+        "Storefront Pages": ["storefront-home", "storefront-featured", "storefront-sale", "storefront-new"],
+        "Product Pages": ["product-single", "product-variants", "product-bundle", "product-subscription"],
+        "Category Pages": ["category-grid", "category-list", "category-filtered", "category-subcategories"],
+        "Shopping Cart Pages": ["cart-full", "cart-empty", "cart-saved", "cart-recommendations"],
+        "Checkout Pages": ["checkout-guest", "checkout-account", "checkout-express", "checkout-multi-step"],
+        "Order Detail Pages": ["order-confirmation", "order-tracking", "order-details", "order-receipt"],
+        "Order History Pages": ["orders-list", "orders-detailed", "orders-filtered", "orders-status"]
+      }
+    }
+  },
+  "component_template": {
+    "name": "Component Name",
+    "category": "Components|Page Examples",
+    "subcategory": "Specific Subcategory",
+    "tags": ["ecommerce", "shopping", "conversion"],
+    "source": "tailwind-ui-ecommerce",
+    "code": "<!-- TSX/JSX code here -->",
+    "description": "Brief description of the e-commerce component",
+    "components_used": ["Button", "Input", "Card", "Badge"],
+    "props": {
+      "product": "Product Object",
+      "price": "Product Price",
+      "currency": "USD",
+      "inStock": true,
+      "onAddToCart": "Function"
+    },
+    "variants": {
+      "size": ["sm", "md", "lg"],
+      "layout": ["grid", "list", "card"],
+      "style": ["minimal", "detailed", "compact"]
+    },
+    "dependencies": ["@headlessui/react", "react", "@heroicons/react"],
+    "responsive": true,
+    "accessibility": {
+      "aria_labels": true,
+      "keyboard_navigation": true,
+      "screen_reader_support": true
+    },
+    "conversion_optimized": true,
+    "mobile_optimized": true,
+    "performance_optimized": true
+  }
+}

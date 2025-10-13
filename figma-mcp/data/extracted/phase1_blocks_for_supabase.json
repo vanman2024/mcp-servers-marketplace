@@ -1,0 +1,1731 @@
+[
+  {
+    "id": "5b7e34ab-d6fd-4014-82e7-807171d5b74e",
+    "name": "Product Grid - 3 Column",
+    "description": "Responsive 3-column product grid with hover effects",
+    "block_type": "product-grid",
+    "app_type": "e-commerce",
+    "react_template": "import React from 'react';\nimport { Card, CardContent, CardFooter, CardHeader } from '@/components/ui/card';\nimport { Button } from '@/components/ui/button';\nimport { Star, ShoppingCart } from 'lucide-react';\n\ninterface Product {\n  id: string;\n  name: string;\n  price: number;\n  image: string;\n  rating: number;\n  reviews: number;\n  badge?: string;\n}\n\ninterface ProductGrid3ColumnProps {\n  products: Product[];\n  onAddToCart?: (productId: string) => void;\n  onProductClick?: (productId: string) => void;\n}\n\nexport function ProductGrid3Column({ \n  products, \n  onAddToCart, \n  onProductClick \n}: ProductGrid3ColumnProps) {\n  return (\n    <div className=\"grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8\">\n      {products.map((product) => (\n        <Card key={product.id} className=\"group cursor-pointer\">\n          <CardHeader className=\"p-0 relative overflow-hidden\">\n            {product.badge && (\n              <span className=\"absolute top-4 left-4 z-10 bg-accent text-accent-foreground px-2 py-1 text-xs font-semibold rounded\">\n                {product.badge}\n              </span>\n            )}\n            <img\n              src={product.image}\n              alt={product.name}\n              className=\"w-full h-64 object-cover group-hover:scale-105 transition-transform duration-300\"\n              onClick={() => onProductClick?.(product.id)}\n            />\n          </CardHeader>\n          <CardContent className=\"p-4\">\n            <h3 className=\"font-semibold text-lg mb-2\" onClick={() => onProductClick?.(product.id)}>\n              {product.name}\n            </h3>\n            <div className=\"flex items-center gap-2 mb-2\">\n              <div className=\"flex items-center\">\n                {[...Array(5)].map((_, i) => (\n                  <Star\n                    key={i}\n                    className={`w-4 h-4 ${\n                      i < Math.floor(product.rating)\n                        ? 'fill-primary text-primary'\n                        : 'text-muted'\n                    }`}\n                  />\n                ))}\n              </div>\n              <span className=\"text-sm text-muted-foreground\">\n                ({product.reviews})\n              </span>\n            </div>\n            <p className=\"text-lg font-semibold\">${product.price.toFixed(2)}</p>\n          </CardContent>\n          <CardFooter className=\"p-4 pt-0\">\n            <Button\n              className=\"w-full\"\n              onClick={(e) => {\n                e.stopPropagation();\n                onAddToCart?.(product.id);\n              }}\n            >\n              <ShoppingCart className=\"w-4 h-4 mr-2\" />\n              Add to Cart\n            </Button>\n          </CardFooter>\n        </Card>\n      ))}\n    </div>\n  );\n}",
+    "dependencies": {
+      "npm": [
+        "lucide-react"
+      ],
+      "components": [
+        "Card",
+        "Button"
+      ]
+    },
+    "props_schema": {
+      "type": "object",
+      "properties": {
+        "products": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "id": {
+                "type": "string"
+              },
+              "name": {
+                "type": "string"
+              },
+              "price": {
+                "type": "number"
+              },
+              "image": {
+                "type": "string"
+              },
+              "rating": {
+                "type": "number"
+              },
+              "reviews": {
+                "type": "number"
+              },
+              "badge": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "id",
+              "name",
+              "price",
+              "image",
+              "rating",
+              "reviews"
+            ]
+          }
+        },
+        "onAddToCart": {
+          "type": "function"
+        },
+        "onProductClick": {
+          "type": "function"
+        }
+      },
+      "required": [
+        "products"
+      ]
+    },
+    "example_props": {
+      "products": [
+        {
+          "id": "1",
+          "name": "Wireless Headphones",
+          "price": 79.99,
+          "image": "/api/placeholder/300/300",
+          "rating": 4.5,
+          "reviews": 234,
+          "badge": "New"
+        },
+        {
+          "id": "2",
+          "name": "Smart Watch",
+          "price": 299.99,
+          "image": "/api/placeholder/300/300",
+          "rating": 4.8,
+          "reviews": 512
+        },
+        {
+          "id": "3",
+          "name": "Laptop Stand",
+          "price": 49.99,
+          "image": "/api/placeholder/300/300",
+          "rating": 4.2,
+          "reviews": 89,
+          "badge": "Sale"
+        }
+      ]
+    },
+    "tags": [
+      "responsive",
+      "accessible",
+      "e-commerce",
+      "products",
+      "grid"
+    ],
+    "created_at": "2025-07-17T04:05:25.964207",
+    "updated_at": "2025-07-17T04:05:25.964217"
+  },
+  {
+    "id": "88044881-94aa-4618-9c4b-9427cea33865",
+    "name": "Product Grid - 4 Column",
+    "description": "Responsive 4-column product grid for larger displays",
+    "block_type": "product-grid",
+    "app_type": "e-commerce",
+    "react_template": "import React from 'react';\nimport { Card, CardContent, CardFooter, CardHeader } from '@/components/ui/card';\nimport { Button } from '@/components/ui/button';\nimport { Badge } from '@/components/ui/badge';\nimport { Heart, ShoppingCart } from 'lucide-react';\n\ninterface Product {\n  id: string;\n  name: string;\n  price: number;\n  originalPrice?: number;\n  image: string;\n  category: string;\n  isNew?: boolean;\n  discount?: number;\n}\n\ninterface ProductGrid4ColumnProps {\n  products: Product[];\n  onAddToCart?: (productId: string) => void;\n  onToggleWishlist?: (productId: string) => void;\n}\n\nexport function ProductGrid4Column({ \n  products, \n  onAddToCart,\n  onToggleWishlist \n}: ProductGrid4ColumnProps) {\n  return (\n    <div className=\"grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4\">\n      {products.map((product) => (\n        <Card key={product.id} className=\"group relative\">\n          <button\n            onClick={() => onToggleWishlist?.(product.id)}\n            className=\"absolute top-4 right-4 z-10 p-2 bg-background/80 backdrop-blur rounded-full opacity-0 group-hover:opacity-100 transition-opacity\"\n          >\n            <Heart className=\"w-4 h-4\" />\n          </button>\n          \n          {(product.isNew || product.discount) && (\n            <div className=\"absolute top-4 left-4 z-10 flex flex-col gap-2\">\n              {product.isNew && <Badge>New</Badge>}\n              {product.discount && (\n                <Badge variant=\"destructive\">-{product.discount}%</Badge>\n              )}\n            </div>\n          )}\n          \n          <CardHeader className=\"p-0\">\n            <img\n              src={product.image}\n              alt={product.name}\n              className=\"w-full h-48 object-cover\"\n            />\n          </CardHeader>\n          \n          <CardContent className=\"p-4\">\n            <p className=\"text-sm text-muted-foreground mb-1\">{product.category}</p>\n            <h3 className=\"font-semibold text-base mb-2 line-clamp-2\">{product.name}</h3>\n            <div className=\"flex items-center gap-2\">\n              <p className=\"text-lg font-semibold\">${product.price.toFixed(2)}</p>\n              {product.originalPrice && (\n                <p className=\"text-sm text-muted-foreground line-through\">\n                  ${product.originalPrice.toFixed(2)}\n                </p>\n              )}\n            </div>\n          </CardContent>\n          \n          <CardFooter className=\"p-4 pt-0\">\n            <Button\n              size=\"sm\"\n              className=\"w-full\"\n              onClick={() => onAddToCart?.(product.id)}\n            >\n              <ShoppingCart className=\"w-4 h-4 mr-2\" />\n              Add to Cart\n            </Button>\n          </CardFooter>\n        </Card>\n      ))}\n    </div>\n  );\n}",
+    "dependencies": {
+      "npm": [
+        "lucide-react"
+      ],
+      "components": [
+        "Card",
+        "Button",
+        "Badge"
+      ]
+    },
+    "props_schema": {
+      "type": "object",
+      "properties": {
+        "products": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "id": {
+                "type": "string"
+              },
+              "name": {
+                "type": "string"
+              },
+              "price": {
+                "type": "number"
+              },
+              "originalPrice": {
+                "type": "number"
+              },
+              "image": {
+                "type": "string"
+              },
+              "category": {
+                "type": "string"
+              },
+              "isNew": {
+                "type": "boolean"
+              },
+              "discount": {
+                "type": "number"
+              }
+            },
+            "required": [
+              "id",
+              "name",
+              "price",
+              "image",
+              "category"
+            ]
+          }
+        },
+        "onAddToCart": {
+          "type": "function"
+        },
+        "onToggleWishlist": {
+          "type": "function"
+        }
+      },
+      "required": [
+        "products"
+      ]
+    },
+    "example_props": {
+      "products": [
+        {
+          "id": "1",
+          "name": "Premium Wireless Mouse",
+          "price": 39.99,
+          "originalPrice": 59.99,
+          "image": "/api/placeholder/300/300",
+          "category": "Accessories",
+          "discount": 33
+        },
+        {
+          "id": "2",
+          "name": "USB-C Hub 7-in-1",
+          "price": 49.99,
+          "image": "/api/placeholder/300/300",
+          "category": "Adapters",
+          "isNew": true
+        }
+      ]
+    },
+    "tags": [
+      "responsive",
+      "accessible",
+      "e-commerce",
+      "products",
+      "grid",
+      "wishlist"
+    ],
+    "created_at": "2025-07-17T04:05:25.964236",
+    "updated_at": "2025-07-17T04:05:25.964238"
+  },
+  {
+    "id": "68e2eb4c-2fe3-4907-a39c-c32ba313b95f",
+    "name": "Product Card - Simple",
+    "description": "Simple product card with minimal information",
+    "block_type": "product-card",
+    "app_type": "e-commerce",
+    "react_template": "import React from 'react';\nimport { Card, CardContent } from '@/components/ui/card';\nimport { Button } from '@/components/ui/button';\n\ninterface SimpleProductCardProps {\n  id: string;\n  name: string;\n  price: number;\n  image: string;\n  onSelect?: () => void;\n}\n\nexport function SimpleProductCard({ \n  id, \n  name, \n  price, \n  image, \n  onSelect \n}: SimpleProductCardProps) {\n  return (\n    <Card className=\"overflow-hidden cursor-pointer hover:shadow-lg transition-shadow\" onClick={onSelect}>\n      <div className=\"aspect-square relative\">\n        <img\n          src={image}\n          alt={name}\n          className=\"w-full h-full object-cover\"\n        />\n      </div>\n      <CardContent className=\"p-4\">\n        <h3 className=\"font-semibold text-base mb-2 line-clamp-1\">{name}</h3>\n        <div className=\"flex items-center justify-between\">\n          <p className=\"text-lg font-semibold\">${price.toFixed(2)}</p>\n          <Button size=\"sm\" variant=\"ghost\">\n            View\n          </Button>\n        </div>\n      </CardContent>\n    </Card>\n  );\n}",
+    "dependencies": {
+      "npm": [],
+      "components": [
+        "Card",
+        "Button"
+      ]
+    },
+    "props_schema": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "name": {
+          "type": "string"
+        },
+        "price": {
+          "type": "number"
+        },
+        "image": {
+          "type": "string"
+        },
+        "onSelect": {
+          "type": "function"
+        }
+      },
+      "required": [
+        "id",
+        "name",
+        "price",
+        "image"
+      ]
+    },
+    "example_props": {
+      "id": "1",
+      "name": "Minimalist Desk Lamp",
+      "price": 89.99,
+      "image": "/api/placeholder/300/300"
+    },
+    "tags": [
+      "simple",
+      "product",
+      "card",
+      "e-commerce"
+    ],
+    "created_at": "2025-07-17T04:05:25.964249",
+    "updated_at": "2025-07-17T04:05:25.964251"
+  },
+  {
+    "id": "6eb6461a-8cb4-4def-a4f5-709fc3a79966",
+    "name": "Product Card - Detailed",
+    "description": "Detailed product card with full information and actions",
+    "block_type": "product-card",
+    "app_type": "e-commerce",
+    "react_template": "import React from 'react';\nimport { Card, CardContent, CardFooter, CardHeader } from '@/components/ui/card';\nimport { Button } from '@/components/ui/button';\nimport { Badge } from '@/components/ui/badge';\nimport { Star, ShoppingCart, Heart, Eye } from 'lucide-react';\n\ninterface DetailedProductCardProps {\n  id: string;\n  name: string;\n  description: string;\n  price: number;\n  originalPrice?: number;\n  image: string;\n  rating: number;\n  reviews: number;\n  inStock: boolean;\n  tags?: string[];\n  onAddToCart?: () => void;\n  onToggleWishlist?: () => void;\n  onQuickView?: () => void;\n}\n\nexport function DetailedProductCard({ \n  id,\n  name,\n  description,\n  price,\n  originalPrice,\n  image,\n  rating,\n  reviews,\n  inStock,\n  tags = [],\n  onAddToCart,\n  onToggleWishlist,\n  onQuickView\n}: DetailedProductCardProps) {\n  const discount = originalPrice ? Math.round(((originalPrice - price) / originalPrice) * 100) : 0;\n  \n  return (\n    <Card className=\"flex flex-col h-full\">\n      <CardHeader className=\"p-0 relative\">\n        {discount > 0 && (\n          <Badge className=\"absolute top-4 left-4 z-10\" variant=\"destructive\">\n            -{discount}%\n          </Badge>\n        )}\n        <div className=\"absolute top-4 right-4 z-10 flex flex-col gap-2\">\n          <Button\n            size=\"icon\"\n            variant=\"secondary\"\n            className=\"w-8 h-8\"\n            onClick={onToggleWishlist}\n          >\n            <Heart className=\"w-4 h-4\" />\n          </Button>\n          <Button\n            size=\"icon\"\n            variant=\"secondary\"\n            className=\"w-8 h-8\"\n            onClick={onQuickView}\n          >\n            <Eye className=\"w-4 h-4\" />\n          </Button>\n        </div>\n        <img\n          src={image}\n          alt={name}\n          className=\"w-full h-64 object-cover\"\n        />\n      </CardHeader>\n      \n      <CardContent className=\"flex-1 p-4\">\n        <h3 className=\"font-semibold text-lg mb-2\">{name}</h3>\n        <p className=\"text-sm text-muted-foreground mb-4 line-clamp-2\">\n          {description}\n        </p>\n        \n        <div className=\"flex items-center gap-2 mb-4\">\n          <div className=\"flex items-center\">\n            {[...Array(5)].map((_, i) => (\n              <Star\n                key={i}\n                className={`w-4 h-4 ${\n                  i < Math.floor(rating)\n                    ? 'fill-primary text-primary'\n                    : 'text-muted'\n                }`}\n              />\n            ))}\n          </div>\n          <span className=\"text-sm text-muted-foreground\">\n            {rating} ({reviews} reviews)\n          </span>\n        </div>\n        \n        <div className=\"flex items-baseline gap-2 mb-4\">\n          <p className=\"text-lg font-semibold\">${price.toFixed(2)}</p>\n          {originalPrice && (\n            <p className=\"text-sm text-muted-foreground line-through\">\n              ${originalPrice.toFixed(2)}\n            </p>\n          )}\n        </div>\n        \n        {tags.length > 0 && (\n          <div className=\"flex flex-wrap gap-2 mb-4\">\n            {tags.map((tag) => (\n              <Badge key={tag} variant=\"secondary\" className=\"text-xs\">\n                {tag}\n              </Badge>\n            ))}\n          </div>\n        )}\n        \n        <p className={`text-sm font-semibold ${inStock ? 'text-success' : 'text-destructive'}`}>\n          {inStock ? 'In Stock' : 'Out of Stock'}\n        </p>\n      </CardContent>\n      \n      <CardFooter className=\"p-4 pt-0\">\n        <Button\n          className=\"w-full\"\n          disabled={!inStock}\n          onClick={onAddToCart}\n        >\n          <ShoppingCart className=\"w-4 h-4 mr-2\" />\n          {inStock ? 'Add to Cart' : 'Out of Stock'}\n        </Button>\n      </CardFooter>\n    </Card>\n  );\n}",
+    "dependencies": {
+      "npm": [
+        "lucide-react"
+      ],
+      "components": [
+        "Card",
+        "Button",
+        "Badge"
+      ]
+    },
+    "props_schema": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "name": {
+          "type": "string"
+        },
+        "description": {
+          "type": "string"
+        },
+        "price": {
+          "type": "number"
+        },
+        "originalPrice": {
+          "type": "number"
+        },
+        "image": {
+          "type": "string"
+        },
+        "rating": {
+          "type": "number"
+        },
+        "reviews": {
+          "type": "number"
+        },
+        "inStock": {
+          "type": "boolean"
+        },
+        "tags": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "onAddToCart": {
+          "type": "function"
+        },
+        "onToggleWishlist": {
+          "type": "function"
+        },
+        "onQuickView": {
+          "type": "function"
+        }
+      },
+      "required": [
+        "id",
+        "name",
+        "description",
+        "price",
+        "image",
+        "rating",
+        "reviews",
+        "inStock"
+      ]
+    },
+    "example_props": {
+      "id": "1",
+      "name": "Professional Camera Lens",
+      "description": "High-quality 50mm f/1.8 prime lens perfect for portrait photography",
+      "price": 399.99,
+      "originalPrice": 499.99,
+      "image": "/api/placeholder/300/300",
+      "rating": 4.7,
+      "reviews": 156,
+      "inStock": true,
+      "tags": [
+        "Photography",
+        "Prime Lens",
+        "Professional"
+      ]
+    },
+    "tags": [
+      "detailed",
+      "product",
+      "card",
+      "e-commerce",
+      "ratings"
+    ],
+    "created_at": "2025-07-17T04:05:25.964264",
+    "updated_at": "2025-07-17T04:05:25.964349"
+  },
+  {
+    "id": "a8c02655-710e-41e5-bc55-92389a6941fc",
+    "name": "Product Detail - Gallery",
+    "description": "Product detail page with image gallery and full information",
+    "block_type": "product-detail",
+    "app_type": "e-commerce",
+    "react_template": "import React, { useState } from 'react';\nimport { Button } from '@/components/ui/button';\nimport { Badge } from '@/components/ui/badge';\nimport { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';\nimport { Star, ShoppingCart, Heart, Share2, Truck, Shield, RefreshCw } from 'lucide-react';\n\ninterface ProductDetailGalleryProps {\n  product: {\n    id: string;\n    name: string;\n    description: string;\n    price: number;\n    originalPrice?: number;\n    images: string[];\n    rating: number;\n    reviews: number;\n    inStock: boolean;\n    category: string;\n    sku: string;\n    features: string[];\n    specifications: Record<string, string>;\n  };\n  onAddToCart?: (quantity: number) => void;\n  onToggleWishlist?: () => void;\n  onShare?: () => void;\n}\n\nexport function ProductDetailGallery({ \n  product,\n  onAddToCart,\n  onToggleWishlist,\n  onShare\n}: ProductDetailGalleryProps) {\n  const [selectedImage, setSelectedImage] = useState(0);\n  const [quantity, setQuantity] = useState(1);\n  \n  const discount = product.originalPrice \n    ? Math.round(((product.originalPrice - product.price) / product.originalPrice) * 100) \n    : 0;\n\n  return (\n    <div className=\"grid lg:grid-cols-2 gap-8\">\n      {/* Image Gallery */}\n      <div className=\"space-y-4\">\n        <div className=\"aspect-square relative overflow-hidden rounded-lg bg-muted\">\n          <img\n            src={product.images[selectedImage]}\n            alt={product.name}\n            className=\"w-full h-full object-cover\"\n          />\n          {discount > 0 && (\n            <Badge className=\"absolute top-4 left-4\" variant=\"destructive\">\n              -{discount}%\n            </Badge>\n          )}\n        </div>\n        <div className=\"grid grid-cols-4 gap-4\">\n          {product.images.map((image, index) => (\n            <button\n              key={index}\n              onClick={() => setSelectedImage(index)}\n              className={`aspect-square rounded-lg overflow-hidden border-2 transition-colors ${\n                selectedImage === index ? 'border-primary' : 'border-transparent'\n              }`}\n            >\n              <img\n                src={image}\n                alt={`${product.name} ${index + 1}`}\n                className=\"w-full h-full object-cover\"\n              />\n            </button>\n          ))}\n        </div>\n      </div>\n\n      {/* Product Information */}\n      <div className=\"space-y-6\">\n        <div>\n          <p className=\"text-sm text-muted-foreground mb-2\">{product.category}</p>\n          <h1 className=\"text-3xl font-semibold mb-2\">{product.name}</h1>\n          <p className=\"text-sm text-muted-foreground\">SKU: {product.sku}</p>\n        </div>\n\n        <div className=\"flex items-center gap-4\">\n          <div className=\"flex items-center\">\n            {[...Array(5)].map((_, i) => (\n              <Star\n                key={i}\n                className={`w-5 h-5 ${\n                  i < Math.floor(product.rating)\n                    ? 'fill-primary text-primary'\n                    : 'text-muted'\n                }`}\n              />\n            ))}\n          </div>\n          <span className=\"text-sm text-muted-foreground\">\n            {product.rating} ({product.reviews} reviews)\n          </span>\n        </div>\n\n        <div className=\"space-y-2\">\n          <div className=\"flex items-baseline gap-2\">\n            <p className=\"text-3xl font-semibold\">${product.price.toFixed(2)}</p>\n            {product.originalPrice && (\n              <p className=\"text-lg text-muted-foreground line-through\">\n                ${product.originalPrice.toFixed(2)}\n              </p>\n            )}\n          </div>\n          <p className={`text-sm font-semibold ${product.inStock ? 'text-success' : 'text-destructive'}`}>\n            {product.inStock ? 'In Stock' : 'Out of Stock'}\n          </p>\n        </div>\n\n        <p className=\"text-muted-foreground\">{product.description}</p>\n\n        <div className=\"space-y-4\">\n          <div className=\"flex items-center gap-4\">\n            <div className=\"flex items-center border rounded-lg\">\n              <Button\n                variant=\"ghost\"\n                size=\"sm\"\n                onClick={() => setQuantity(Math.max(1, quantity - 1))}\n                disabled={!product.inStock}\n              >\n                -\n              </Button>\n              <span className=\"px-4 py-2 min-w-[3rem] text-center\">{quantity}</span>\n              <Button\n                variant=\"ghost\"\n                size=\"sm\"\n                onClick={() => setQuantity(quantity + 1)}\n                disabled={!product.inStock}\n              >\n                +\n              </Button>\n            </div>\n            <Button\n              className=\"flex-1\"\n              size=\"lg\"\n              disabled={!product.inStock}\n              onClick={() => onAddToCart?.(quantity)}\n            >\n              <ShoppingCart className=\"w-5 h-5 mr-2\" />\n              Add to Cart\n            </Button>\n          </div>\n\n          <div className=\"flex gap-2\">\n            <Button variant=\"outline\" size=\"lg\" onClick={onToggleWishlist}>\n              <Heart className=\"w-5 h-5 mr-2\" />\n              Wishlist\n            </Button>\n            <Button variant=\"outline\" size=\"lg\" onClick={onShare}>\n              <Share2 className=\"w-5 h-5 mr-2\" />\n              Share\n            </Button>\n          </div>\n        </div>\n\n        <div className=\"grid grid-cols-3 gap-4 py-4 border-y\">\n          <div className=\"flex flex-col items-center text-center\">\n            <Truck className=\"w-6 h-6 mb-2 text-muted-foreground\" />\n            <p className=\"text-sm font-semibold\">Free Shipping</p>\n            <p className=\"text-xs text-muted-foreground\">Orders over $50</p>\n          </div>\n          <div className=\"flex flex-col items-center text-center\">\n            <Shield className=\"w-6 h-6 mb-2 text-muted-foreground\" />\n            <p className=\"text-sm font-semibold\">Warranty</p>\n            <p className=\"text-xs text-muted-foreground\">2 Year Coverage</p>\n          </div>\n          <div className=\"flex flex-col items-center text-center\">\n            <RefreshCw className=\"w-6 h-6 mb-2 text-muted-foreground\" />\n            <p className=\"text-sm font-semibold\">Easy Returns</p>\n            <p className=\"text-xs text-muted-foreground\">30 Day Policy</p>\n          </div>\n        </div>\n\n        <Tabs defaultValue=\"features\" className=\"w-full\">\n          <TabsList className=\"grid w-full grid-cols-2\">\n            <TabsTrigger value=\"features\">Features</TabsTrigger>\n            <TabsTrigger value=\"specifications\">Specifications</TabsTrigger>\n          </TabsList>\n          <TabsContent value=\"features\" className=\"space-y-2\">\n            <ul className=\"list-disc list-inside space-y-1\">\n              {product.features.map((feature, index) => (\n                <li key={index} className=\"text-sm\">{feature}</li>\n              ))}\n            </ul>\n          </TabsContent>\n          <TabsContent value=\"specifications\" className=\"space-y-2\">\n            <dl className=\"space-y-2\">\n              {Object.entries(product.specifications).map(([key, value]) => (\n                <div key={key} className=\"flex justify-between text-sm\">\n                  <dt className=\"font-semibold\">{key}:</dt>\n                  <dd className=\"text-muted-foreground\">{value}</dd>\n                </div>\n              ))}\n            </dl>\n          </TabsContent>\n        </Tabs>\n      </div>\n    </div>\n  );\n}",
+    "dependencies": {
+      "npm": [
+        "lucide-react"
+      ],
+      "components": [
+        "Button",
+        "Badge",
+        "Tabs"
+      ]
+    },
+    "props_schema": {
+      "type": "object",
+      "properties": {
+        "product": {
+          "type": "object",
+          "properties": {
+            "id": {
+              "type": "string"
+            },
+            "name": {
+              "type": "string"
+            },
+            "description": {
+              "type": "string"
+            },
+            "price": {
+              "type": "number"
+            },
+            "originalPrice": {
+              "type": "number"
+            },
+            "images": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            },
+            "rating": {
+              "type": "number"
+            },
+            "reviews": {
+              "type": "number"
+            },
+            "inStock": {
+              "type": "boolean"
+            },
+            "category": {
+              "type": "string"
+            },
+            "sku": {
+              "type": "string"
+            },
+            "features": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            },
+            "specifications": {
+              "type": "object",
+              "additionalProperties": {
+                "type": "string"
+              }
+            }
+          },
+          "required": [
+            "id",
+            "name",
+            "description",
+            "price",
+            "images",
+            "rating",
+            "reviews",
+            "inStock",
+            "category",
+            "sku",
+            "features",
+            "specifications"
+          ]
+        },
+        "onAddToCart": {
+          "type": "function"
+        },
+        "onToggleWishlist": {
+          "type": "function"
+        },
+        "onShare": {
+          "type": "function"
+        }
+      },
+      "required": [
+        "product"
+      ]
+    },
+    "example_props": {
+      "product": {
+        "id": "1",
+        "name": "Professional DSLR Camera",
+        "description": "Capture stunning photos and videos with this professional-grade DSLR camera featuring advanced autofocus and 4K video recording.",
+        "price": 1299.99,
+        "originalPrice": 1599.99,
+        "images": [
+          "/api/placeholder/600/600",
+          "/api/placeholder/600/600",
+          "/api/placeholder/600/600",
+          "/api/placeholder/600/600"
+        ],
+        "rating": 4.8,
+        "reviews": 324,
+        "inStock": true,
+        "category": "Electronics",
+        "sku": "CAM-PRO-001",
+        "features": [
+          "24.2MP Full-Frame Sensor",
+          "4K Video Recording at 60fps",
+          "Advanced 45-Point Autofocus",
+          "5-Axis Image Stabilization",
+          "Weather-Sealed Body",
+          "Dual Memory Card Slots"
+        ],
+        "specifications": {
+          "Sensor": "Full-Frame CMOS",
+          "Resolution": "24.2 Megapixels",
+          "ISO Range": "100-51200",
+          "Video": "4K 60fps",
+          "Weight": "850g",
+          "Battery Life": "970 shots"
+        }
+      }
+    },
+    "tags": [
+      "product-detail",
+      "gallery",
+      "e-commerce",
+      "specifications"
+    ],
+    "created_at": "2025-07-17T04:05:25.964370",
+    "updated_at": "2025-07-17T04:05:25.964373"
+  },
+  {
+    "id": "18ea2217-0a19-4bd8-9dd5-d58eb02364a5",
+    "name": "Product Detail - Tabs",
+    "description": "Product detail with tabbed content sections",
+    "block_type": "product-detail",
+    "app_type": "e-commerce",
+    "react_template": "import React from 'react';\nimport { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';\nimport { Card, CardContent } from '@/components/ui/card';\nimport { Badge } from '@/components/ui/badge';\nimport { Star, Package, Truck, Shield } from 'lucide-react';\n\ninterface ProductDetailTabsProps {\n  product: {\n    description: string;\n    features: string[];\n    specifications: Record<string, string>;\n    shipping: {\n      methods: Array<{\n        name: string;\n        price: string;\n        duration: string;\n      }>;\n      returns: string;\n    };\n    warranty: {\n      period: string;\n      coverage: string[];\n    };\n  };\n  reviews?: Array<{\n    id: string;\n    author: string;\n    rating: number;\n    date: string;\n    comment: string;\n    verified: boolean;\n  }>;\n}\n\nexport function ProductDetailTabs({ product, reviews = [] }: ProductDetailTabsProps) {\n  return (\n    <Tabs defaultValue=\"description\" className=\"w-full\">\n      <TabsList className=\"grid w-full grid-cols-5\">\n        <TabsTrigger value=\"description\">Description</TabsTrigger>\n        <TabsTrigger value=\"features\">Features</TabsTrigger>\n        <TabsTrigger value=\"specifications\">Specs</TabsTrigger>\n        <TabsTrigger value=\"shipping\">Shipping</TabsTrigger>\n        <TabsTrigger value=\"reviews\">Reviews ({reviews.length})</TabsTrigger>\n      </TabsList>\n      \n      <TabsContent value=\"description\" className=\"mt-6\">\n        <Card>\n          <CardContent className=\"p-6\">\n            <h3 className=\"font-semibold text-lg mb-4\">Product Description</h3>\n            <p className=\"text-muted-foreground\">{product.description}</p>\n          </CardContent>\n        </Card>\n      </TabsContent>\n      \n      <TabsContent value=\"features\" className=\"mt-6\">\n        <Card>\n          <CardContent className=\"p-6\">\n            <h3 className=\"font-semibold text-lg mb-4\">Key Features</h3>\n            <ul className=\"space-y-2\">\n              {product.features.map((feature, index) => (\n                <li key={index} className=\"flex items-start\">\n                  <Package className=\"w-4 h-4 mt-0.5 mr-2 text-primary\" />\n                  <span className=\"text-sm\">{feature}</span>\n                </li>\n              ))}\n            </ul>\n          </CardContent>\n        </Card>\n      </TabsContent>\n      \n      <TabsContent value=\"specifications\" className=\"mt-6\">\n        <Card>\n          <CardContent className=\"p-6\">\n            <h3 className=\"font-semibold text-lg mb-4\">Technical Specifications</h3>\n            <dl className=\"grid grid-cols-1 md:grid-cols-2 gap-4\">\n              {Object.entries(product.specifications).map(([key, value]) => (\n                <div key={key} className=\"border-b pb-2\">\n                  <dt className=\"font-semibold text-sm\">{key}</dt>\n                  <dd className=\"text-sm text-muted-foreground\">{value}</dd>\n                </div>\n              ))}\n            </dl>\n          </CardContent>\n        </Card>\n      </TabsContent>\n      \n      <TabsContent value=\"shipping\" className=\"mt-6\">\n        <div className=\"grid md:grid-cols-2 gap-6\">\n          <Card>\n            <CardContent className=\"p-6\">\n              <div className=\"flex items-center mb-4\">\n                <Truck className=\"w-5 h-5 mr-2 text-primary\" />\n                <h3 className=\"font-semibold text-lg\">Shipping Methods</h3>\n              </div>\n              <div className=\"space-y-4\">\n                {product.shipping.methods.map((method, index) => (\n                  <div key={index} className=\"flex justify-between items-center p-3 border rounded-lg\">\n                    <div>\n                      <p className=\"font-semibold text-sm\">{method.name}</p>\n                      <p className=\"text-xs text-muted-foreground\">{method.duration}</p>\n                    </div>\n                    <p className=\"font-semibold\">{method.price}</p>\n                  </div>\n                ))}\n              </div>\n            </CardContent>\n          </Card>\n          \n          <Card>\n            <CardContent className=\"p-6\">\n              <div className=\"flex items-center mb-4\">\n                <Shield className=\"w-5 h-5 mr-2 text-primary\" />\n                <h3 className=\"font-semibold text-lg\">Returns & Warranty</h3>\n              </div>\n              <div className=\"space-y-4\">\n                <div>\n                  <p className=\"font-semibold text-sm mb-2\">Return Policy</p>\n                  <p className=\"text-sm text-muted-foreground\">{product.shipping.returns}</p>\n                </div>\n                <div>\n                  <p className=\"font-semibold text-sm mb-2\">Warranty Period</p>\n                  <p className=\"text-sm text-muted-foreground\">{product.warranty.period}</p>\n                  <ul className=\"mt-2 space-y-1\">\n                    {product.warranty.coverage.map((item, index) => (\n                      <li key={index} className=\"text-xs text-muted-foreground\">\u2022 {item}</li>\n                    ))}\n                  </ul>\n                </div>\n              </div>\n            </CardContent>\n          </Card>\n        </div>\n      </TabsContent>\n      \n      <TabsContent value=\"reviews\" className=\"mt-6\">\n        <div className=\"space-y-4\">\n          {reviews.length === 0 ? (\n            <Card>\n              <CardContent className=\"p-6 text-center\">\n                <p className=\"text-muted-foreground\">No reviews yet. Be the first to review!</p>\n              </CardContent>\n            </Card>\n          ) : (\n            reviews.map((review) => (\n              <Card key={review.id}>\n                <CardContent className=\"p-6\">\n                  <div className=\"flex items-start justify-between mb-4\">\n                    <div>\n                      <div className=\"flex items-center gap-2\">\n                        <p className=\"font-semibold\">{review.author}</p>\n                        {review.verified && (\n                          <Badge variant=\"secondary\" className=\"text-xs\">Verified</Badge>\n                        )}\n                      </div>\n                      <div className=\"flex items-center gap-2 mt-1\">\n                        <div className=\"flex\">\n                          {[...Array(5)].map((_, i) => (\n                            <Star\n                              key={i}\n                              className={`w-4 h-4 ${\n                                i < review.rating\n                                  ? 'fill-primary text-primary'\n                                  : 'text-muted'\n                              }`}\n                            />\n                          ))}\n                        </div>\n                        <span className=\"text-sm text-muted-foreground\">{review.date}</span>\n                      </div>\n                    </div>\n                  </div>\n                  <p className=\"text-sm\">{review.comment}</p>\n                </CardContent>\n              </Card>\n            ))\n          )}\n        </div>\n      </TabsContent>\n    </Tabs>\n  );\n}",
+    "dependencies": {
+      "npm": [
+        "lucide-react"
+      ],
+      "components": [
+        "Tabs",
+        "Card",
+        "Badge"
+      ]
+    },
+    "props_schema": {
+      "type": "object",
+      "properties": {
+        "product": {
+          "type": "object",
+          "required": [
+            "description",
+            "features",
+            "specifications",
+            "shipping",
+            "warranty"
+          ]
+        },
+        "reviews": {
+          "type": "array",
+          "items": {
+            "type": "object"
+          }
+        }
+      },
+      "required": [
+        "product"
+      ]
+    },
+    "example_props": {
+      "product": {
+        "description": "This premium product delivers exceptional performance and reliability for all your needs.",
+        "features": [
+          "Advanced technology integration",
+          "Energy efficient design",
+          "Durable construction",
+          "User-friendly interface"
+        ],
+        "specifications": {
+          "Dimensions": "10 x 8 x 6 inches",
+          "Weight": "2.5 lbs",
+          "Material": "Aluminum alloy",
+          "Power": "USB-C charging"
+        },
+        "shipping": {
+          "methods": [
+            {
+              "name": "Standard Shipping",
+              "price": "$5.99",
+              "duration": "5-7 business days"
+            },
+            {
+              "name": "Express Shipping",
+              "price": "$12.99",
+              "duration": "2-3 business days"
+            },
+            {
+              "name": "Next Day",
+              "price": "$24.99",
+              "duration": "1 business day"
+            }
+          ],
+          "returns": "30-day return policy. Items must be in original condition."
+        },
+        "warranty": {
+          "period": "2 Year Limited Warranty",
+          "coverage": [
+            "Manufacturing defects",
+            "Component failures",
+            "Free repairs or replacement"
+          ]
+        }
+      }
+    },
+    "tags": [
+      "product-detail",
+      "tabs",
+      "e-commerce",
+      "reviews",
+      "specifications"
+    ],
+    "created_at": "2025-07-17T04:05:25.964388",
+    "updated_at": "2025-07-17T04:05:25.964389"
+  },
+  {
+    "id": "ae75a687-a126-41bb-8577-d7eeac8a873c",
+    "name": "Shopping Cart - Sidebar",
+    "description": "Slide-out shopping cart sidebar with items and checkout",
+    "block_type": "shopping-cart",
+    "app_type": "e-commerce",
+    "react_template": "import React from 'react';\nimport { Sheet, SheetContent, SheetHeader, SheetTitle, SheetFooter } from '@/components/ui/sheet';\nimport { Button } from '@/components/ui/button';\nimport { Separator } from '@/components/ui/separator';\nimport { X, Plus, Minus, ShoppingBag } from 'lucide-react';\n\ninterface CartItem {\n  id: string;\n  name: string;\n  price: number;\n  quantity: number;\n  image: string;\n  variant?: string;\n}\n\ninterface ShoppingCartSidebarProps {\n  isOpen: boolean;\n  onClose: () => void;\n  items: CartItem[];\n  onUpdateQuantity: (itemId: string, quantity: number) => void;\n  onRemoveItem: (itemId: string) => void;\n  onCheckout: () => void;\n}\n\nexport function ShoppingCartSidebar({\n  isOpen,\n  onClose,\n  items,\n  onUpdateQuantity,\n  onRemoveItem,\n  onCheckout\n}: ShoppingCartSidebarProps) {\n  const subtotal = items.reduce((sum, item) => sum + (item.price * item.quantity), 0);\n  const shipping = subtotal > 50 ? 0 : 5.99;\n  const tax = subtotal * 0.08;\n  const total = subtotal + shipping + tax;\n\n  return (\n    <Sheet open={isOpen} onOpenChange={onClose}>\n      <SheetContent className=\"w-full sm:max-w-md\">\n        <SheetHeader>\n          <SheetTitle className=\"flex items-center gap-2\">\n            <ShoppingBag className=\"w-5 h-5\" />\n            Shopping Cart ({items.length})\n          </SheetTitle>\n        </SheetHeader>\n        \n        <div className=\"flex-1 overflow-y-auto py-4\">\n          {items.length === 0 ? (\n            <div className=\"flex flex-col items-center justify-center h-full text-center\">\n              <ShoppingBag className=\"w-16 h-16 text-muted-foreground mb-4\" />\n              <p className=\"text-lg font-semibold mb-2\">Your cart is empty</p>\n              <p className=\"text-sm text-muted-foreground\">Add items to get started</p>\n            </div>\n          ) : (\n            <div className=\"space-y-4\">\n              {items.map((item) => (\n                <div key={item.id} className=\"flex gap-4 p-4 border rounded-lg\">\n                  <img\n                    src={item.image}\n                    alt={item.name}\n                    className=\"w-20 h-20 object-cover rounded\"\n                  />\n                  <div className=\"flex-1\">\n                    <h4 className=\"font-semibold text-sm\">{item.name}</h4>\n                    {item.variant && (\n                      <p className=\"text-xs text-muted-foreground\">{item.variant}</p>\n                    )}\n                    <p className=\"text-sm font-semibold mt-1\">${item.price.toFixed(2)}</p>\n                    \n                    <div className=\"flex items-center gap-2 mt-2\">\n                      <div className=\"flex items-center border rounded\">\n                        <Button\n                          size=\"icon\"\n                          variant=\"ghost\"\n                          className=\"h-8 w-8\"\n                          onClick={() => onUpdateQuantity(item.id, Math.max(1, item.quantity - 1))}\n                        >\n                          <Minus className=\"w-3 h-3\" />\n                        </Button>\n                        <span className=\"px-3 text-sm\">{item.quantity}</span>\n                        <Button\n                          size=\"icon\"\n                          variant=\"ghost\"\n                          className=\"h-8 w-8\"\n                          onClick={() => onUpdateQuantity(item.id, item.quantity + 1)}\n                        >\n                          <Plus className=\"w-3 h-3\" />\n                        </Button>\n                      </div>\n                      <Button\n                        size=\"icon\"\n                        variant=\"ghost\"\n                        className=\"h-8 w-8 ml-auto\"\n                        onClick={() => onRemoveItem(item.id)}\n                      >\n                        <X className=\"w-4 h-4\" />\n                      </Button>\n                    </div>\n                  </div>\n                </div>\n              ))}\n            </div>\n          )}\n        </div>\n        \n        {items.length > 0 && (\n          <SheetFooter className=\"flex-col gap-4\">\n            <Separator />\n            <div className=\"space-y-2 w-full\">\n              <div className=\"flex justify-between text-sm\">\n                <span>Subtotal</span>\n                <span>${subtotal.toFixed(2)}</span>\n              </div>\n              <div className=\"flex justify-between text-sm\">\n                <span>Shipping</span>\n                <span>{shipping === 0 ? 'FREE' : `$${shipping.toFixed(2)}`}</span>\n              </div>\n              <div className=\"flex justify-between text-sm\">\n                <span>Tax</span>\n                <span>${tax.toFixed(2)}</span>\n              </div>\n              <Separator />\n              <div className=\"flex justify-between font-semibold text-lg\">\n                <span>Total</span>\n                <span>${total.toFixed(2)}</span>\n              </div>\n            </div>\n            \n            <div className=\"w-full space-y-2\">\n              <Button className=\"w-full\" size=\"lg\" onClick={onCheckout}>\n                Proceed to Checkout\n              </Button>\n              <Button variant=\"outline\" className=\"w-full\" onClick={onClose}>\n                Continue Shopping\n              </Button>\n            </div>\n            \n            {shipping > 0 && (\n              <p className=\"text-xs text-center text-muted-foreground\">\n                Add ${(50 - subtotal).toFixed(2)} more for free shipping\n              </p>\n            )}\n          </SheetFooter>\n        )}\n      </SheetContent>\n    </Sheet>\n  );\n}",
+    "dependencies": {
+      "npm": [
+        "lucide-react"
+      ],
+      "components": [
+        "Sheet",
+        "Button",
+        "Separator"
+      ]
+    },
+    "props_schema": {
+      "type": "object",
+      "properties": {
+        "isOpen": {
+          "type": "boolean"
+        },
+        "onClose": {
+          "type": "function"
+        },
+        "items": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "id": {
+                "type": "string"
+              },
+              "name": {
+                "type": "string"
+              },
+              "price": {
+                "type": "number"
+              },
+              "quantity": {
+                "type": "number"
+              },
+              "image": {
+                "type": "string"
+              },
+              "variant": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "id",
+              "name",
+              "price",
+              "quantity",
+              "image"
+            ]
+          }
+        },
+        "onUpdateQuantity": {
+          "type": "function"
+        },
+        "onRemoveItem": {
+          "type": "function"
+        },
+        "onCheckout": {
+          "type": "function"
+        }
+      },
+      "required": [
+        "isOpen",
+        "onClose",
+        "items",
+        "onUpdateQuantity",
+        "onRemoveItem",
+        "onCheckout"
+      ]
+    },
+    "example_props": {
+      "isOpen": true,
+      "items": [
+        {
+          "id": "1",
+          "name": "Wireless Mouse",
+          "price": 29.99,
+          "quantity": 2,
+          "image": "/api/placeholder/80/80",
+          "variant": "Black"
+        },
+        {
+          "id": "2",
+          "name": "USB-C Cable",
+          "price": 12.99,
+          "quantity": 1,
+          "image": "/api/placeholder/80/80"
+        }
+      ]
+    },
+    "tags": [
+      "shopping-cart",
+      "sidebar",
+      "e-commerce",
+      "checkout"
+    ],
+    "created_at": "2025-07-17T04:05:25.964401",
+    "updated_at": "2025-07-17T04:05:25.964403"
+  },
+  {
+    "id": "042952b5-9719-4dee-a401-bd7291a82510",
+    "name": "Shopping Cart - Page",
+    "description": "Full page shopping cart with detailed item management",
+    "block_type": "shopping-cart",
+    "app_type": "e-commerce",
+    "react_template": "import React from 'react';\nimport { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';\nimport { Button } from '@/components/ui/button';\nimport { Input } from '@/components/ui/input';\nimport { Separator } from '@/components/ui/separator';\nimport { Badge } from '@/components/ui/badge';\nimport { Trash2, Plus, Minus, ShoppingBag, ArrowRight, Tag } from 'lucide-react';\n\ninterface CartItem {\n  id: string;\n  name: string;\n  description: string;\n  price: number;\n  originalPrice?: number;\n  quantity: number;\n  image: string;\n  variant?: string;\n  inStock: boolean;\n}\n\ninterface ShoppingCartPageProps {\n  items: CartItem[];\n  onUpdateQuantity: (itemId: string, quantity: number) => void;\n  onRemoveItem: (itemId: string) => void;\n  onApplyCoupon: (code: string) => void;\n  onCheckout: () => void;\n  appliedCoupon?: {\n    code: string;\n    discount: number;\n  };\n}\n\nexport function ShoppingCartPage({\n  items,\n  onUpdateQuantity,\n  onRemoveItem,\n  onApplyCoupon,\n  onCheckout,\n  appliedCoupon\n}: ShoppingCartPageProps) {\n  const [couponCode, setCouponCode] = React.useState('');\n  \n  const subtotal = items.reduce((sum, item) => sum + (item.price * item.quantity), 0);\n  const discount = appliedCoupon ? subtotal * (appliedCoupon.discount / 100) : 0;\n  const shipping = subtotal > 50 ? 0 : 5.99;\n  const tax = (subtotal - discount) * 0.08;\n  const total = subtotal - discount + shipping + tax;\n\n  if (items.length === 0) {\n    return (\n      <div className=\"flex flex-col items-center justify-center min-h-[400px] text-center\">\n        <ShoppingBag className=\"w-24 h-24 text-muted-foreground mb-4\" />\n        <h2 className=\"text-2xl font-semibold mb-2\">Your cart is empty</h2>\n        <p className=\"text-muted-foreground mb-8\">Add items to your cart to continue shopping</p>\n        <Button size=\"lg\">\n          Continue Shopping\n          <ArrowRight className=\"w-4 h-4 ml-2\" />\n        </Button>\n      </div>\n    );\n  }\n\n  return (\n    <div className=\"grid lg:grid-cols-3 gap-8\">\n      <div className=\"lg:col-span-2 space-y-4\">\n        <h1 className=\"text-2xl font-semibold mb-6\">Shopping Cart ({items.length} items)</h1>\n        \n        {items.map((item) => (\n          <Card key={item.id}>\n            <CardContent className=\"p-6\">\n              <div className=\"flex gap-4\">\n                <img\n                  src={item.image}\n                  alt={item.name}\n                  className=\"w-32 h-32 object-cover rounded-lg\"\n                />\n                \n                <div className=\"flex-1 space-y-2\">\n                  <div className=\"flex justify-between\">\n                    <div>\n                      <h3 className=\"font-semibold text-lg\">{item.name}</h3>\n                      {item.variant && (\n                        <p className=\"text-sm text-muted-foreground\">{item.variant}</p>\n                      )}\n                    </div>\n                    <Button\n                      variant=\"ghost\"\n                      size=\"icon\"\n                      onClick={() => onRemoveItem(item.id)}\n                    >\n                      <Trash2 className=\"w-4 h-4\" />\n                    </Button>\n                  </div>\n                  \n                  <p className=\"text-sm text-muted-foreground line-clamp-2\">\n                    {item.description}\n                  </p>\n                  \n                  <div className=\"flex items-center justify-between\">\n                    <div className=\"flex items-center gap-4\">\n                      <div className=\"flex items-center border rounded-lg\">\n                        <Button\n                          size=\"icon\"\n                          variant=\"ghost\"\n                          className=\"h-8 w-8\"\n                          onClick={() => onUpdateQuantity(item.id, Math.max(1, item.quantity - 1))}\n                          disabled={!item.inStock}\n                        >\n                          <Minus className=\"w-3 h-3\" />\n                        </Button>\n                        <span className=\"px-4 text-sm\">{item.quantity}</span>\n                        <Button\n                          size=\"icon\"\n                          variant=\"ghost\"\n                          className=\"h-8 w-8\"\n                          onClick={() => onUpdateQuantity(item.id, item.quantity + 1)}\n                          disabled={!item.inStock}\n                        >\n                          <Plus className=\"w-3 h-3\" />\n                        </Button>\n                      </div>\n                      \n                      {!item.inStock && (\n                        <Badge variant=\"destructive\">Out of Stock</Badge>\n                      )}\n                    </div>\n                    \n                    <div className=\"text-right\">\n                      <p className=\"text-lg font-semibold\">${(item.price * item.quantity).toFixed(2)}</p>\n                      {item.originalPrice && (\n                        <p className=\"text-sm text-muted-foreground line-through\">\n                          ${(item.originalPrice * item.quantity).toFixed(2)}\n                        </p>\n                      )}\n                    </div>\n                  </div>\n                </div>\n              </div>\n            </CardContent>\n          </Card>\n        ))}\n      </div>\n      \n      <div className=\"space-y-4\">\n        <Card>\n          <CardHeader>\n            <CardTitle>Order Summary</CardTitle>\n          </CardHeader>\n          <CardContent className=\"space-y-4\">\n            <div className=\"space-y-2\">\n              <div className=\"flex justify-between text-sm\">\n                <span>Subtotal</span>\n                <span>${subtotal.toFixed(2)}</span>\n              </div>\n              \n              {appliedCoupon && (\n                <div className=\"flex justify-between text-sm text-success\">\n                  <span>Discount ({appliedCoupon.code})</span>\n                  <span>-${discount.toFixed(2)}</span>\n                </div>\n              )}\n              \n              <div className=\"flex justify-between text-sm\">\n                <span>Shipping</span>\n                <span>{shipping === 0 ? 'FREE' : `$${shipping.toFixed(2)}`}</span>\n              </div>\n              \n              <div className=\"flex justify-between text-sm\">\n                <span>Tax</span>\n                <span>${tax.toFixed(2)}</span>\n              </div>\n              \n              <Separator />\n              \n              <div className=\"flex justify-between font-semibold text-lg\">\n                <span>Total</span>\n                <span>${total.toFixed(2)}</span>\n              </div>\n            </div>\n            \n            <div className=\"space-y-2\">\n              <div className=\"flex gap-2\">\n                <Input\n                  placeholder=\"Enter coupon code\"\n                  value={couponCode}\n                  onChange={(e) => setCouponCode(e.target.value)}\n                />\n                <Button\n                  variant=\"outline\"\n                  onClick={() => {\n                    onApplyCoupon(couponCode);\n                    setCouponCode('');\n                  }}\n                >\n                  <Tag className=\"w-4 h-4\" />\n                </Button>\n              </div>\n              \n              {shipping > 0 && (\n                <p className=\"text-xs text-muted-foreground\">\n                  Add ${(50 - subtotal).toFixed(2)} more for free shipping\n                </p>\n              )}\n            </div>\n            \n            <Button className=\"w-full\" size=\"lg\" onClick={onCheckout}>\n              Proceed to Checkout\n              <ArrowRight className=\"w-4 h-4 ml-2\" />\n            </Button>\n            \n            <Button variant=\"outline\" className=\"w-full\">\n              Continue Shopping\n            </Button>\n          </CardContent>\n        </Card>\n        \n        <Card>\n          <CardContent className=\"p-4\">\n            <p className=\"text-sm text-muted-foreground\">\n              \u2713 Secure checkout<br />\n              \u2713 Free returns within 30 days<br />\n              \u2713 Customer support 24/7\n            </p>\n          </CardContent>\n        </Card>\n      </div>\n    </div>\n  );\n}",
+    "dependencies": {
+      "npm": [
+        "lucide-react"
+      ],
+      "components": [
+        "Card",
+        "Button",
+        "Input",
+        "Separator",
+        "Badge"
+      ]
+    },
+    "props_schema": {
+      "type": "object",
+      "properties": {
+        "items": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "id": {
+                "type": "string"
+              },
+              "name": {
+                "type": "string"
+              },
+              "description": {
+                "type": "string"
+              },
+              "price": {
+                "type": "number"
+              },
+              "originalPrice": {
+                "type": "number"
+              },
+              "quantity": {
+                "type": "number"
+              },
+              "image": {
+                "type": "string"
+              },
+              "variant": {
+                "type": "string"
+              },
+              "inStock": {
+                "type": "boolean"
+              }
+            },
+            "required": [
+              "id",
+              "name",
+              "description",
+              "price",
+              "quantity",
+              "image",
+              "inStock"
+            ]
+          }
+        },
+        "onUpdateQuantity": {
+          "type": "function"
+        },
+        "onRemoveItem": {
+          "type": "function"
+        },
+        "onApplyCoupon": {
+          "type": "function"
+        },
+        "onCheckout": {
+          "type": "function"
+        },
+        "appliedCoupon": {
+          "type": "object",
+          "properties": {
+            "code": {
+              "type": "string"
+            },
+            "discount": {
+              "type": "number"
+            }
+          }
+        }
+      },
+      "required": [
+        "items",
+        "onUpdateQuantity",
+        "onRemoveItem",
+        "onApplyCoupon",
+        "onCheckout"
+      ]
+    },
+    "example_props": {
+      "items": [
+        {
+          "id": "1",
+          "name": "Wireless Keyboard",
+          "description": "Bluetooth mechanical keyboard with RGB backlighting",
+          "price": 89.99,
+          "originalPrice": 119.99,
+          "quantity": 1,
+          "image": "/api/placeholder/128/128",
+          "variant": "Cherry MX Blue",
+          "inStock": true
+        }
+      ]
+    },
+    "tags": [
+      "shopping-cart",
+      "page",
+      "e-commerce",
+      "checkout",
+      "order-summary"
+    ],
+    "created_at": "2025-07-17T04:05:25.964413",
+    "updated_at": "2025-07-17T04:05:25.964414"
+  },
+  {
+    "id": "8be84b6f-0fc2-4e13-8868-e1ce68163c18",
+    "name": "Checkout - Single Page",
+    "description": "Complete single-page checkout with all steps",
+    "block_type": "checkout",
+    "app_type": "e-commerce",
+    "react_template": "import React, { useState } from 'react';\nimport { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';\nimport { Button } from '@/components/ui/button';\nimport { Input } from '@/components/ui/input';\nimport { Label } from '@/components/ui/label';\nimport { Checkbox } from '@/components/ui/checkbox';\nimport { RadioGroup, RadioGroupItem } from '@/components/ui/radio-group';\nimport { Separator } from '@/components/ui/separator';\nimport { CreditCard, Truck, Shield, Check } from 'lucide-react';\n\ninterface CheckoutItem {\n  id: string;\n  name: string;\n  price: number;\n  quantity: number;\n  image: string;\n}\n\ninterface CheckoutSinglePageProps {\n  items: CheckoutItem[];\n  onPlaceOrder: (orderData: any) => void;\n}\n\nexport function CheckoutSinglePage({ items, onPlaceOrder }: CheckoutSinglePageProps) {\n  const [step, setStep] = useState(1);\n  const [formData, setFormData] = useState({\n    email: '',\n    firstName: '',\n    lastName: '',\n    address: '',\n    city: '',\n    postalCode: '',\n    country: '',\n    shippingMethod: 'standard',\n    paymentMethod: 'card',\n    cardNumber: '',\n    expiryDate: '',\n    cvv: '',\n    saveInfo: false\n  });\n\n  const subtotal = items.reduce((sum, item) => sum + (item.price * item.quantity), 0);\n  const shipping = formData.shippingMethod === 'express' ? 15.99 : 5.99;\n  const tax = subtotal * 0.08;\n  const total = subtotal + shipping + tax;\n\n  const handleInputChange = (field: string, value: string | boolean) => {\n    setFormData(prev => ({ ...prev, [field]: value }));\n  };\n\n  const handleSubmit = () => {\n    onPlaceOrder({\n      items,\n      shippingAddress: {\n        firstName: formData.firstName,\n        lastName: formData.lastName,\n        address: formData.address,\n        city: formData.city,\n        postalCode: formData.postalCode,\n        country: formData.country\n      },\n      payment: {\n        method: formData.paymentMethod,\n        amount: total\n      },\n      shippingMethod: formData.shippingMethod\n    });\n  };\n\n  return (\n    <div className=\"max-w-6xl mx-auto p-6 grid lg:grid-cols-3 gap-8\">\n      {/* Checkout Form */}\n      <div className=\"lg:col-span-2 space-y-6\">\n        {/* Progress Steps */}\n        <div className=\"flex items-center gap-4 mb-8\">\n          {[1, 2, 3].map((s) => (\n            <div key={s} className=\"flex items-center\">\n              <div className={`w-8 h-8 rounded-full flex items-center justify-center text-sm font-semibold ${\n                s <= step ? 'bg-primary text-primary-foreground' : 'bg-muted text-muted-foreground'\n              }`}>\n                {s < step ? <Check className=\"w-4 h-4\" /> : s}\n              </div>\n              {s < 3 && <div className={`w-16 h-1 mx-2 ${s < step ? 'bg-primary' : 'bg-muted'}`} />}\n            </div>\n          ))}\n        </div>\n\n        {/* Step 1: Contact & Shipping */}\n        <Card>\n          <CardHeader>\n            <CardTitle className=\"flex items-center gap-2\">\n              <Truck className=\"w-5 h-5\" />\n              Contact & Shipping Information\n            </CardTitle>\n          </CardHeader>\n          <CardContent className=\"space-y-4\">\n            <div>\n              <Label htmlFor=\"email\">Email Address</Label>\n              <Input\n                id=\"email\"\n                type=\"email\"\n                value={formData.email}\n                onChange={(e) => handleInputChange('email', e.target.value)}\n                placeholder=\"your@email.com\"\n              />\n            </div>\n            \n            <div className=\"grid grid-cols-2 gap-4\">\n              <div>\n                <Label htmlFor=\"firstName\">First Name</Label>\n                <Input\n                  id=\"firstName\"\n                  value={formData.firstName}\n                  onChange={(e) => handleInputChange('firstName', e.target.value)}\n                />\n              </div>\n              <div>\n                <Label htmlFor=\"lastName\">Last Name</Label>\n                <Input\n                  id=\"lastName\"\n                  value={formData.lastName}\n                  onChange={(e) => handleInputChange('lastName', e.target.value)}\n                />\n              </div>\n            </div>\n            \n            <div>\n              <Label htmlFor=\"address\">Street Address</Label>\n              <Input\n                id=\"address\"\n                value={formData.address}\n                onChange={(e) => handleInputChange('address', e.target.value)}\n              />\n            </div>\n            \n            <div className=\"grid grid-cols-3 gap-4\">\n              <div>\n                <Label htmlFor=\"city\">City</Label>\n                <Input\n                  id=\"city\"\n                  value={formData.city}\n                  onChange={(e) => handleInputChange('city', e.target.value)}\n                />\n              </div>\n              <div>\n                <Label htmlFor=\"postalCode\">Postal Code</Label>\n                <Input\n                  id=\"postalCode\"\n                  value={formData.postalCode}\n                  onChange={(e) => handleInputChange('postalCode', e.target.value)}\n                />\n              </div>\n              <div>\n                <Label htmlFor=\"country\">Country</Label>\n                <Input\n                  id=\"country\"\n                  value={formData.country}\n                  onChange={(e) => handleInputChange('country', e.target.value)}\n                />\n              </div>\n            </div>\n          </CardContent>\n        </Card>\n\n        {/* Step 2: Shipping Method */}\n        <Card>\n          <CardHeader>\n            <CardTitle>Shipping Method</CardTitle>\n          </CardHeader>\n          <CardContent>\n            <RadioGroup\n              value={formData.shippingMethod}\n              onValueChange={(value) => handleInputChange('shippingMethod', value)}\n            >\n              <div className=\"flex items-center justify-between p-4 border rounded-lg\">\n                <div className=\"flex items-center space-x-2\">\n                  <RadioGroupItem value=\"standard\" id=\"standard\" />\n                  <Label htmlFor=\"standard\">\n                    <div>\n                      <p className=\"font-semibold\">Standard Shipping</p>\n                      <p className=\"text-sm text-muted-foreground\">5-7 business days</p>\n                    </div>\n                  </Label>\n                </div>\n                <p className=\"font-semibold\">$5.99</p>\n              </div>\n              \n              <div className=\"flex items-center justify-between p-4 border rounded-lg\">\n                <div className=\"flex items-center space-x-2\">\n                  <RadioGroupItem value=\"express\" id=\"express\" />\n                  <Label htmlFor=\"express\">\n                    <div>\n                      <p className=\"font-semibold\">Express Shipping</p>\n                      <p className=\"text-sm text-muted-foreground\">2-3 business days</p>\n                    </div>\n                  </Label>\n                </div>\n                <p className=\"font-semibold\">$15.99</p>\n              </div>\n            </RadioGroup>\n          </CardContent>\n        </Card>\n\n        {/* Step 3: Payment */}\n        <Card>\n          <CardHeader>\n            <CardTitle className=\"flex items-center gap-2\">\n              <CreditCard className=\"w-5 h-5\" />\n              Payment Information\n            </CardTitle>\n          </CardHeader>\n          <CardContent className=\"space-y-4\">\n            <RadioGroup\n              value={formData.paymentMethod}\n              onValueChange={(value) => handleInputChange('paymentMethod', value)}\n            >\n              <div className=\"flex items-center space-x-2\">\n                <RadioGroupItem value=\"card\" id=\"card\" />\n                <Label htmlFor=\"card\">Credit/Debit Card</Label>\n              </div>\n              <div className=\"flex items-center space-x-2\">\n                <RadioGroupItem value=\"paypal\" id=\"paypal\" />\n                <Label htmlFor=\"paypal\">PayPal</Label>\n              </div>\n            </RadioGroup>\n            \n            {formData.paymentMethod === 'card' && (\n              <div className=\"space-y-4\">\n                <div>\n                  <Label htmlFor=\"cardNumber\">Card Number</Label>\n                  <Input\n                    id=\"cardNumber\"\n                    value={formData.cardNumber}\n                    onChange={(e) => handleInputChange('cardNumber', e.target.value)}\n                    placeholder=\"1234 5678 9012 3456\"\n                  />\n                </div>\n                <div className=\"grid grid-cols-2 gap-4\">\n                  <div>\n                    <Label htmlFor=\"expiryDate\">Expiry Date</Label>\n                    <Input\n                      id=\"expiryDate\"\n                      value={formData.expiryDate}\n                      onChange={(e) => handleInputChange('expiryDate', e.target.value)}\n                      placeholder=\"MM/YY\"\n                    />\n                  </div>\n                  <div>\n                    <Label htmlFor=\"cvv\">CVV</Label>\n                    <Input\n                      id=\"cvv\"\n                      value={formData.cvv}\n                      onChange={(e) => handleInputChange('cvv', e.target.value)}\n                      placeholder=\"123\"\n                    />\n                  </div>\n                </div>\n              </div>\n            )}\n            \n            <div className=\"flex items-center space-x-2\">\n              <Checkbox\n                id=\"saveInfo\"\n                checked={formData.saveInfo}\n                onCheckedChange={(checked) => handleInputChange('saveInfo', checked)}\n              />\n              <Label htmlFor=\"saveInfo\" className=\"text-sm\">\n                Save this information for next time\n              </Label>\n            </div>\n          </CardContent>\n        </Card>\n\n        <Button size=\"lg\" className=\"w-full\" onClick={handleSubmit}>\n          <Shield className=\"w-5 h-5 mr-2\" />\n          Place Order - ${total.toFixed(2)}\n        </Button>\n      </div>\n\n      {/* Order Summary */}\n      <div>\n        <Card className=\"sticky top-6\">\n          <CardHeader>\n            <CardTitle>Order Summary</CardTitle>\n          </CardHeader>\n          <CardContent className=\"space-y-4\">\n            <div className=\"space-y-4\">\n              {items.map((item) => (\n                <div key={item.id} className=\"flex gap-3\">\n                  <img\n                    src={item.image}\n                    alt={item.name}\n                    className=\"w-16 h-16 object-cover rounded\"\n                  />\n                  <div className=\"flex-1\">\n                    <p className=\"font-semibold text-sm\">{item.name}</p>\n                    <p className=\"text-xs text-muted-foreground\">Qty: {item.quantity}</p>\n                    <p className=\"font-semibold\">${(item.price * item.quantity).toFixed(2)}</p>\n                  </div>\n                </div>\n              ))}\n            </div>\n            \n            <Separator />\n            \n            <div className=\"space-y-2\">\n              <div className=\"flex justify-between text-sm\">\n                <span>Subtotal</span>\n                <span>${subtotal.toFixed(2)}</span>\n              </div>\n              <div className=\"flex justify-between text-sm\">\n                <span>Shipping</span>\n                <span>${shipping.toFixed(2)}</span>\n              </div>\n              <div className=\"flex justify-between text-sm\">\n                <span>Tax</span>\n                <span>${tax.toFixed(2)}</span>\n              </div>\n              <Separator />\n              <div className=\"flex justify-between font-semibold text-lg\">\n                <span>Total</span>\n                <span>${total.toFixed(2)}</span>\n              </div>\n            </div>\n          </CardContent>\n        </Card>\n      </div>\n    </div>\n  );\n}",
+    "dependencies": {
+      "npm": [
+        "lucide-react"
+      ],
+      "components": [
+        "Card",
+        "Button",
+        "Input",
+        "Label",
+        "Checkbox",
+        "RadioGroup",
+        "Separator"
+      ]
+    },
+    "props_schema": {
+      "type": "object",
+      "properties": {
+        "items": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "id": {
+                "type": "string"
+              },
+              "name": {
+                "type": "string"
+              },
+              "price": {
+                "type": "number"
+              },
+              "quantity": {
+                "type": "number"
+              },
+              "image": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "id",
+              "name",
+              "price",
+              "quantity",
+              "image"
+            ]
+          }
+        },
+        "onPlaceOrder": {
+          "type": "function"
+        }
+      },
+      "required": [
+        "items",
+        "onPlaceOrder"
+      ]
+    },
+    "example_props": {
+      "items": [
+        {
+          "id": "1",
+          "name": "Wireless Headphones",
+          "price": 79.99,
+          "quantity": 1,
+          "image": "/api/placeholder/64/64"
+        },
+        {
+          "id": "2",
+          "name": "Phone Case",
+          "price": 24.99,
+          "quantity": 2,
+          "image": "/api/placeholder/64/64"
+        }
+      ]
+    },
+    "tags": [
+      "checkout",
+      "single-page",
+      "e-commerce",
+      "payment",
+      "shipping"
+    ],
+    "created_at": "2025-07-17T04:05:25.964428",
+    "updated_at": "2025-07-17T04:05:25.964429"
+  },
+  {
+    "id": "210c14c3-3f0b-4e58-862c-66b137c7102e",
+    "name": "Order Summary - Card",
+    "description": "Compact order summary card for checkout and review",
+    "block_type": "order-summary",
+    "app_type": "e-commerce",
+    "react_template": "import React from 'react';\nimport { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';\nimport { Button } from '@/components/ui/button';\nimport { Badge } from '@/components/ui/badge';\nimport { Separator } from '@/components/ui/separator';\nimport { Truck, Package, Clock, MapPin } from 'lucide-react';\n\ninterface OrderSummaryCardProps {\n  order: {\n    id: string;\n    status: 'pending' | 'confirmed' | 'shipped' | 'delivered';\n    date: string;\n    total: number;\n    subtotal: number;\n    shipping: number;\n    tax: number;\n    items: Array<{\n      id: string;\n      name: string;\n      quantity: number;\n      price: number;\n      image: string;\n    }>;\n    shipping_address: {\n      name: string;\n      address: string;\n      city: string;\n      postal_code: string;\n    };\n    estimated_delivery?: string;\n  };\n  onTrackOrder?: () => void;\n  onViewDetails?: () => void;\n}\n\nexport function OrderSummaryCard({ order, onTrackOrder, onViewDetails }: OrderSummaryCardProps) {\n  const getStatusColor = (status: string) => {\n    switch (status) {\n      case 'pending': return 'bg-yellow-100 text-yellow-800';\n      case 'confirmed': return 'bg-blue-100 text-blue-800';\n      case 'shipped': return 'bg-purple-100 text-purple-800';\n      case 'delivered': return 'bg-green-100 text-green-800';\n      default: return 'bg-gray-100 text-gray-800';\n    }\n  };\n\n  const getStatusIcon = (status: string) => {\n    switch (status) {\n      case 'pending': return <Clock className=\"w-4 h-4\" />;\n      case 'confirmed': return <Package className=\"w-4 h-4\" />;\n      case 'shipped': return <Truck className=\"w-4 h-4\" />;\n      case 'delivered': return <MapPin className=\"w-4 h-4\" />;\n      default: return <Package className=\"w-4 h-4\" />;\n    }\n  };\n\n  return (\n    <Card>\n      <CardHeader>\n        <div className=\"flex items-center justify-between\">\n          <CardTitle className=\"text-lg\">Order #{order.id}</CardTitle>\n          <Badge className={getStatusColor(order.status)}>\n            <div className=\"flex items-center gap-1\">\n              {getStatusIcon(order.status)}\n              {order.status.toUpperCase()}\n            </div>\n          </Badge>\n        </div>\n        <p className=\"text-sm text-muted-foreground\">\n          Ordered on {new Date(order.date).toLocaleDateString()}\n        </p>\n      </CardHeader>\n      \n      <CardContent className=\"space-y-4\">\n        {/* Order Items */}\n        <div className=\"space-y-3\">\n          {order.items.map((item) => (\n            <div key={item.id} className=\"flex gap-3\">\n              <img\n                src={item.image}\n                alt={item.name}\n                className=\"w-12 h-12 object-cover rounded\"\n              />\n              <div className=\"flex-1 min-w-0\">\n                <p className=\"font-semibold text-sm truncate\">{item.name}</p>\n                <p className=\"text-xs text-muted-foreground\">\n                  Qty: {item.quantity} \u00d7 ${item.price.toFixed(2)}\n                </p>\n              </div>\n              <p className=\"text-sm font-semibold\">\n                ${(item.price * item.quantity).toFixed(2)}\n              </p>\n            </div>\n          ))}\n        </div>\n        \n        <Separator />\n        \n        {/* Order Totals */}\n        <div className=\"space-y-2\">\n          <div className=\"flex justify-between text-sm\">\n            <span>Subtotal</span>\n            <span>${order.subtotal.toFixed(2)}</span>\n          </div>\n          <div className=\"flex justify-between text-sm\">\n            <span>Shipping</span>\n            <span>${order.shipping.toFixed(2)}</span>\n          </div>\n          <div className=\"flex justify-between text-sm\">\n            <span>Tax</span>\n            <span>${order.tax.toFixed(2)}</span>\n          </div>\n          <Separator />\n          <div className=\"flex justify-between font-semibold\">\n            <span>Total</span>\n            <span>${order.total.toFixed(2)}</span>\n          </div>\n        </div>\n        \n        <Separator />\n        \n        {/* Shipping Address */}\n        <div>\n          <p className=\"font-semibold text-sm mb-2\">Shipping Address</p>\n          <div className=\"text-sm text-muted-foreground\">\n            <p>{order.shipping_address.name}</p>\n            <p>{order.shipping_address.address}</p>\n            <p>{order.shipping_address.city}, {order.shipping_address.postal_code}</p>\n          </div>\n        </div>\n        \n        {/* Delivery Estimate */}\n        {order.estimated_delivery && (\n          <div className=\"bg-muted p-3 rounded-lg\">\n            <div className=\"flex items-center gap-2\">\n              <Truck className=\"w-4 h-4 text-muted-foreground\" />\n              <p className=\"text-sm font-semibold\">Estimated Delivery</p>\n            </div>\n            <p className=\"text-sm text-muted-foreground mt-1\">\n              {new Date(order.estimated_delivery).toLocaleDateString()}\n            </p>\n          </div>\n        )}\n        \n        {/* Action Buttons */}\n        <div className=\"flex gap-2 pt-2\">\n          {order.status !== 'pending' && (\n            <Button variant=\"outline\" size=\"sm\" onClick={onTrackOrder} className=\"flex-1\">\n              <Truck className=\"w-4 h-4 mr-2\" />\n              Track Order\n            </Button>\n          )}\n          <Button variant=\"outline\" size=\"sm\" onClick={onViewDetails} className=\"flex-1\">\n            View Details\n          </Button>\n        </div>\n      </CardContent>\n    </Card>\n  );\n}",
+    "dependencies": {
+      "npm": [
+        "lucide-react"
+      ],
+      "components": [
+        "Card",
+        "Button",
+        "Badge",
+        "Separator"
+      ]
+    },
+    "props_schema": {
+      "type": "object",
+      "properties": {
+        "order": {
+          "type": "object",
+          "properties": {
+            "id": {
+              "type": "string"
+            },
+            "status": {
+              "type": "string",
+              "enum": [
+                "pending",
+                "confirmed",
+                "shipped",
+                "delivered"
+              ]
+            },
+            "date": {
+              "type": "string"
+            },
+            "total": {
+              "type": "number"
+            },
+            "subtotal": {
+              "type": "number"
+            },
+            "shipping": {
+              "type": "number"
+            },
+            "tax": {
+              "type": "number"
+            },
+            "items": {
+              "type": "array"
+            },
+            "shipping_address": {
+              "type": "object"
+            },
+            "estimated_delivery": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "id",
+            "status",
+            "date",
+            "total",
+            "subtotal",
+            "shipping",
+            "tax",
+            "items",
+            "shipping_address"
+          ]
+        },
+        "onTrackOrder": {
+          "type": "function"
+        },
+        "onViewDetails": {
+          "type": "function"
+        }
+      },
+      "required": [
+        "order"
+      ]
+    },
+    "example_props": {
+      "order": {
+        "id": "ORD-2024-001",
+        "status": "shipped",
+        "date": "2024-01-15T10:30:00Z",
+        "total": 124.97,
+        "subtotal": 109.98,
+        "shipping": 5.99,
+        "tax": 8.8,
+        "items": [
+          {
+            "id": "1",
+            "name": "Wireless Mouse",
+            "quantity": 2,
+            "price": 29.99,
+            "image": "/api/placeholder/48/48"
+          },
+          {
+            "id": "2",
+            "name": "USB Cable",
+            "quantity": 1,
+            "price": 49.99,
+            "image": "/api/placeholder/48/48"
+          }
+        ],
+        "shipping_address": {
+          "name": "John Doe",
+          "address": "123 Main St",
+          "city": "Anytown",
+          "postal_code": "12345"
+        },
+        "estimated_delivery": "2024-01-20T00:00:00Z"
+      }
+    },
+    "tags": [
+      "order-summary",
+      "card",
+      "e-commerce",
+      "tracking",
+      "delivery"
+    ],
+    "created_at": "2025-07-17T04:05:25.964440",
+    "updated_at": "2025-07-17T04:05:25.964441"
+  },
+  {
+    "id": "a49d590b-81d9-4ee5-9ee7-7be33f7d419f",
+    "name": "Product Reviews - List",
+    "description": "Product reviews list with ratings and filtering",
+    "block_type": "product-reviews",
+    "app_type": "e-commerce",
+    "react_template": "import React, { useState } from 'react';\nimport { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';\nimport { Button } from '@/components/ui/button';\nimport { Badge } from '@/components/ui/badge';\nimport { Progress } from '@/components/ui/progress';\nimport { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';\nimport { Star, ThumbsUp, ThumbsDown, Filter, MoreHorizontal } from 'lucide-react';\n\ninterface Review {\n  id: string;\n  author: string;\n  rating: number;\n  title: string;\n  content: string;\n  date: string;\n  verified: boolean;\n  helpful: number;\n  images?: string[];\n}\n\ninterface ProductReviewsListProps {\n  productName: string;\n  averageRating: number;\n  totalReviews: number;\n  ratingDistribution: {\n    5: number;\n    4: number;\n    3: number;\n    2: number;\n    1: number;\n  };\n  reviews: Review[];\n  onWriteReview?: () => void;\n  onHelpfulVote?: (reviewId: string, helpful: boolean) => void;\n}\n\nexport function ProductReviewsList({\n  productName,\n  averageRating,\n  totalReviews,\n  ratingDistribution,\n  reviews,\n  onWriteReview,\n  onHelpfulVote\n}: ProductReviewsListProps) {\n  const [sortBy, setSortBy] = useState('newest');\n  const [filterRating, setFilterRating] = useState('all');\n\n  const filteredReviews = reviews.filter(review => {\n    if (filterRating === 'all') return true;\n    return review.rating === parseInt(filterRating);\n  });\n\n  const sortedReviews = [...filteredReviews].sort((a, b) => {\n    switch (sortBy) {\n      case 'newest':\n        return new Date(b.date).getTime() - new Date(a.date).getTime();\n      case 'oldest':\n        return new Date(a.date).getTime() - new Date(b.date).getTime();\n      case 'highest':\n        return b.rating - a.rating;\n      case 'lowest':\n        return a.rating - b.rating;\n      case 'helpful':\n        return b.helpful - a.helpful;\n      default:\n        return 0;\n    }\n  });\n\n  return (\n    <div className=\"space-y-6\">\n      {/* Reviews Overview */}\n      <Card>\n        <CardHeader>\n          <CardTitle>Customer Reviews</CardTitle>\n        </CardHeader>\n        <CardContent>\n          <div className=\"grid md:grid-cols-2 gap-6\">\n            <div className=\"space-y-4\">\n              <div className=\"text-center\">\n                <div className=\"text-4xl font-bold\">{averageRating.toFixed(1)}</div>\n                <div className=\"flex items-center justify-center gap-1 mt-2\">\n                  {[...Array(5)].map((_, i) => (\n                    <Star\n                      key={i}\n                      className={`w-5 h-5 ${\n                        i < Math.floor(averageRating)\n                          ? 'fill-primary text-primary'\n                          : 'text-muted'\n                      }`}\n                    />\n                  ))}\n                </div>\n                <p className=\"text-sm text-muted-foreground mt-1\">\n                  Based on {totalReviews} reviews\n                </p>\n              </div>\n              \n              <Button onClick={onWriteReview} className=\"w-full\">\n                Write a Review\n              </Button>\n            </div>\n            \n            <div className=\"space-y-2\">\n              {[5, 4, 3, 2, 1].map((rating) => {\n                const count = ratingDistribution[rating as keyof typeof ratingDistribution];\n                const percentage = totalReviews > 0 ? (count / totalReviews) * 100 : 0;\n                \n                return (\n                  <div key={rating} className=\"flex items-center gap-2\">\n                    <span className=\"text-sm w-8\">{rating}\u2605</span>\n                    <Progress value={percentage} className=\"flex-1\" />\n                    <span className=\"text-sm text-muted-foreground w-12\">\n                      ({count})\n                    </span>\n                  </div>\n                );\n              })}\n            </div>\n          </div>\n        </CardContent>\n      </Card>\n\n      {/* Filters and Sorting */}\n      <div className=\"flex flex-wrap gap-4 items-center justify-between\">\n        <Tabs value={filterRating} onValueChange={setFilterRating}>\n          <TabsList>\n            <TabsTrigger value=\"all\">All ({totalReviews})</TabsTrigger>\n            <TabsTrigger value=\"5\">5\u2605 ({ratingDistribution[5]})</TabsTrigger>\n            <TabsTrigger value=\"4\">4\u2605 ({ratingDistribution[4]})</TabsTrigger>\n            <TabsTrigger value=\"3\">3\u2605 ({ratingDistribution[3]})</TabsTrigger>\n            <TabsTrigger value=\"2\">2\u2605 ({ratingDistribution[2]})</TabsTrigger>\n            <TabsTrigger value=\"1\">1\u2605 ({ratingDistribution[1]})</TabsTrigger>\n          </TabsList>\n        </Tabs>\n        \n        <div className=\"flex items-center gap-2\">\n          <Filter className=\"w-4 h-4\" />\n          <select\n            value={sortBy}\n            onChange={(e) => setSortBy(e.target.value)}\n            className=\"text-sm border rounded px-2 py-1\"\n          >\n            <option value=\"newest\">Newest first</option>\n            <option value=\"oldest\">Oldest first</option>\n            <option value=\"highest\">Highest rated</option>\n            <option value=\"lowest\">Lowest rated</option>\n            <option value=\"helpful\">Most helpful</option>\n          </select>\n        </div>\n      </div>\n\n      {/* Reviews List */}\n      <div className=\"space-y-4\">\n        {sortedReviews.length === 0 ? (\n          <Card>\n            <CardContent className=\"p-8 text-center\">\n              <p className=\"text-muted-foreground\">No reviews match your filters.</p>\n            </CardContent>\n          </Card>\n        ) : (\n          sortedReviews.map((review) => (\n            <Card key={review.id}>\n              <CardContent className=\"p-6\">\n                <div className=\"space-y-4\">\n                  <div className=\"flex items-start justify-between\">\n                    <div className=\"space-y-2\">\n                      <div className=\"flex items-center gap-2\">\n                        <p className=\"font-semibold\">{review.author}</p>\n                        {review.verified && (\n                          <Badge variant=\"secondary\" className=\"text-xs\">\n                            Verified Purchase\n                          </Badge>\n                        )}\n                      </div>\n                      \n                      <div className=\"flex items-center gap-2\">\n                        <div className=\"flex\">\n                          {[...Array(5)].map((_, i) => (\n                            <Star\n                              key={i}\n                              className={`w-4 h-4 ${\n                                i < review.rating\n                                  ? 'fill-primary text-primary'\n                                  : 'text-muted'\n                              }`}\n                            />\n                          ))}\n                        </div>\n                        <span className=\"text-sm text-muted-foreground\">\n                          {new Date(review.date).toLocaleDateString()}\n                        </span>\n                      </div>\n                    </div>\n                    \n                    <Button variant=\"ghost\" size=\"icon\">\n                      <MoreHorizontal className=\"w-4 h-4\" />\n                    </Button>\n                  </div>\n                  \n                  <div>\n                    <h4 className=\"font-semibold mb-2\">{review.title}</h4>\n                    <p className=\"text-sm text-muted-foreground leading-relaxed\">\n                      {review.content}\n                    </p>\n                  </div>\n                  \n                  {review.images && review.images.length > 0 && (\n                    <div className=\"flex gap-2\">\n                      {review.images.map((image, index) => (\n                        <img\n                          key={index}\n                          src={image}\n                          alt={`Review image ${index + 1}`}\n                          className=\"w-16 h-16 object-cover rounded border\"\n                        />\n                      ))}\n                    </div>\n                  )}\n                  \n                  <div className=\"flex items-center gap-4 pt-2\">\n                    <p className=\"text-sm text-muted-foreground\">\n                      Was this helpful?\n                    </p>\n                    <div className=\"flex gap-2\">\n                      <Button\n                        variant=\"outline\"\n                        size=\"sm\"\n                        onClick={() => onHelpfulVote?.(review.id, true)}\n                      >\n                        <ThumbsUp className=\"w-3 h-3 mr-1\" />\n                        Yes ({review.helpful})\n                      </Button>\n                      <Button\n                        variant=\"outline\"\n                        size=\"sm\"\n                        onClick={() => onHelpfulVote?.(review.id, false)}\n                      >\n                        <ThumbsDown className=\"w-3 h-3 mr-1\" />\n                        No\n                      </Button>\n                    </div>\n                  </div>\n                </div>\n              </CardContent>\n            </Card>\n          ))\n        )}\n      </div>\n    </div>\n  );\n}",
+    "dependencies": {
+      "npm": [
+        "lucide-react"
+      ],
+      "components": [
+        "Card",
+        "Button",
+        "Badge",
+        "Progress",
+        "Tabs"
+      ]
+    },
+    "props_schema": {
+      "type": "object",
+      "properties": {
+        "productName": {
+          "type": "string"
+        },
+        "averageRating": {
+          "type": "number"
+        },
+        "totalReviews": {
+          "type": "number"
+        },
+        "ratingDistribution": {
+          "type": "object",
+          "properties": {
+            "5": {
+              "type": "number"
+            },
+            "4": {
+              "type": "number"
+            },
+            "3": {
+              "type": "number"
+            },
+            "2": {
+              "type": "number"
+            },
+            "1": {
+              "type": "number"
+            }
+          },
+          "required": [
+            "5",
+            "4",
+            "3",
+            "2",
+            "1"
+          ]
+        },
+        "reviews": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "id": {
+                "type": "string"
+              },
+              "author": {
+                "type": "string"
+              },
+              "rating": {
+                "type": "number"
+              },
+              "title": {
+                "type": "string"
+              },
+              "content": {
+                "type": "string"
+              },
+              "date": {
+                "type": "string"
+              },
+              "verified": {
+                "type": "boolean"
+              },
+              "helpful": {
+                "type": "number"
+              },
+              "images": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              }
+            },
+            "required": [
+              "id",
+              "author",
+              "rating",
+              "title",
+              "content",
+              "date",
+              "verified",
+              "helpful"
+            ]
+          }
+        },
+        "onWriteReview": {
+          "type": "function"
+        },
+        "onHelpfulVote": {
+          "type": "function"
+        }
+      },
+      "required": [
+        "productName",
+        "averageRating",
+        "totalReviews",
+        "ratingDistribution",
+        "reviews"
+      ]
+    },
+    "example_props": {
+      "productName": "Wireless Headphones",
+      "averageRating": 4.3,
+      "totalReviews": 89,
+      "ratingDistribution": {
+        "5": 42,
+        "4": 23,
+        "3": 15,
+        "2": 6,
+        "1": 3
+      },
+      "reviews": [
+        {
+          "id": "1",
+          "author": "Sarah Johnson",
+          "rating": 5,
+          "title": "Excellent sound quality!",
+          "content": "These headphones exceeded my expectations. The sound quality is crystal clear and the noise cancellation works perfectly.",
+          "date": "2024-01-15T00:00:00Z",
+          "verified": true,
+          "helpful": 12,
+          "images": [
+            "/api/placeholder/64/64"
+          ]
+        },
+        {
+          "id": "2",
+          "author": "Mike Chen",
+          "rating": 4,
+          "title": "Good value for money",
+          "content": "Solid headphones for the price. Battery life is impressive and they're comfortable for long listening sessions.",
+          "date": "2024-01-10T00:00:00Z",
+          "verified": true,
+          "helpful": 8
+        }
+      ]
+    },
+    "tags": [
+      "product-reviews",
+      "ratings",
+      "e-commerce",
+      "feedback",
+      "social-proof"
+    ],
+    "created_at": "2025-07-17T04:05:25.964456",
+    "updated_at": "2025-07-17T04:05:25.964459"
+  },
+  {
+    "id": "41a6a95c-0f6a-42a2-a4e0-c0433a8e2267",
+    "name": "Product Filter - Sidebar",
+    "description": "Advanced product filtering sidebar with multiple filter types",
+    "block_type": "product-filter",
+    "app_type": "e-commerce",
+    "react_template": "import React, { useState } from 'react';\nimport { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';\nimport { Button } from '@/components/ui/button';\nimport { Checkbox } from '@/components/ui/checkbox';\nimport { Label } from '@/components/ui/label';\nimport { Slider } from '@/components/ui/slider';\nimport { Badge } from '@/components/ui/badge';\nimport { Collapsible, CollapsibleContent, CollapsibleTrigger } from '@/components/ui/collapsible';\nimport { ChevronDown, X, Filter } from 'lucide-react';\n\ninterface FilterState {\n  categories: string[];\n  brands: string[];\n  priceRange: [number, number];\n  ratings: number[];\n  inStock: boolean;\n  onSale: boolean;\n}\n\ninterface ProductFilterSidebarProps {\n  filters: FilterState;\n  onFiltersChange: (filters: FilterState) => void;\n  onClearFilters: () => void;\n  availableFilters: {\n    categories: Array<{ id: string; name: string; count: number }>;\n    brands: Array<{ id: string; name: string; count: number }>;\n    priceRange: { min: number; max: number };\n  };\n  resultCount: number;\n}\n\nexport function ProductFilterSidebar({\n  filters,\n  onFiltersChange,\n  onClearFilters,\n  availableFilters,\n  resultCount\n}: ProductFilterSidebarProps) {\n  const [openSections, setOpenSections] = useState({\n    categories: true,\n    brands: true,\n    price: true,\n    ratings: true,\n    availability: true\n  });\n\n  const handleCategoryToggle = (categoryId: string) => {\n    const newCategories = filters.categories.includes(categoryId)\n      ? filters.categories.filter(id => id !== categoryId)\n      : [...filters.categories, categoryId];\n    \n    onFiltersChange({ ...filters, categories: newCategories });\n  };\n\n  const handleBrandToggle = (brandId: string) => {\n    const newBrands = filters.brands.includes(brandId)\n      ? filters.brands.filter(id => id !== brandId)\n      : [...filters.brands, brandId];\n    \n    onFiltersChange({ ...filters, brands: newBrands });\n  };\n\n  const handleRatingToggle = (rating: number) => {\n    const newRatings = filters.ratings.includes(rating)\n      ? filters.ratings.filter(r => r !== rating)\n      : [...filters.ratings, rating];\n    \n    onFiltersChange({ ...filters, ratings: newRatings });\n  };\n\n  const getActiveFilterCount = () => {\n    return filters.categories.length + \n           filters.brands.length + \n           filters.ratings.length + \n           (filters.inStock ? 1 : 0) + \n           (filters.onSale ? 1 : 0);\n  };\n\n  return (\n    <div className=\"w-full max-w-sm space-y-4\">\n      {/* Filter Header */}\n      <Card>\n        <CardHeader className=\"pb-3\">\n          <div className=\"flex items-center justify-between\">\n            <CardTitle className=\"flex items-center gap-2\">\n              <Filter className=\"w-5 h-5\" />\n              Filters\n              {getActiveFilterCount() > 0 && (\n                <Badge variant=\"secondary\" className=\"ml-2\">\n                  {getActiveFilterCount()}\n                </Badge>\n              )}\n            </CardTitle>\n            {getActiveFilterCount() > 0 && (\n              <Button variant=\"ghost\" size=\"sm\" onClick={onClearFilters}>\n                Clear All\n              </Button>\n            )}\n          </div>\n          <p className=\"text-sm text-muted-foreground\">\n            {resultCount} products found\n          </p>\n        </CardHeader>\n      </Card>\n\n      {/* Categories Filter */}\n      <Card>\n        <Collapsible\n          open={openSections.categories}\n          onOpenChange={(open) => setOpenSections(prev => ({ ...prev, categories: open }))}\n        >\n          <CollapsibleTrigger asChild>\n            <CardHeader className=\"cursor-pointer pb-3\">\n              <div className=\"flex items-center justify-between\">\n                <CardTitle className=\"text-base\">Categories</CardTitle>\n                <ChevronDown className={`w-4 h-4 transition-transform ${\n                  openSections.categories ? 'rotate-180' : ''\n                }`} />\n              </div>\n            </CardHeader>\n          </CollapsibleTrigger>\n          <CollapsibleContent>\n            <CardContent className=\"pt-0\">\n              <div className=\"space-y-3\">\n                {availableFilters.categories.map((category) => (\n                  <div key={category.id} className=\"flex items-center space-x-2\">\n                    <Checkbox\n                      id={`category-${category.id}`}\n                      checked={filters.categories.includes(category.id)}\n                      onCheckedChange={() => handleCategoryToggle(category.id)}\n                    />\n                    <Label \n                      htmlFor={`category-${category.id}`}\n                      className=\"flex-1 text-sm cursor-pointer\"\n                    >\n                      {category.name}\n                    </Label>\n                    <span className=\"text-xs text-muted-foreground\">\n                      ({category.count})\n                    </span>\n                  </div>\n                ))}\n              </div>\n            </CardContent>\n          </CollapsibleContent>\n        </Collapsible>\n      </Card>\n\n      {/* Price Range Filter */}\n      <Card>\n        <Collapsible\n          open={openSections.price}\n          onOpenChange={(open) => setOpenSections(prev => ({ ...prev, price: open }))}\n        >\n          <CollapsibleTrigger asChild>\n            <CardHeader className=\"cursor-pointer pb-3\">\n              <div className=\"flex items-center justify-between\">\n                <CardTitle className=\"text-base\">Price Range</CardTitle>\n                <ChevronDown className={`w-4 h-4 transition-transform ${\n                  openSections.price ? 'rotate-180' : ''\n                }`} />\n              </div>\n            </CardHeader>\n          </CollapsibleTrigger>\n          <CollapsibleContent>\n            <CardContent className=\"pt-0\">\n              <div className=\"space-y-4\">\n                <Slider\n                  value={filters.priceRange}\n                  onValueChange={(value) => onFiltersChange({ \n                    ...filters, \n                    priceRange: value as [number, number]\n                  })}\n                  max={availableFilters.priceRange.max}\n                  min={availableFilters.priceRange.min}\n                  step={10}\n                  className=\"w-full\"\n                />\n                <div className=\"flex items-center justify-between text-sm\">\n                  <span>${filters.priceRange[0]}</span>\n                  <span>${filters.priceRange[1]}</span>\n                </div>\n              </div>\n            </CardContent>\n          </CollapsibleContent>\n        </Collapsible>\n      </Card>\n\n      {/* Brands Filter */}\n      <Card>\n        <Collapsible\n          open={openSections.brands}\n          onOpenChange={(open) => setOpenSections(prev => ({ ...prev, brands: open }))}\n        >\n          <CollapsibleTrigger asChild>\n            <CardHeader className=\"cursor-pointer pb-3\">\n              <div className=\"flex items-center justify-between\">\n                <CardTitle className=\"text-base\">Brands</CardTitle>\n                <ChevronDown className={`w-4 h-4 transition-transform ${\n                  openSections.brands ? 'rotate-180' : ''\n                }`} />\n              </div>\n            </CardHeader>\n          </CollapsibleTrigger>\n          <CollapsibleContent>\n            <CardContent className=\"pt-0\">\n              <div className=\"space-y-3\">\n                {availableFilters.brands.map((brand) => (\n                  <div key={brand.id} className=\"flex items-center space-x-2\">\n                    <Checkbox\n                      id={`brand-${brand.id}`}\n                      checked={filters.brands.includes(brand.id)}\n                      onCheckedChange={() => handleBrandToggle(brand.id)}\n                    />\n                    <Label \n                      htmlFor={`brand-${brand.id}`}\n                      className=\"flex-1 text-sm cursor-pointer\"\n                    >\n                      {brand.name}\n                    </Label>\n                    <span className=\"text-xs text-muted-foreground\">\n                      ({brand.count})\n                    </span>\n                  </div>\n                ))}\n              </div>\n            </CardContent>\n          </CollapsibleContent>\n        </Collapsible>\n      </Card>\n\n      {/* Ratings Filter */}\n      <Card>\n        <Collapsible\n          open={openSections.ratings}\n          onOpenChange={(open) => setOpenSections(prev => ({ ...prev, ratings: open }))}\n        >\n          <CollapsibleTrigger asChild>\n            <CardHeader className=\"cursor-pointer pb-3\">\n              <div className=\"flex items-center justify-between\">\n                <CardTitle className=\"text-base\">Customer Rating</CardTitle>\n                <ChevronDown className={`w-4 h-4 transition-transform ${\n                  openSections.ratings ? 'rotate-180' : ''\n                }`} />\n              </div>\n            </CardHeader>\n          </CollapsibleTrigger>\n          <CollapsibleContent>\n            <CardContent className=\"pt-0\">\n              <div className=\"space-y-3\">\n                {[5, 4, 3, 2, 1].map((rating) => (\n                  <div key={rating} className=\"flex items-center space-x-2\">\n                    <Checkbox\n                      id={`rating-${rating}`}\n                      checked={filters.ratings.includes(rating)}\n                      onCheckedChange={() => handleRatingToggle(rating)}\n                    />\n                    <Label \n                      htmlFor={`rating-${rating}`}\n                      className=\"flex items-center text-sm cursor-pointer\"\n                    >\n                      <span className=\"mr-1\">{rating}</span>\n                      {'\u2605'.repeat(rating)}{'\u2606'.repeat(5-rating)}\n                      <span className=\"ml-1\">& up</span>\n                    </Label>\n                  </div>\n                ))}\n              </div>\n            </CardContent>\n          </CollapsibleContent>\n        </Collapsible>\n      </Card>\n\n      {/* Availability Filter */}\n      <Card>\n        <Collapsible\n          open={openSections.availability}\n          onOpenChange={(open) => setOpenSections(prev => ({ ...prev, availability: open }))}\n        >\n          <CollapsibleTrigger asChild>\n            <CardHeader className=\"cursor-pointer pb-3\">\n              <div className=\"flex items-center justify-between\">\n                <CardTitle className=\"text-base\">Availability</CardTitle>\n                <ChevronDown className={`w-4 h-4 transition-transform ${\n                  openSections.availability ? 'rotate-180' : ''\n                }`} />\n              </div>\n            </CardHeader>\n          </CollapsibleTrigger>\n          <CollapsibleContent>\n            <CardContent className=\"pt-0\">\n              <div className=\"space-y-3\">\n                <div className=\"flex items-center space-x-2\">\n                  <Checkbox\n                    id=\"inStock\"\n                    checked={filters.inStock}\n                    onCheckedChange={(checked) => \n                      onFiltersChange({ ...filters, inStock: !!checked })\n                    }\n                  />\n                  <Label htmlFor=\"inStock\" className=\"text-sm cursor-pointer\">\n                    In Stock Only\n                  </Label>\n                </div>\n                <div className=\"flex items-center space-x-2\">\n                  <Checkbox\n                    id=\"onSale\"\n                    checked={filters.onSale}\n                    onCheckedChange={(checked) => \n                      onFiltersChange({ ...filters, onSale: !!checked })\n                    }\n                  />\n                  <Label htmlFor=\"onSale\" className=\"text-sm cursor-pointer\">\n                    On Sale\n                  </Label>\n                </div>\n              </div>\n            </CardContent>\n          </CollapsibleContent>\n        </Collapsible>\n      </Card>\n    </div>\n  );\n}",
+    "dependencies": {
+      "npm": [
+        "lucide-react"
+      ],
+      "components": [
+        "Card",
+        "Button",
+        "Checkbox",
+        "Label",
+        "Slider",
+        "Badge",
+        "Collapsible"
+      ]
+    },
+    "props_schema": {
+      "type": "object",
+      "properties": {
+        "filters": {
+          "type": "object",
+          "properties": {
+            "categories": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            },
+            "brands": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            },
+            "priceRange": {
+              "type": "array",
+              "items": {
+                "type": "number"
+              }
+            },
+            "ratings": {
+              "type": "array",
+              "items": {
+                "type": "number"
+              }
+            },
+            "inStock": {
+              "type": "boolean"
+            },
+            "onSale": {
+              "type": "boolean"
+            }
+          }
+        },
+        "onFiltersChange": {
+          "type": "function"
+        },
+        "onClearFilters": {
+          "type": "function"
+        },
+        "availableFilters": {
+          "type": "object"
+        },
+        "resultCount": {
+          "type": "number"
+        }
+      },
+      "required": [
+        "filters",
+        "onFiltersChange",
+        "onClearFilters",
+        "availableFilters",
+        "resultCount"
+      ]
+    },
+    "example_props": {
+      "filters": {
+        "categories": [
+          "electronics"
+        ],
+        "brands": [],
+        "priceRange": [
+          0,
+          1000
+        ],
+        "ratings": [
+          4,
+          5
+        ],
+        "inStock": true,
+        "onSale": false
+      },
+      "resultCount": 42,
+      "availableFilters": {
+        "categories": [
+          {
+            "id": "electronics",
+            "name": "Electronics",
+            "count": 156
+          },
+          {
+            "id": "clothing",
+            "name": "Clothing",
+            "count": 89
+          },
+          {
+            "id": "books",
+            "name": "Books",
+            "count": 234
+          }
+        ],
+        "brands": [
+          {
+            "id": "apple",
+            "name": "Apple",
+            "count": 45
+          },
+          {
+            "id": "samsung",
+            "name": "Samsung",
+            "count": 67
+          }
+        ],
+        "priceRange": {
+          "min": 0,
+          "max": 2000
+        }
+      }
+    },
+    "tags": [
+      "product-filter",
+      "sidebar",
+      "e-commerce",
+      "search",
+      "categories"
+    ],
+    "created_at": "2025-07-17T04:05:25.964472",
+    "updated_at": "2025-07-17T04:05:25.964473"
+  },
+  {
+    "id": "7089aedd-7297-434d-911f-bce332db01d6",
+    "name": "Category Banner",
+    "description": "Hero banner for product category pages with navigation",
+    "block_type": "category-banner",
+    "app_type": "e-commerce",
+    "react_template": "import React from 'react';\nimport { Button } from '@/components/ui/button';\nimport { Badge } from '@/components/ui/badge';\nimport { ArrowRight, Star, TrendingUp } from 'lucide-react';\n\ninterface CategoryBannerProps {\n  category: {\n    name: string;\n    description: string;\n    image: string;\n    productCount: number;\n    featured?: boolean;\n    trending?: boolean;\n  };\n  subcategories?: Array<{\n    id: string;\n    name: string;\n    image: string;\n    productCount: number;\n  }>;\n  onExploreCategory?: () => void;\n  onSelectSubcategory?: (subcategoryId: string) => void;\n}\n\nexport function CategoryBanner({\n  category,\n  subcategories = [],\n  onExploreCategory,\n  onSelectSubcategory\n}: CategoryBannerProps) {\n  return (\n    <div className=\"relative\">\n      {/* Main Category Banner */}\n      <div className=\"relative h-96 overflow-hidden rounded-lg bg-gradient-to-r from-primary/20 to-secondary/20\">\n        <img\n          src={category.image}\n          alt={category.name}\n          className=\"absolute inset-0 w-full h-full object-cover mix-blend-overlay\"\n        />\n        \n        <div className=\"absolute inset-0 bg-gradient-to-r from-black/60 to-black/20\" />\n        \n        <div className=\"relative h-full flex items-center\">\n          <div className=\"max-w-7xl mx-auto px-6 text-white\">\n            <div className=\"max-w-2xl\">\n              <div className=\"flex items-center gap-3 mb-4\">\n                <h1 className=\"text-4xl md:text-5xl font-bold\">{category.name}</h1>\n                {category.featured && (\n                  <Badge variant=\"secondary\" className=\"bg-primary text-primary-foreground\">\n                    <Star className=\"w-3 h-3 mr-1\" />\n                    Featured\n                  </Badge>\n                )}\n                {category.trending && (\n                  <Badge variant=\"secondary\" className=\"bg-green-600 text-white\">\n                    <TrendingUp className=\"w-3 h-3 mr-1\" />\n                    Trending\n                  </Badge>\n                )}\n              </div>\n              \n              <p className=\"text-lg md:text-xl text-gray-200 mb-6 leading-relaxed\">\n                {category.description}\n              </p>\n              \n              <div className=\"flex items-center gap-6 mb-8\">\n                <div className=\"text-sm\">\n                  <span className=\"text-2xl font-semibold\">{category.productCount.toLocaleString()}</span>\n                  <p className=\"text-gray-300\">Products Available</p>\n                </div>\n                \n                <div className=\"h-8 w-px bg-gray-400\" />\n                \n                <div className=\"text-sm\">\n                  <span className=\"text-2xl font-semibold\">{subcategories.length}</span>\n                  <p className=\"text-gray-300\">Subcategories</p>\n                </div>\n              </div>\n              \n              <Button size=\"lg\" onClick={onExploreCategory} className=\"group\">\n                Explore {category.name}\n                <ArrowRight className=\"w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform\" />\n              </Button>\n            </div>\n          </div>\n        </div>\n        \n        {/* Decorative Elements */}\n        <div className=\"absolute top-8 right-8 w-32 h-32 bg-white/10 rounded-full blur-3xl\" />\n        <div className=\"absolute bottom-12 right-24 w-20 h-20 bg-primary/20 rounded-full blur-2xl\" />\n      </div>\n\n      {/* Subcategories Grid */}\n      {subcategories.length > 0 && (\n        <div className=\"mt-12\">\n          <h2 className=\"text-2xl font-semibold mb-6\">Shop by Category</h2>\n          <div className=\"grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-6 gap-4\">\n            {subcategories.map((subcategory) => (\n              <button\n                key={subcategory.id}\n                onClick={() => onSelectSubcategory?.(subcategory.id)}\n                className=\"group text-left\"\n              >\n                <div className=\"aspect-square relative overflow-hidden rounded-lg bg-muted mb-3 group-hover:shadow-lg transition-shadow\">\n                  <img\n                    src={subcategory.image}\n                    alt={subcategory.name}\n                    className=\"w-full h-full object-cover group-hover:scale-105 transition-transform duration-300\"\n                  />\n                </div>\n                <h3 className=\"font-semibold text-sm mb-1 group-hover:text-primary transition-colors\">\n                  {subcategory.name}\n                </h3>\n                <p className=\"text-xs text-muted-foreground\">\n                  {subcategory.productCount} items\n                </p>\n              </button>\n            ))}\n          </div>\n        </div>\n      )}\n    </div>\n  );\n}",
+    "dependencies": {
+      "npm": [
+        "lucide-react"
+      ],
+      "components": [
+        "Button",
+        "Badge"
+      ]
+    },
+    "props_schema": {
+      "type": "object",
+      "properties": {
+        "category": {
+          "type": "object",
+          "properties": {
+            "name": {
+              "type": "string"
+            },
+            "description": {
+              "type": "string"
+            },
+            "image": {
+              "type": "string"
+            },
+            "productCount": {
+              "type": "number"
+            },
+            "featured": {
+              "type": "boolean"
+            },
+            "trending": {
+              "type": "boolean"
+            }
+          },
+          "required": [
+            "name",
+            "description",
+            "image",
+            "productCount"
+          ]
+        },
+        "subcategories": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "id": {
+                "type": "string"
+              },
+              "name": {
+                "type": "string"
+              },
+              "image": {
+                "type": "string"
+              },
+              "productCount": {
+                "type": "number"
+              }
+            },
+            "required": [
+              "id",
+              "name",
+              "image",
+              "productCount"
+            ]
+          }
+        },
+        "onExploreCategory": {
+          "type": "function"
+        },
+        "onSelectSubcategory": {
+          "type": "function"
+        }
+      },
+      "required": [
+        "category"
+      ]
+    },
+    "example_props": {
+      "category": {
+        "name": "Electronics",
+        "description": "Discover the latest technology and gadgets from top brands. From smartphones to smart home devices, find everything you need to stay connected and productive.",
+        "image": "/api/placeholder/800/400",
+        "productCount": 1247,
+        "featured": true,
+        "trending": true
+      },
+      "subcategories": [
+        {
+          "id": "smartphones",
+          "name": "Smartphones",
+          "image": "/api/placeholder/200/200",
+          "productCount": 156
+        },
+        {
+          "id": "laptops",
+          "name": "Laptops",
+          "image": "/api/placeholder/200/200",
+          "productCount": 89
+        },
+        {
+          "id": "headphones",
+          "name": "Headphones",
+          "image": "/api/placeholder/200/200",
+          "productCount": 234
+        },
+        {
+          "id": "cameras",
+          "name": "Cameras",
+          "image": "/api/placeholder/200/200",
+          "productCount": 67
+        },
+        {
+          "id": "gaming",
+          "name": "Gaming",
+          "image": "/api/placeholder/200/200",
+          "productCount": 178
+        },
+        {
+          "id": "accessories",
+          "name": "Accessories",
+          "image": "/api/placeholder/200/200",
+          "productCount": 523
+        }
+      ]
+    },
+    "tags": [
+      "category-banner",
+      "hero",
+      "e-commerce",
+      "navigation",
+      "subcategories"
+    ],
+    "created_at": "2025-07-17T04:05:25.964486",
+    "updated_at": "2025-07-17T04:05:25.964488"
+  },
+  {
+    "id": "a529be27-727f-4c1d-8aa4-5860eb26ae5f",
+    "name": "Sale Banner - Countdown",
+    "description": "Promotional sale banner with countdown timer",
+    "block_type": "sale-banner",
+    "app_type": "e-commerce",
+    "react_template": "import React, { useState, useEffect } from 'react';\nimport { Button } from '@/components/ui/button';\nimport { Badge } from '@/components/ui/badge';\nimport { Card } from '@/components/ui/card';\nimport { Flame, Clock, ArrowRight, Zap } from 'lucide-react';\n\ninterface SaleBannerCountdownProps {\n  sale: {\n    title: string;\n    subtitle?: string;\n    description: string;\n    discountPercentage: number;\n    endDate: string;\n    image?: string;\n    backgroundColor?: string;\n    textColor?: string;\n  };\n  onShopNow?: () => void;\n  compact?: boolean;\n}\n\nexport function SaleBannerCountdown({ sale, onShopNow, compact = false }: SaleBannerCountdownProps) {\n  const [timeLeft, setTimeLeft] = useState({\n    days: 0,\n    hours: 0,\n    minutes: 0,\n    seconds: 0\n  });\n\n  useEffect(() => {\n    const calculateTimeLeft = () => {\n      const endTime = new Date(sale.endDate).getTime();\n      const now = new Date().getTime();\n      const difference = endTime - now;\n\n      if (difference > 0) {\n        setTimeLeft({\n          days: Math.floor(difference / (1000 * 60 * 60 * 24)),\n          hours: Math.floor((difference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)),\n          minutes: Math.floor((difference % (1000 * 60 * 60)) / (1000 * 60)),\n          seconds: Math.floor((difference % (1000 * 60)) / 1000)\n        });\n      } else {\n        setTimeLeft({ days: 0, hours: 0, minutes: 0, seconds: 0 });\n      }\n    };\n\n    calculateTimeLeft();\n    const timer = setInterval(calculateTimeLeft, 1000);\n\n    return () => clearInterval(timer);\n  }, [sale.endDate]);\n\n  const isExpired = timeLeft.days === 0 && timeLeft.hours === 0 && timeLeft.minutes === 0 && timeLeft.seconds === 0;\n\n  if (compact) {\n    return (\n      <Card className=\"relative overflow-hidden border-2 border-red-200 bg-gradient-to-r from-red-50 to-orange-50\">\n        <div className=\"flex items-center justify-between p-4\">\n          <div className=\"flex items-center gap-3\">\n            <div className=\"flex items-center gap-2\">\n              <Flame className=\"w-5 h-5 text-red-500\" />\n              <span className=\"font-semibold text-red-900\">{sale.title}</span>\n              <Badge variant=\"destructive\" className=\"animate-pulse\">\n                {sale.discountPercentage}% OFF\n              </Badge>\n            </div>\n            <div className=\"flex items-center gap-1 text-sm text-red-700\">\n              <Clock className=\"w-4 h-4\" />\n              <span>\n                {timeLeft.days}d {timeLeft.hours}h {timeLeft.minutes}m {timeLeft.seconds}s\n              </span>\n            </div>\n          </div>\n          <Button size=\"sm\" onClick={onShopNow} disabled={isExpired}>\n            Shop Now\n            <ArrowRight className=\"w-4 h-4 ml-1\" />\n          </Button>\n        </div>\n      </Card>\n    );\n  }\n\n  return (\n    <div \n      className=\"relative overflow-hidden rounded-lg\"\n      style={{ \n        backgroundColor: sale.backgroundColor || '#ef4444',\n        color: sale.textColor || 'white'\n      }}\n    >\n      {sale.image && (\n        <div className=\"absolute inset-0\">\n          <img\n            src={sale.image}\n            alt={sale.title}\n            className=\"w-full h-full object-cover opacity-20\"\n          />\n        </div>\n      )}\n      \n      <div className=\"relative p-8 md:p-12\">\n        <div className=\"max-w-6xl mx-auto\">\n          <div className=\"grid lg:grid-cols-2 gap-8 items-center\">\n            <div className=\"space-y-6\">\n              <div className=\"space-y-2\">\n                <div className=\"flex items-center gap-3\">\n                  <Zap className=\"w-8 h-8\" />\n                  <Badge variant=\"secondary\" className=\"bg-white/20 text-white border-white/30\">\n                    Limited Time\n                  </Badge>\n                </div>\n                <h1 className=\"text-4xl md:text-5xl font-bold leading-tight\">\n                  {sale.title}\n                </h1>\n                {sale.subtitle && (\n                  <p className=\"text-xl md:text-2xl opacity-90\">\n                    {sale.subtitle}\n                  </p>\n                )}\n              </div>\n              \n              <p className=\"text-lg opacity-80 leading-relaxed\">\n                {sale.description}\n              </p>\n              \n              <div className=\"flex items-center gap-4\">\n                <div className=\"text-6xl font-bold\">\n                  {sale.discountPercentage}%\n                </div>\n                <div>\n                  <p className=\"text-2xl font-semibold\">OFF</p>\n                  <p className=\"text-sm opacity-75\">Everything</p>\n                </div>\n              </div>\n              \n              <Button \n                size=\"lg\" \n                variant=\"secondary\"\n                onClick={onShopNow}\n                disabled={isExpired}\n                className=\"group bg-white text-black hover:bg-gray-100\"\n              >\n                {isExpired ? 'Sale Ended' : 'Shop Now'}\n                {!isExpired && (\n                  <ArrowRight className=\"w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform\" />\n                )}\n              </Button>\n            </div>\n            \n            <div className=\"flex justify-center\">\n              <div className=\"bg-white/10 backdrop-blur-sm rounded-2xl p-8 text-center\">\n                <div className=\"flex items-center gap-2 justify-center mb-6\">\n                  <Clock className=\"w-6 h-6\" />\n                  <h3 className=\"text-xl font-semibold\">Sale Ends In</h3>\n                </div>\n                \n                {isExpired ? (\n                  <div className=\"text-4xl font-bold\">\n                    EXPIRED\n                  </div>\n                ) : (\n                  <div className=\"grid grid-cols-4 gap-4\">\n                    {[\n                      { label: 'Days', value: timeLeft.days },\n                      { label: 'Hours', value: timeLeft.hours },\n                      { label: 'Minutes', value: timeLeft.minutes },\n                      { label: 'Seconds', value: timeLeft.seconds }\n                    ].map((item) => (\n                      <div key={item.label} className=\"bg-white/20 rounded-lg p-4\">\n                        <div className=\"text-3xl font-bold\">\n                          {item.value.toString().padStart(2, '0')}\n                        </div>\n                        <div className=\"text-sm opacity-75\">\n                          {item.label}\n                        </div>\n                      </div>\n                    ))}\n                  </div>\n                )}\n                \n                <p className=\"text-sm opacity-75 mt-4\">\n                  Hurry! Don't miss out on these amazing deals\n                </p>\n              </div>\n            </div>\n          </div>\n        </div>\n      </div>\n      \n      {/* Decorative Elements */}\n      <div className=\"absolute top-0 right-0 w-64 h-64 bg-white/5 rounded-full -translate-y-32 translate-x-32\" />\n      <div className=\"absolute bottom-0 left-0 w-48 h-48 bg-white/5 rounded-full translate-y-24 -translate-x-24\" />\n    </div>\n  );\n}",
+    "dependencies": {
+      "npm": [
+        "lucide-react"
+      ],
+      "components": [
+        "Button",
+        "Badge",
+        "Card"
+      ]
+    },
+    "props_schema": {
+      "type": "object",
+      "properties": {
+        "sale": {
+          "type": "object",
+          "properties": {
+            "title": {
+              "type": "string"
+            },
+            "subtitle": {
+              "type": "string"
+            },
+            "description": {
+              "type": "string"
+            },
+            "discountPercentage": {
+              "type": "number"
+            },
+            "endDate": {
+              "type": "string"
+            },
+            "image": {
+              "type": "string"
+            },
+            "backgroundColor": {
+              "type": "string"
+            },
+            "textColor": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "title",
+            "description",
+            "discountPercentage",
+            "endDate"
+          ]
+        },
+        "onShopNow": {
+          "type": "function"
+        },
+        "compact": {
+          "type": "boolean"
+        }
+      },
+      "required": [
+        "sale"
+      ]
+    },
+    "example_props": {
+      "sale": {
+        "title": "Black Friday Sale",
+        "subtitle": "Biggest Sale of the Year",
+        "description": "Get incredible discounts on thousands of products across all categories. From electronics to fashion, home goods to beauty products.",
+        "discountPercentage": 50,
+        "endDate": "2024-11-30T23:59:59Z",
+        "backgroundColor": "#dc2626",
+        "textColor": "#ffffff"
+      },
+      "compact": false
+    },
+    "tags": [
+      "sale-banner",
+      "countdown",
+      "e-commerce",
+      "promotion",
+      "urgency"
+    ],
+    "created_at": "2025-07-17T04:05:25.964500",
+    "updated_at": "2025-07-17T04:05:25.964502"
+  },
+  {
+    "id": "70a06b38-00ac-46c4-a2d8-f6f9bc4159b8",
+    "name": "Wishlist Grid",
+    "description": "User wishlist display with product management",
+    "block_type": "wishlist",
+    "app_type": "e-commerce",
+    "react_template": "import React from 'react';\nimport { Card, CardContent, CardFooter } from '@/components/ui/card';\nimport { Button } from '@/components/ui/button';\nimport { Badge } from '@/components/ui/badge';\nimport { Heart, ShoppingCart, Share2, X, Star } from 'lucide-react';\n\ninterface WishlistItem {\n  id: string;\n  name: string;\n  price: number;\n  originalPrice?: number;\n  image: string;\n  inStock: boolean;\n  rating?: number;\n  reviews?: number;\n  addedDate: string;\n}\n\ninterface WishlistGridProps {\n  items: WishlistItem[];\n  onRemoveFromWishlist: (itemId: string) => void;\n  onAddToCart: (itemId: string) => void;\n  onShare?: (itemId: string) => void;\n  onViewProduct?: (itemId: string) => void;\n  emptyMessage?: string;\n}\n\nexport function WishlistGrid({\n  items,\n  onRemoveFromWishlist,\n  onAddToCart,\n  onShare,\n  onViewProduct,\n  emptyMessage = \"Your wishlist is empty. Start adding items you love!\"\n}: WishlistGridProps) {\n  if (items.length === 0) {\n    return (\n      <div className=\"flex flex-col items-center justify-center py-16 px-4\">\n        <div className=\"w-32 h-32 rounded-full bg-muted flex items-center justify-center mb-6\">\n          <Heart className=\"w-16 h-16 text-muted-foreground\" />\n        </div>\n        <h2 className=\"text-2xl font-semibold mb-4\">Your Wishlist is Empty</h2>\n        <p className=\"text-muted-foreground text-center max-w-md mb-8\">\n          {emptyMessage}\n        </p>\n        <Button size=\"lg\">\n          Start Shopping\n        </Button>\n      </div>\n    );\n  }\n\n  return (\n    <div className=\"space-y-6\">\n      <div className=\"flex items-center justify-between\">\n        <h1 className=\"text-2xl font-semibold\">\n          My Wishlist ({items.length} {items.length === 1 ? 'item' : 'items'})\n        </h1>\n        <div className=\"text-sm text-muted-foreground\">\n          Last updated: {new Date().toLocaleDateString()}\n        </div>\n      </div>\n\n      <div className=\"grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6\">\n        {items.map((item) => {\n          const discount = item.originalPrice \n            ? Math.round(((item.originalPrice - item.price) / item.originalPrice) * 100)\n            : 0;\n\n          return (\n            <Card key={item.id} className=\"group relative\">\n              <button\n                onClick={() => onRemoveFromWishlist(item.id)}\n                className=\"absolute top-3 right-3 z-10 p-2 bg-background/80 backdrop-blur rounded-full opacity-0 group-hover:opacity-100 transition-opacity\"\n                title=\"Remove from wishlist\"\n              >\n                <X className=\"w-4 h-4\" />\n              </button>\n\n              {discount > 0 && (\n                <Badge \n                  variant=\"destructive\" \n                  className=\"absolute top-3 left-3 z-10\"\n                >\n                  -{discount}%\n                </Badge>\n              )}\n\n              {!item.inStock && (\n                <Badge \n                  variant=\"secondary\" \n                  className=\"absolute top-3 left-3 z-10 bg-gray-500 text-white\"\n                >\n                  Out of Stock\n                </Badge>\n              )}\n\n              <div \n                className=\"cursor-pointer\"\n                onClick={() => onViewProduct?.(item.id)}\n              >\n                <div className=\"aspect-square relative overflow-hidden\">\n                  <img\n                    src={item.image}\n                    alt={item.name}\n                    className=\"w-full h-full object-cover group-hover:scale-105 transition-transform duration-300\"\n                  />\n                </div>\n\n                <CardContent className=\"p-4\">\n                  <h3 className=\"font-semibold text-base mb-2 line-clamp-2 group-hover:text-primary transition-colors\">\n                    {item.name}\n                  </h3>\n\n                  {item.rating && item.reviews && (\n                    <div className=\"flex items-center gap-2 mb-2\">\n                      <div className=\"flex items-center\">\n                        {[...Array(5)].map((_, i) => (\n                          <Star\n                            key={i}\n                            className={`w-3 h-3 ${\n                              i < Math.floor(item.rating!)\n                                ? 'fill-primary text-primary'\n                                : 'text-muted'\n                            }`}\n                          />\n                        ))}\n                      </div>\n                      <span className=\"text-xs text-muted-foreground\">\n                        ({item.reviews})\n                      </span>\n                    </div>\n                  )}\n\n                  <div className=\"flex items-center gap-2 mb-2\">\n                    <p className=\"text-lg font-semibold\">\n                      ${item.price.toFixed(2)}\n                    </p>\n                    {item.originalPrice && (\n                      <p className=\"text-sm text-muted-foreground line-through\">\n                        ${item.originalPrice.toFixed(2)}\n                      </p>\n                    )}\n                  </div>\n\n                  <p className=\"text-xs text-muted-foreground\">\n                    Added {new Date(item.addedDate).toLocaleDateString()}\n                  </p>\n                </CardContent>\n              </div>\n\n              <CardFooter className=\"p-4 pt-0 space-y-2\">\n                <Button\n                  className=\"w-full\"\n                  onClick={() => onAddToCart(item.id)}\n                  disabled={!item.inStock}\n                >\n                  <ShoppingCart className=\"w-4 h-4 mr-2\" />\n                  {item.inStock ? 'Add to Cart' : 'Out of Stock'}\n                </Button>\n\n                <div className=\"flex gap-2 w-full\">\n                  <Button\n                    variant=\"outline\"\n                    size=\"sm\"\n                    className=\"flex-1\"\n                    onClick={() => onShare?.(item.id)}\n                  >\n                    <Share2 className=\"w-3 h-3 mr-1\" />\n                    Share\n                  </Button>\n                  <Button\n                    variant=\"outline\"\n                    size=\"sm\"\n                    className=\"flex-1\"\n                    onClick={() => onRemoveFromWishlist(item.id)}\n                  >\n                    <Heart className=\"w-3 h-3 mr-1 fill-current\" />\n                    Remove\n                  </Button>\n                </div>\n              </CardFooter>\n            </Card>\n          );\n        })}\n      </div>\n    </div>\n  );\n}",
+    "dependencies": {
+      "npm": [
+        "lucide-react"
+      ],
+      "components": [
+        "Card",
+        "Button",
+        "Badge"
+      ]
+    },
+    "props_schema": {
+      "type": "object",
+      "properties": {
+        "items": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "id": {
+                "type": "string"
+              },
+              "name": {
+                "type": "string"
+              },
+              "price": {
+                "type": "number"
+              },
+              "originalPrice": {
+                "type": "number"
+              },
+              "image": {
+                "type": "string"
+              },
+              "inStock": {
+                "type": "boolean"
+              },
+              "rating": {
+                "type": "number"
+              },
+              "reviews": {
+                "type": "number"
+              },
+              "addedDate": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "id",
+              "name",
+              "price",
+              "image",
+              "inStock",
+              "addedDate"
+            ]
+          }
+        },
+        "onRemoveFromWishlist": {
+          "type": "function"
+        },
+        "onAddToCart": {
+          "type": "function"
+        },
+        "onShare": {
+          "type": "function"
+        },
+        "onViewProduct": {
+          "type": "function"
+        },
+        "emptyMessage": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "items",
+        "onRemoveFromWishlist",
+        "onAddToCart"
+      ]
+    },
+    "example_props": {
+      "items": [
+        {
+          "id": "1",
+          "name": "Wireless Noise-Cancelling Headphones",
+          "price": 199.99,
+          "originalPrice": 249.99,
+          "image": "/api/placeholder/300/300",
+          "inStock": true,
+          "rating": 4.5,
+          "reviews": 128,
+          "addedDate": "2024-01-15T10:30:00Z"
+        },
+        {
+          "id": "2",
+          "name": "Smart Fitness Watch",
+          "price": 299.99,
+          "image": "/api/placeholder/300/300",
+          "inStock": false,
+          "rating": 4.2,
+          "reviews": 89,
+          "addedDate": "2024-01-10T14:20:00Z"
+        },
+        {
+          "id": "3",
+          "name": "Portable Bluetooth Speaker",
+          "price": 79.99,
+          "originalPrice": 99.99,
+          "image": "/api/placeholder/300/300",
+          "inStock": true,
+          "rating": 4.7,
+          "reviews": 234,
+          "addedDate": "2024-01-05T09:15:00Z"
+        }
+      ]
+    },
+    "tags": [
+      "wishlist",
+      "e-commerce",
+      "favorites",
+      "user-account",
+      "product-management"
+    ],
+    "created_at": "2025-07-17T04:05:25.964513",
+    "updated_at": "2025-07-17T04:05:25.964516"
+  }
+]

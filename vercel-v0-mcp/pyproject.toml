@@ -1,0 +1,19 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "vercel-v0-mcp"
+version = "0.1.0"
+description = "MCP server for Vercel v0 UI component generation"
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = [
+    "fastmcp>=0.1.0",
+    "openai>=1.0.0",
+    "python-dotenv>=1.0.0",
+    "uvicorn>=0.20.0",
+]
+
+[project.scripts]
+vercel-v0-mcp = "vercel_v0_server:main"

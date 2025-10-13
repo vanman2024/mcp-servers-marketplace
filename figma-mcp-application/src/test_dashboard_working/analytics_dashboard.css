@@ -1,0 +1,53 @@
+/* Analytics Dashboard Styles */
+:root {
+  --color-primary: #3B82F6;
+  --color-secondary: #8B5CF6;
+  --color-success: #10B981;
+  --color-warning: #F59E0B;
+  --color-error: #EF4444;
+  --color-info: #3B82F6;
+  --color-background: #FFFFFF;
+  --color-surface: #F9FAFB;
+  --color-text: #111827;
+  --color-textsecondary: #6B7280;
+  --color-border: #E5E7EB;
+}
+
+
+.dashboard-shell {
+    display: grid;
+    grid-template-columns: 16rem 1fr;
+    min-height: 100vh;
+}
+
+.sidebar {
+    background: var(--sidebar-bg);
+    border-right: 1px solid var(--border-color);
+    overflow-y: auto;
+}
+
+.main-content {
+    background: var(--content-bg);
+    overflow-y: auto;
+}
+
+/* Responsive breakpoints */
+@media (max-width: 768px) {
+    .dashboard-shell {
+        grid-template-columns: 1fr;
+    }
+    
+    .sidebar {
+        position: fixed;
+        top: 0;
+        left: -100%;
+        z-index: 50;
+        width: 16rem;
+        height: 100vh;
+        transition: left 0.3s ease;
+    }
+    
+    .sidebar.open {
+        left: 0;
+    }
+}

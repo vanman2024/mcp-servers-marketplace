@@ -1,0 +1,167 @@
+[
+  {
+    "figma_id": "13:2142",
+    "name": "separator",
+    "description": "",
+    "category_id": "0b25761c-856d-4306-8d4e-6888b09c286b",
+    "figma_url": "https://www.figma.com/file/JGMQqO02q6wLSyk29RDsgh?node-id=13%3A2142",
+    "component_type": "layout",
+    "tags": [
+      "layout"
+    ],
+    "complexity_score": 1,
+    "popularity_score": 0,
+    "props": {
+      "layoutMode": "VERTICAL"
+    },
+    "figma_node_type": "COMPONENT",
+    "width": 252.0,
+    "height": 90.0,
+    "status": "active",
+    "last_synced": "2025-07-14T01:37:30.756995+00:00"
+  },
+  {
+    "figma_id": "13:2119",
+    "name": "slider",
+    "description": "",
+    "category_id": "36ba3882-188b-4ee6-8cde-0e746f24331e",
+    "figma_url": "https://www.figma.com/file/JGMQqO02q6wLSyk29RDsgh?node-id=13%3A2119",
+    "component_type": "form",
+    "tags": [
+      "form"
+    ],
+    "complexity_score": 1,
+    "popularity_score": 0,
+    "props": {},
+    "figma_node_type": "COMPONENT",
+    "width": 414.0,
+    "height": 8.0,
+    "status": "active",
+    "last_synced": "2025-07-14T01:37:30.757037+00:00"
+  },
+  {
+    "figma_id": "13:492",
+    "name": "tabs and content",
+    "description": "",
+    "category_id": "0b25761c-856d-4306-8d4e-6888b09c286b",
+    "figma_url": "https://www.figma.com/file/JGMQqO02q6wLSyk29RDsgh?node-id=13%3A492",
+    "component_type": "layout",
+    "tags": [
+      "layout"
+    ],
+    "complexity_score": 1,
+    "popularity_score": 0,
+    "props": {
+      "layoutMode": "VERTICAL"
+    },
+    "figma_node_type": "COMPONENT",
+    "width": 400.0,
+    "height": 344.0,
+    "status": "active",
+    "last_synced": "2025-07-14T01:37:30.757066+00:00"
+  },
+  {
+    "figma_id": "13:896",
+    "name": "tooltip",
+    "description": "",
+    "category_id": "39a395a4-fd92-4580-ab84-85ded91963e9",
+    "figma_url": "https://www.figma.com/file/JGMQqO02q6wLSyk29RDsgh?node-id=13%3A896",
+    "component_type": "overlay",
+    "tags": [
+      "overlay"
+    ],
+    "complexity_score": 2,
+    "popularity_score": 0,
+    "props": {
+      "layoutMode": "HORIZONTAL",
+      "fills": [
+        {
+          "blendMode": "NORMAL",
+          "type": "SOLID",
+          "color": {
+            "r": 1.0,
+            "g": 1.0,
+            "b": 1.0,
+            "a": 1.0
+          }
+        }
+      ],
+      "effects": [
+        {
+          "type": "DROP_SHADOW",
+          "visible": true,
+          "color": {
+            "r": 0.11764705926179886,
+            "g": 0.16078431904315948,
+            "b": 0.23137255012989044,
+            "a": 0.25
+          },
+          "blendMode": "NORMAL",
+          "offset": {
+            "x": 0.0,
+            "y": 2.0
+          },
+          "radius": 4.0,
+          "showShadowBehindNode": false
+        }
+      ]
+    },
+    "figma_node_type": "COMPONENT",
+    "width": 117.0,
+    "height": 34.0,
+    "status": "active",
+    "last_synced": "2025-07-14T01:37:30.757106+00:00"
+  },
+  {
+    "figma_id": "13:888",
+    "name": "popover",
+    "description": "",
+    "category_id": "39a395a4-fd92-4580-ab84-85ded91963e9",
+    "figma_url": "https://www.figma.com/file/JGMQqO02q6wLSyk29RDsgh?node-id=13%3A888",
+    "component_type": "overlay",
+    "tags": [
+      "overlay"
+    ],
+    "complexity_score": 2,
+    "popularity_score": 0,
+    "props": {
+      "layoutMode": "VERTICAL",
+      "fills": [
+        {
+          "blendMode": "NORMAL",
+          "type": "SOLID",
+          "color": {
+            "r": 1.0,
+            "g": 1.0,
+            "b": 1.0,
+            "a": 1.0
+          }
+        }
+      ],
+      "effects": [
+        {
+          "type": "DROP_SHADOW",
+          "visible": true,
+          "color": {
+            "r": 0.0,
+            "g": 0.0,
+            "b": 0.0,
+            "a": 0.09000000357627869
+          },
+          "blendMode": "NORMAL",
+          "offset": {
+            "x": 0.0,
+            "y": 4.0
+          },
+          "radius": 6.0,
+          "showShadowBehindNode": false
+        }
+      ]
+    },
+    "figma_node_type": "COMPONENT",
+    "width": 320.0,
+    "height": 265.0,
+    "status": "active",
+    "last_synced": "2025-07-14T01:37:30.757125+00:00"
+  }
+]

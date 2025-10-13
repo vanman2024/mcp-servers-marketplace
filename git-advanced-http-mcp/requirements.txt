@@ -1,0 +1,7 @@
+# Git Advanced MCP Server Requirements
+fastmcp>=2.7.1
+aiohttp>=3.9.0
+python-dotenv>=1.0.0
+
+# Optional for enhanced functionality
+gitpython>=3.1.40  # For more advanced git operations if needed later

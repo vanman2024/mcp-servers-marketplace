@@ -1,0 +1,19 @@
+[project]
+name = "sequential-thinking-http-mcp"
+version = "0.1.0"
+description = "Sequential thinking MCP server with HTTP transport"
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = [
+    "fastmcp==0.2.6",
+    "uvicorn>=0.20.0,<1",
+    "httpx>=0.24.0",
+    "python-dotenv>=1.0.0"
+]
+
+[project.scripts]
+sequential-thinking-server = "sequential_thinking_server:main"
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"

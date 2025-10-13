@@ -1,0 +1,73 @@
+{
+  "taxonomy": {
+    "Page Sections": {
+      "description": "Marketing page sections and layouts",
+      "subcategories": {
+        "Hero Sections": ["hero-centered", "hero-split", "hero-with-image", "hero-with-video", "hero-gradient"],
+        "Feature Sections": ["feature-grid", "feature-list", "feature-showcase", "feature-comparison", "feature-timeline"],
+        "CTA Sections": ["cta-banner", "cta-split", "cta-centered", "cta-with-form", "cta-action"],
+        "Bento Grids": ["bento-basic", "bento-mixed", "bento-featured", "bento-asymmetric"],
+        "Pricing Sections": ["pricing-simple", "pricing-comparison", "pricing-tiers", "pricing-toggle"],
+        "Header Sections": ["header-marketing", "header-sticky", "header-transparent", "header-with-cta"],
+        "Newsletter Sections": ["newsletter-simple", "newsletter-with-image", "newsletter-inline", "newsletter-popup"],
+        "Stats": ["stats-simple", "stats-with-icons", "stats-grid", "stats-highlighted"],
+        "Testimonials": ["testimonial-grid", "testimonial-carousel", "testimonial-single", "testimonial-featured"],
+        "Blog Sections": ["blog-grid", "blog-list", "blog-featured", "blog-cards"],
+        "Contact Sections": ["contact-form", "contact-info", "contact-map", "contact-split"],
+        "Team Sections": ["team-grid", "team-list", "team-cards", "team-leadership"],
+        "Content Sections": ["content-split", "content-centered", "content-with-image", "content-columns"],
+        "Logo Clouds": ["logo-simple", "logo-with-background", "logo-grid", "logo-carousel"],
+        "FAQs": ["faq-simple", "faq-accordion", "faq-with-icons", "faq-split"],
+        "Footers": ["footer-simple", "footer-with-logo", "footer-newsletter", "footer-social"]
+      }
+    },
+    "Elements": {
+      "description": "Individual marketing elements and components",
+      "subcategories": {
+        "Headers": ["header-basic", "header-with-nav", "header-with-search", "header-mobile"],
+        "Flyout Menus": ["flyout-basic", "flyout-with-icons", "flyout-with-description", "flyout-mega"],
+        "Banners": ["banner-promo", "banner-announcement", "banner-cookie", "banner-discount"],
+        "Feedback": ["feedback-form", "feedback-rating", "feedback-survey", "feedback-widget"],
+        "404 Pages": ["404-simple", "404-with-search", "404-with-links", "404-illustrated"]
+      }
+    },
+    "Page Examples": {
+      "description": "Complete marketing page layouts",
+      "subcategories": {
+        "Landing Pages": ["landing-saas", "landing-product", "landing-service", "landing-event"],
+        "Pricing Pages": ["pricing-saas", "pricing-product", "pricing-service", "pricing-comparison"],
+        "About Pages": ["about-company", "about-team", "about-mission", "about-story"]
+      }
+    }
+  },
+  "component_template": {
+    "name": "Component Name",
+    "category": "Page Sections|Elements|Page Examples",
+    "subcategory": "Specific Subcategory",
+    "tags": ["marketing", "landing", "conversion"],
+    "source": "tailwind-ui-marketing",
+    "code": "<!-- TSX/JSX code here -->",
+    "description": "Brief description of the marketing component",
+    "components_used": ["Button", "Input", "Card"],
+    "props": {
+      "title": "Component Title",
+      "description": "Component Description",
+      "ctaText": "Call to Action",
+      "ctaHref": "#"
+    },
+    "variants": {
+      "size": ["sm", "md", "lg"],
+      "color": ["primary", "secondary", "accent"],
+      "style": ["simple", "gradient", "image"]
+    },
+    "dependencies": ["@headlessui/react", "react"],
+    "responsive": true,
+    "accessibility": {
+      "aria_labels": true,
+      "keyboard_navigation": true,
+      "screen_reader_support": true
+    },
+    "conversion_optimized": true,
+    "seo_friendly": true
+  }
+}

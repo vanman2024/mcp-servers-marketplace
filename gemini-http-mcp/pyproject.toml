@@ -1,0 +1,21 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "gemini-http-mcp"
+version = "0.1.0"
+description = "MCP server for Google Gemini AI operations via HTTP"
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = [
+    "fastmcp>=0.1.0",
+    "python-dotenv>=1.0.0",
+    "uvicorn>=0.20.0",
+    "httpx>=0.24.0",
+    "google-generativeai>=0.7.0",
+    "Pillow>=10.0.0",
+]
+
+[project.scripts]
+gemini-http-mcp = "gemini_server:main"

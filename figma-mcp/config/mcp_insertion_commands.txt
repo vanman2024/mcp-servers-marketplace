@@ -1,0 +1,134 @@
+# MCP Supabase insertion commands
+# Run these one by one with the MCP tools
+
+# Batch 1 - batch_001.json
+# mcp__supabase-v4__insert_data:
+# - table: figma_components
+# - data: batch_001.json
+# - project_id: wsmhiiharnhqupdniwgw
+
+# Batch 2 - batch_002.json
+# mcp__supabase-v4__insert_data:
+# - table: figma_components
+# - data: batch_002.json
+# - project_id: wsmhiiharnhqupdniwgw
+
+# Batch 3 - batch_003.json
+# mcp__supabase-v4__insert_data:
+# - table: figma_components
+# - data: batch_003.json
+# - project_id: wsmhiiharnhqupdniwgw
+
+# Batch 4 - batch_004.json
+# mcp__supabase-v4__insert_data:
+# - table: figma_components
+# - data: batch_004.json
+# - project_id: wsmhiiharnhqupdniwgw
+
+# Batch 5 - batch_005.json
+# mcp__supabase-v4__insert_data:
+# - table: figma_components
+# - data: batch_005.json
+# - project_id: wsmhiiharnhqupdniwgw
+
+# Batch 6 - batch_006.json
+# mcp__supabase-v4__insert_data:
+# - table: figma_components
+# - data: batch_006.json
+# - project_id: wsmhiiharnhqupdniwgw
+
+# Batch 7 - batch_007.json
+# mcp__supabase-v4__insert_data:
+# - table: figma_components
+# - data: batch_007.json
+# - project_id: wsmhiiharnhqupdniwgw
+
+# Batch 8 - batch_008.json
+# mcp__supabase-v4__insert_data:
+# - table: figma_components
+# - data: batch_008.json
+# - project_id: wsmhiiharnhqupdniwgw
+
+# Batch 9 - batch_009.json
+# mcp__supabase-v4__insert_data:
+# - table: figma_components
+# - data: batch_009.json
+# - project_id: wsmhiiharnhqupdniwgw
+
+# Batch 10 - batch_010.json
+# mcp__supabase-v4__insert_data:
+# - table: figma_components
+# - data: batch_010.json
+# - project_id: wsmhiiharnhqupdniwgw
+
+# Batch 11 - batch_011.json
+# mcp__supabase-v4__insert_data:
+# - table: figma_components
+# - data: batch_011.json
+# - project_id: wsmhiiharnhqupdniwgw
+
+# Batch 12 - batch_012.json
+# mcp__supabase-v4__insert_data:
+# - table: figma_components
+# - data: batch_012.json
+# - project_id: wsmhiiharnhqupdniwgw
+
+# Batch 13 - batch_013.json
+# mcp__supabase-v4__insert_data:
+# - table: figma_components
+# - data: batch_013.json
+# - project_id: wsmhiiharnhqupdniwgw
+
+# Batch 14 - batch_014.json
+# mcp__supabase-v4__insert_data:
+# - table: figma_components
+# - data: batch_014.json
+# - project_id: wsmhiiharnhqupdniwgw
+
+# Batch 15 - batch_015.json
+# mcp__supabase-v4__insert_data:
+# - table: figma_components
+# - data: batch_015.json
+# - project_id: wsmhiiharnhqupdniwgw
+
+# Batch 16 - batch_016.json
+# mcp__supabase-v4__insert_data:
+# - table: figma_components
+# - data: batch_016.json
+# - project_id: wsmhiiharnhqupdniwgw
+
+# Batch 17 - batch_017.json
+# mcp__supabase-v4__insert_data:
+# - table: figma_components
+# - data: batch_017.json
+# - project_id: wsmhiiharnhqupdniwgw
+
+# Batch 18 - batch_018.json
+# mcp__supabase-v4__insert_data:
+# - table: figma_components
+# - data: batch_018.json
+# - project_id: wsmhiiharnhqupdniwgw
+
+# Batch 19 - batch_019.json
+# mcp__supabase-v4__insert_data:
+# - table: figma_components
+# - data: batch_019.json
+# - project_id: wsmhiiharnhqupdniwgw
+
+# Batch 20 - batch_020.json
+# mcp__supabase-v4__insert_data:
+# - table: figma_components
+# - data: batch_020.json
+# - project_id: wsmhiiharnhqupdniwgw
+
+# Batch 21 - batch_021.json
+# mcp__supabase-v4__insert_data:
+# - table: figma_components
+# - data: batch_021.json
+# - project_id: wsmhiiharnhqupdniwgw
+
+# Batch 22 - batch_022.json
+# mcp__supabase-v4__insert_data:
+# - table: figma_components
+# - data: batch_022.json
+# - project_id: wsmhiiharnhqupdniwgw

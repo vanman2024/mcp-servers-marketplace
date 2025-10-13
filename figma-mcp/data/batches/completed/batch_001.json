@@ -1,0 +1,1679 @@
+[
+  {
+    "figma_id": "13:2142",
+    "name": "separator",
+    "description": "",
+    "category_id": "0b25761c-856d-4306-8d4e-6888b09c286b",
+    "figma_url": "https://www.figma.com/file/JGMQqO02q6wLSyk29RDsgh?node-id=13%3A2142",
+    "component_type": "layout",
+    "tags": [
+      "layout"
+    ],
+    "complexity_score": 1,
+    "popularity_score": 0,
+    "props": {
+      "layoutMode": "VERTICAL"
+    },
+    "figma_node_type": "COMPONENT",
+    "width": 252.0,
+    "height": 90.0,
+    "status": "active",
+    "last_synced": "2025-07-14T01:37:30.756995+00:00"
+  },
+  {
+    "figma_id": "13:2119",
+    "name": "slider",
+    "description": "",
+    "category_id": "36ba3882-188b-4ee6-8cde-0e746f24331e",
+    "figma_url": "https://www.figma.com/file/JGMQqO02q6wLSyk29RDsgh?node-id=13%3A2119",
+    "component_type": "form",
+    "tags": [
+      "form"
+    ],
+    "complexity_score": 1,
+    "popularity_score": 0,
+    "props": {},
+    "figma_node_type": "COMPONENT",
+    "width": 414.0,
+    "height": 8.0,
+    "status": "active",
+    "last_synced": "2025-07-14T01:37:30.757037+00:00"
+  },
+  {
+    "figma_id": "13:492",
+    "name": "tabs and content",
+    "description": "",
+    "category_id": "0b25761c-856d-4306-8d4e-6888b09c286b",
+    "figma_url": "https://www.figma.com/file/JGMQqO02q6wLSyk29RDsgh?node-id=13%3A492",
+    "component_type": "layout",
+    "tags": [
+      "layout"
+    ],
+    "complexity_score": 1,
+    "popularity_score": 0,
+    "props": {
+      "layoutMode": "VERTICAL"
+    },
+    "figma_node_type": "COMPONENT",
+    "width": 400.0,
+    "height": 344.0,
+    "status": "active",
+    "last_synced": "2025-07-14T01:37:30.757066+00:00"
+  },
+  {
+    "figma_id": "13:896",
+    "name": "tooltip",
+    "description": "",
+    "category_id": "39a395a4-fd92-4580-ab84-85ded91963e9",
+    "figma_url": "https://www.figma.com/file/JGMQqO02q6wLSyk29RDsgh?node-id=13%3A896",
+    "component_type": "overlay",
+    "tags": [
+      "overlay"
+    ],
+    "complexity_score": 2,
+    "popularity_score": 0,
+    "props": {
+      "layoutMode": "HORIZONTAL",
+      "fills": [
+        {
+          "blendMode": "NORMAL",
+          "type": "SOLID",
+          "color": {
+            "r": 1.0,
+            "g": 1.0,
+            "b": 1.0,
+            "a": 1.0
+          }
+        }
+      ],
+      "effects": [
+        {
+          "type": "DROP_SHADOW",
+          "visible": true,
+          "color": {
+            "r": 0.11764705926179886,
+            "g": 0.16078431904315948,
+            "b": 0.23137255012989044,
+            "a": 0.25
+          },
+          "blendMode": "NORMAL",
+          "offset": {
+            "x": 0.0,
+            "y": 2.0
+          },
+          "radius": 4.0,
+          "showShadowBehindNode": false
+        }
+      ]
+    },
+    "figma_node_type": "COMPONENT",
+    "width": 117.0,
+    "height": 34.0,
+    "status": "active",
+    "last_synced": "2025-07-14T01:37:30.757106+00:00"
+  },
+  {
+    "figma_id": "13:888",
+    "name": "popover",
+    "description": "",
+    "category_id": "39a395a4-fd92-4580-ab84-85ded91963e9",
+    "figma_url": "https://www.figma.com/file/JGMQqO02q6wLSyk29RDsgh?node-id=13%3A888",
+    "component_type": "overlay",
+    "tags": [
+      "overlay"
+    ],
+    "complexity_score": 2,
+    "popularity_score": 0,
+    "props": {
+      "layoutMode": "VERTICAL",
+      "fills": [
+        {
+          "blendMode": "NORMAL",
+          "type": "SOLID",
+          "color": {
+            "r": 1.0,
+            "g": 1.0,
+            "b": 1.0,
+            "a": 1.0
+          }
+        }
+      ],
+      "effects": [
+        {
+          "type": "DROP_SHADOW",
+          "visible": true,
+          "color": {
+            "r": 0.0,
+            "g": 0.0,
+            "b": 0.0,
+            "a": 0.09000000357627869
+          },
+          "blendMode": "NORMAL",
+          "offset": {
+            "x": 0.0,
+            "y": 4.0
+          },
+          "radius": 6.0,
+          "showShadowBehindNode": false
+        }
+      ]
+    },
+    "figma_node_type": "COMPONENT",
+    "width": 320.0,
+    "height": 265.0,
+    "status": "active",
+    "last_synced": "2025-07-14T01:37:30.757125+00:00"
+  },
+  {
+    "figma_id": "13:1649",
+    "name": "progress",
+    "description": "",
+    "category_id": "62856418-308d-40fd-9734-652914399ff4",
+    "figma_url": "https://www.figma.com/file/JGMQqO02q6wLSyk29RDsgh?node-id=13%3A1649",
+    "component_type": "feedback",
+    "tags": [
+      "feedback"
+    ],
+    "complexity_score": 1,
+    "popularity_score": 0,
+    "props": {},
+    "figma_node_type": "COMPONENT",
+    "width": 414.0,
+    "height": 16.0,
+    "status": "active",
+    "last_synced": "2025-07-14T01:37:30.757152+00:00"
+  },
+  {
+    "figma_id": "13:1679",
+    "name": "radio group",
+    "description": "",
+    "category_id": "36ba3882-188b-4ee6-8cde-0e746f24331e",
+    "figma_url": "https://www.figma.com/file/JGMQqO02q6wLSyk29RDsgh?node-id=13%3A1679",
+    "component_type": "form",
+    "tags": [
+      "form"
+    ],
+    "complexity_score": 1,
+    "popularity_score": 0,
+    "props": {
+      "layoutMode": "VERTICAL"
+    },
+    "figma_node_type": "COMPONENT",
+    "width": 108.0,
+    "height": 64.0,
+    "status": "active",
+    "last_synced": "2025-07-14T01:37:30.757168+00:00"
+  },
+  {
+    "figma_id": "20:1084",
+    "name": "scroll-area",
+    "description": "",
+    "category_id": "0b25761c-856d-4306-8d4e-6888b09c286b",
+    "figma_url": "https://www.figma.com/file/JGMQqO02q6wLSyk29RDsgh?node-id=20%3A1084",
+    "component_type": "component",
+    "tags": [
+      "component"
+    ],
+    "complexity_score": 1,
+    "popularity_score": 0,
+    "props": {
+      "layoutMode": "VERTICAL",
+      "fills": [
+        {
+          "blendMode": "NORMAL",
+          "type": "SOLID",
+          "color": {
+            "r": 1.0,
+            "g": 1.0,
+            "b": 1.0,
+            "a": 1.0
+          }
+        }
+      ]
+    },
+    "figma_node_type": "COMPONENT",
+    "width": 190.0,
+    "height": 278.0,
+    "status": "active",
+    "last_synced": "2025-07-14T01:37:30.757189+00:00"
+  },
+  {
+    "figma_id": "8:302",
+    "name": "select",
+    "description": "",
+    "category_id": "36ba3882-188b-4ee6-8cde-0e746f24331e",
+    "figma_url": "https://www.figma.com/file/JGMQqO02q6wLSyk29RDsgh?node-id=8%3A302",
+    "component_type": "form",
+    "tags": [
+      "form"
+    ],
+    "complexity_score": 1,
+    "popularity_score": 0,
+    "props": {
+      "layoutMode": "HORIZONTAL",
+      "primaryAxisSizingMode": "FIXED",
+      "fills": [
+        {
+          "blendMode": "NORMAL",
+          "type": "SOLID",
+          "color": {
+            "r": 1.0,
+            "g": 1.0,
+            "b": 1.0,
+            "a": 1.0
+          }
+        }
+      ]
+    },
+    "figma_node_type": "COMPONENT",
+    "width": 204.0,
+    "height": 40.0,
+    "status": "active",
+    "last_synced": "2025-07-14T01:37:30.757213+00:00"
+  },
+  {
+    "figma_id": "13:2034",
+    "name": "select options",
+    "description": "",
+    "category_id": "36ba3882-188b-4ee6-8cde-0e746f24331e",
+    "figma_url": "https://www.figma.com/file/JGMQqO02q6wLSyk29RDsgh?node-id=13%3A2034",
+    "component_type": "form",
+    "tags": [
+      "form"
+    ],
+    "complexity_score": 2,
+    "popularity_score": 0,
+    "props": {
+      "layoutMode": "HORIZONTAL",
+      "primaryAxisSizingMode": "FIXED",
+      "effects": [
+        {
+          "type": "DROP_SHADOW",
+          "visible": true,
+          "color": {
+            "r": 0.0,
+            "g": 0.0,
+            "b": 0.0,
+            "a": 0.09000000357627869
+          },
+          "blendMode": "NORMAL",
+          "offset": {
+            "x": 0.0,
+            "y": 4.0
+          },
+          "radius": 6.0,
+          "showShadowBehindNode": false
+        }
+      ]
+    },
+    "figma_node_type": "COMPONENT",
+    "width": 204.0,
+    "height": 510.0,
+    "status": "active",
+    "last_synced": "2025-07-14T01:37:30.757226+00:00"
+  },
+  {
+    "figma_id": "4:462",
+    "name": "hover card",
+    "description": "",
+    "category_id": "372f1392-4989-42d7-81b1-8ce4b1c010a3",
+    "figma_url": "https://www.figma.com/file/JGMQqO02q6wLSyk29RDsgh?node-id=4%3A462",
+    "component_type": "card",
+    "tags": [
+      "hover",
+      "card"
+    ],
+    "complexity_score": 2,
+    "popularity_score": 0,
+    "props": {
+      "layoutMode": "HORIZONTAL",
+      "fills": [
+        {
+          "blendMode": "NORMAL",
+          "type": "SOLID",
+          "color": {
+            "r": 1.0,
+            "g": 1.0,
+            "b": 1.0,
+            "a": 1.0
+          }
+        }
+      ],
+      "effects": [
+        {
+          "type": "DROP_SHADOW",
+          "visible": true,
+          "color": {
+            "r": 0.6833333373069763,
+            "g": 0.6833333373069763,
+            "b": 0.6833333373069763,
+            "a": 0.25
+          },
+          "blendMode": "NORMAL",
+          "offset": {
+            "x": 0.0,
+            "y": 4.0
+          },
+          "radius": 4.0,
+          "showShadowBehindNode": false
+        }
+      ]
+    },
+    "figma_node_type": "COMPONENT",
+    "width": 320.0,
+    "height": 118.0,
+    "status": "active",
+    "last_synced": "2025-07-14T01:37:30.757311+00:00"
+  },
+  {
+    "figma_id": "21:1142",
+    "name": "label",
+    "description": "",
+    "category_id": "0b25761c-856d-4306-8d4e-6888b09c286b",
+    "figma_url": "https://www.figma.com/file/JGMQqO02q6wLSyk29RDsgh?node-id=21%3A1142",
+    "component_type": "component",
+    "tags": [
+      "component"
+    ],
+    "complexity_score": 1,
+    "popularity_score": 0,
+    "props": {
+      "layoutMode": "HORIZONTAL"
+    },
+    "figma_node_type": "COMPONENT",
+    "width": 207.0,
+    "height": 14.0,
+    "status": "active",
+    "last_synced": "2025-07-14T01:37:30.757341+00:00"
+  },
+  {
+    "figma_id": "13:443",
+    "name": "menubar and content",
+    "description": "",
+    "category_id": "8a783d0c-d70f-4700-b649-ade1cfded25d",
+    "figma_url": "https://www.figma.com/file/JGMQqO02q6wLSyk29RDsgh?node-id=13%3A443",
+    "component_type": "navigation",
+    "tags": [
+      "navigation"
+    ],
+    "complexity_score": 1,
+    "popularity_score": 0,
+    "props": {
+      "layoutMode": "VERTICAL"
+    },
+    "figma_node_type": "COMPONENT",
+    "width": 233.0,
+    "height": 234.0,
+    "status": "active",
+    "last_synced": "2025-07-14T01:37:30.757356+00:00"
+  },
+  {
+    "figma_id": "13:788",
+    "name": "navigation menu and content",
+    "description": "",
+    "category_id": "8a783d0c-d70f-4700-b649-ade1cfded25d",
+    "figma_url": "https://www.figma.com/file/JGMQqO02q6wLSyk29RDsgh?node-id=13%3A788",
+    "component_type": "navigation",
+    "tags": [
+      "navigation"
+    ],
+    "complexity_score": 1,
+    "popularity_score": 0,
+    "props": {
+      "layoutMode": "VERTICAL"
+    },
+    "figma_node_type": "COMPONENT",
+    "width": 499.0,
+    "height": 362.0,
+    "status": "active",
+    "last_synced": "2025-07-14T01:37:30.757413+00:00"
+  },
+  {
+    "figma_id": "57:1305",
+    "name": "command",
+    "description": "",
+    "category_id": "0b25761c-856d-4306-8d4e-6888b09c286b",
+    "figma_url": "https://www.figma.com/file/JGMQqO02q6wLSyk29RDsgh?node-id=57%3A1305",
+    "component_type": "component",
+    "tags": [
+      "component"
+    ],
+    "complexity_score": 2,
+    "popularity_score": 0,
+    "props": {
+      "layoutMode": "VERTICAL",
+      "effects": [
+        {
+          "type": "DROP_SHADOW",
+          "visible": true,
+          "color": {
+            "r": 0.0,
+            "g": 0.0,
+            "b": 0.0,
+            "a": 0.09000000357627869
+          },
+          "blendMode": "NORMAL",
+          "offset": {
+            "x": 0.0,
+            "y": 4.0
+          },
+          "radius": 6.0,
+          "showShadowBehindNode": false
+        }
+      ]
+    },
+    "figma_node_type": "COMPONENT",
+    "width": 690.0,
+    "height": 320.0,
+    "status": "active",
+    "last_synced": "2025-07-14T01:37:30.757464+00:00"
+  },
+  {
+    "figma_id": "12:393",
+    "name": "context menu",
+    "description": "",
+    "category_id": "8a783d0c-d70f-4700-b649-ade1cfded25d",
+    "figma_url": "https://www.figma.com/file/JGMQqO02q6wLSyk29RDsgh?node-id=12%3A393",
+    "component_type": "navigation",
+    "tags": [
+      "navigation"
+    ],
+    "complexity_score": 2,
+    "popularity_score": 0,
+    "props": {
+      "layoutMode": "HORIZONTAL",
+      "effects": [
+        {
+          "type": "DROP_SHADOW",
+          "visible": true,
+          "color": {
+            "r": 0.0,
+            "g": 0.0,
+            "b": 0.0,
+            "a": 0.09000000357627869
+          },
+          "blendMode": "NORMAL",
+          "offset": {
+            "x": 0.0,
+            "y": 4.0
+          },
+          "radius": 6.0,
+          "showShadowBehindNode": false
+        }
+      ]
+    },
+    "figma_node_type": "COMPONENT",
+    "width": 256.0,
+    "height": 360.0,
+    "status": "active",
+    "last_synced": "2025-07-14T01:37:30.757510+00:00"
+  },
+  {
+    "figma_id": "4:329",
+    "name": "dialog",
+    "description": "",
+    "category_id": "39a395a4-fd92-4580-ab84-85ded91963e9",
+    "figma_url": "https://www.figma.com/file/JGMQqO02q6wLSyk29RDsgh?node-id=4%3A329",
+    "component_type": "modal",
+    "tags": [
+      "modal"
+    ],
+    "complexity_score": 1,
+    "popularity_score": 0,
+    "props": {
+      "layoutMode": "VERTICAL",
+      "fills": [
+        {
+          "blendMode": "NORMAL",
+          "type": "SOLID",
+          "color": {
+            "r": 1.0,
+            "g": 1.0,
+            "b": 1.0,
+            "a": 1.0
+          }
+        }
+      ]
+    },
+    "figma_node_type": "COMPONENT",
+    "width": 425.0,
+    "height": 316.0,
+    "status": "active",
+    "last_synced": "2025-07-14T01:37:30.757559+00:00"
+  },
+  {
+    "figma_id": "4:6588",
+    "name": "dropdown menu",
+    "description": "",
+    "category_id": "8a783d0c-d70f-4700-b649-ade1cfded25d",
+    "figma_url": "https://www.figma.com/file/JGMQqO02q6wLSyk29RDsgh?node-id=4%3A6588",
+    "component_type": "navigation",
+    "tags": [
+      "navigation"
+    ],
+    "complexity_score": 3,
+    "popularity_score": 0,
+    "props": {
+      "layoutMode": "VERTICAL",
+      "effects": [
+        {
+          "type": "DROP_SHADOW",
+          "visible": true,
+          "color": {
+            "r": 0.0,
+            "g": 0.0,
+            "b": 0.0,
+            "a": 0.09000000357627869
+          },
+          "blendMode": "NORMAL",
+          "offset": {
+            "x": 0.0,
+            "y": 4.0
+          },
+          "radius": 6.0,
+          "showShadowBehindNode": false
+        }
+      ]
+    },
+    "figma_node_type": "COMPONENT",
+    "width": 224.0,
+    "height": 424.0002746582031,
+    "status": "active",
+    "last_synced": "2025-07-14T01:37:30.757580+00:00"
+  },
+  {
+    "figma_id": "6:237",
+    "name": "accordion",
+    "description": "",
+    "category_id": "0b25761c-856d-4306-8d4e-6888b09c286b",
+    "figma_url": "https://www.figma.com/file/JGMQqO02q6wLSyk29RDsgh?node-id=6%3A237",
+    "component_type": "layout",
+    "tags": [
+      "layout"
+    ],
+    "complexity_score": 1,
+    "popularity_score": 0,
+    "props": {
+      "layoutMode": "VERTICAL",
+      "fills": [
+        {
+          "blendMode": "NORMAL",
+          "type": "SOLID",
+          "color": {
+            "r": 1.0,
+            "g": 1.0,
+            "b": 1.0,
+            "a": 1.0
+          }
+        }
+      ]
+    },
+    "figma_node_type": "COMPONENT",
+    "width": 498.0,
+    "height": 252.0,
+    "status": "active",
+    "last_synced": "2025-07-14T01:37:30.757641+00:00"
+  },
+  {
+    "figma_id": "1:78",
+    "name": "alter dialog",
+    "description": "",
+    "category_id": "39a395a4-fd92-4580-ab84-85ded91963e9",
+    "figma_url": "https://www.figma.com/file/JGMQqO02q6wLSyk29RDsgh?node-id=1%3A78",
+    "component_type": "modal",
+    "tags": [
+      "modal"
+    ],
+    "complexity_score": 1,
+    "popularity_score": 0,
+    "props": {
+      "layoutMode": "VERTICAL",
+      "fills": [
+        {
+          "blendMode": "NORMAL",
+          "type": "SOLID",
+          "color": {
+            "r": 1.0,
+            "g": 1.0,
+            "b": 1.0,
+            "a": 1.0
+          }
+        }
+      ]
+    },
+    "figma_node_type": "COMPONENT",
+    "width": 512.0,
+    "height": 180.0,
+    "status": "active",
+    "last_synced": "2025-07-14T01:37:30.757660+00:00"
+  },
+  {
+    "figma_id": "21:1392",
+    "name": "table",
+    "description": "",
+    "category_id": "d5d6e30f-01f6-4278-8228-624b6cd3572e",
+    "figma_url": "https://www.figma.com/file/JGMQqO02q6wLSyk29RDsgh?node-id=21%3A1392",
+    "component_type": "data-display",
+    "tags": [
+      "data-display"
+    ],
+    "complexity_score": 1,
+    "popularity_score": 0,
+    "props": {
+      "layoutMode": "VERTICAL"
+    },
+    "figma_node_type": "COMPONENT",
+    "width": 689.0,
+    "height": 160.0,
+    "status": "active",
+    "last_synced": "2025-07-14T01:37:30.757773+00:00"
+  },
+  {
+    "figma_id": "1:72",
+    "name": "button - type=default, state=Default",
+    "description": "Variant of button",
+    "category_id": "67c515c4-87e1-44a6-997f-0773c9b82669",
+    "figma_url": "https://www.figma.com/file/JGMQqO02q6wLSyk29RDsgh?node-id=1%3A72",
+    "component_type": "button",
+    "tags": [
+      "button",
+      "default"
+    ],
+    "complexity_score": 1,
+    "popularity_score": 0,
+    "props": {
+      "layoutMode": "HORIZONTAL",
+      "fills": [
+        {
+          "blendMode": "NORMAL",
+          "type": "SOLID",
+          "color": {
+            "r": 0.05882352963089943,
+            "g": 0.09019608050584793,
+            "b": 0.16470588743686676,
+            "a": 1.0
+          }
+        }
+      ]
+    },
+    "figma_node_type": "COMPONENT",
+    "width": 93.0,
+    "height": 40.0,
+    "status": "active",
+    "last_synced": "2025-07-14T01:37:30.757923+00:00"
+  },
+  {
+    "figma_id": "13:903",
+    "name": "button - type=primary button, state=hover",
+    "description": "Variant of button",
+    "category_id": "67c515c4-87e1-44a6-997f-0773c9b82669",
+    "figma_url": "https://www.figma.com/file/JGMQqO02q6wLSyk29RDsgh?node-id=13%3A903",
+    "component_type": "button",
+    "tags": [
+      "hover",
+      "button",
+      "primary"
+    ],
+    "complexity_score": 1,
+    "popularity_score": 0,
+    "props": {
+      "layoutMode": "HORIZONTAL",
+      "fills": [
+        {
+          "blendMode": "NORMAL",
+          "type": "SOLID",
+          "color": {
+            "r": 0.20000000298023224,
+            "g": 0.2549019753932953,
+            "b": 0.3333333432674408,
+            "a": 1.0
+          }
+        }
+      ]
+    },
+    "figma_node_type": "COMPONENT",
+    "width": 93.0,
+    "height": 40.0,
+    "status": "active",
+    "last_synced": "2025-07-14T01:37:30.757940+00:00"
+  },
+  {
+    "figma_id": "1:86",
+    "name": "button - type=destructive, state=Default",
+    "description": "Variant of button",
+    "category_id": "67c515c4-87e1-44a6-997f-0773c9b82669",
+    "figma_url": "https://www.figma.com/file/JGMQqO02q6wLSyk29RDsgh?node-id=1%3A86",
+    "component_type": "button",
+    "tags": [
+      "button",
+      "default",
+      "destructive"
+    ],
+    "complexity_score": 1,
+    "popularity_score": 0,
+    "props": {
+      "layoutMode": "HORIZONTAL",
+      "fills": [
+        {
+          "blendMode": "NORMAL",
+          "type": "SOLID",
+          "color": {
+            "r": 0.9372549057006836,
+            "g": 0.2666666805744171,
+            "b": 0.2666666805744171,
+            "a": 1.0
+          }
+        }
+      ]
+    },
+    "figma_node_type": "COMPONENT",
+    "width": 110.0,
+    "height": 40.0,
+    "status": "active",
+    "last_synced": "2025-07-14T01:37:30.757990+00:00"
+  },
+  {
+    "figma_id": "13:905",
+    "name": "button - type=destructive, state=hover",
+    "description": "Variant of button",
+    "category_id": "67c515c4-87e1-44a6-997f-0773c9b82669",
+    "figma_url": "https://www.figma.com/file/JGMQqO02q6wLSyk29RDsgh?node-id=13%3A905",
+    "component_type": "button",
+    "tags": [
+      "hover",
+      "button",
+      "destructive"
+    ],
+    "complexity_score": 1,
+    "popularity_score": 0,
+    "props": {
+      "layoutMode": "HORIZONTAL",
+      "fills": [
+        {
+          "blendMode": "NORMAL",
+          "type": "SOLID",
+          "color": {
+            "r": 0.8627451062202454,
+            "g": 0.14901961386203766,
+            "b": 0.14901961386203766,
+            "a": 1.0
+          }
+        }
+      ]
+    },
+    "figma_node_type": "COMPONENT",
+    "width": 110.0,
+    "height": 40.0,
+    "status": "active",
+    "last_synced": "2025-07-14T01:37:30.758004+00:00"
+  },
+  {
+    "figma_id": "1:73",
+    "name": "button - type=outline, state=Default",
+    "description": "Variant of button",
+    "category_id": "67c515c4-87e1-44a6-997f-0773c9b82669",
+    "figma_url": "https://www.figma.com/file/JGMQqO02q6wLSyk29RDsgh?node-id=1%3A73",
+    "component_type": "button",
+    "tags": [
+      "outline",
+      "button",
+      "default"
+    ],
+    "complexity_score": 1,
+    "popularity_score": 0,
+    "props": {
+      "layoutMode": "HORIZONTAL",
+      "fills": [
+        {
+          "blendMode": "NORMAL",
+          "type": "SOLID",
+          "color": {
+            "r": 1.0,
+            "g": 1.0,
+            "b": 1.0,
+            "a": 1.0
+          }
+        }
+      ]
+    },
+    "figma_node_type": "COMPONENT",
+    "width": 79.0,
+    "height": 40.0,
+    "status": "active",
+    "last_synced": "2025-07-14T01:37:30.758017+00:00"
+  },
+  {
+    "figma_id": "13:901",
+    "name": "button - type=outline, state=hover",
+    "description": "Variant of button",
+    "category_id": "67c515c4-87e1-44a6-997f-0773c9b82669",
+    "figma_url": "https://www.figma.com/file/JGMQqO02q6wLSyk29RDsgh?node-id=13%3A901",
+    "component_type": "button",
+    "tags": [
+      "outline",
+      "button",
+      "hover"
+    ],
+    "complexity_score": 1,
+    "popularity_score": 0,
+    "props": {
+      "layoutMode": "HORIZONTAL",
+      "fills": [
+        {
+          "blendMode": "NORMAL",
+          "type": "SOLID",
+          "color": {
+            "r": 0.9450980424880981,
+            "g": 0.9607843160629272,
+            "b": 0.9764705896377563,
+            "a": 1.0
+          }
+        }
+      ]
+    },
+    "figma_node_type": "COMPONENT",
+    "width": 79.0,
+    "height": 40.0,
+    "status": "active",
+    "last_synced": "2025-07-14T01:37:30.758028+00:00"
+  },
+  {
+    "figma_id": "1:88",
+    "name": "button - type=subtle, state=Default",
+    "description": "Variant of button",
+    "category_id": "67c515c4-87e1-44a6-997f-0773c9b82669",
+    "figma_url": "https://www.figma.com/file/JGMQqO02q6wLSyk29RDsgh?node-id=1%3A88",
+    "component_type": "button",
+    "tags": [
+      "button",
+      "default"
+    ],
+    "complexity_score": 1,
+    "popularity_score": 0,
+    "props": {
+      "layoutMode": "HORIZONTAL",
+      "fills": [
+        {
+          "blendMode": "NORMAL",
+          "type": "SOLID",
+          "color": {
+            "r": 0.9450980424880981,
+            "g": 0.9607843160629272,
+            "b": 0.9764705896377563,
+            "a": 1.0
+          }
+        }
+      ]
+    },
+    "figma_node_type": "COMPONENT",
+    "width": 76.0,
+    "height": 40.0,
+    "status": "active",
+    "last_synced": "2025-07-14T01:37:30.758037+00:00"
+  },
+  {
+    "figma_id": "13:907",
+    "name": "button - type=subtle, state=hover",
+    "description": "Variant of button",
+    "category_id": "67c515c4-87e1-44a6-997f-0773c9b82669",
+    "figma_url": "https://www.figma.com/file/JGMQqO02q6wLSyk29RDsgh?node-id=13%3A907",
+    "component_type": "button",
+    "tags": [
+      "hover",
+      "button"
+    ],
+    "complexity_score": 1,
+    "popularity_score": 0,
+    "props": {
+      "layoutMode": "HORIZONTAL",
+      "fills": [
+        {
+          "blendMode": "NORMAL",
+          "type": "SOLID",
+          "color": {
+            "r": 0.886274516582489,
+            "g": 0.9098039269447327,
+            "b": 0.9411764740943909,
+            "a": 1.0
+          }
+        }
+      ]
+    },
+    "figma_node_type": "COMPONENT",
+    "width": 76.0,
+    "height": 40.0,
+    "status": "active",
+    "last_synced": "2025-07-14T01:37:30.758046+00:00"
+  },
+  {
+    "figma_id": "1:90",
+    "name": "button - type=ghost, state=Default",
+    "description": "Variant of button",
+    "category_id": "67c515c4-87e1-44a6-997f-0773c9b82669",
+    "figma_url": "https://www.figma.com/file/JGMQqO02q6wLSyk29RDsgh?node-id=1%3A90",
+    "component_type": "button",
+    "tags": [
+      "ghost",
+      "default",
+      "button"
+    ],
+    "complexity_score": 1,
+    "popularity_score": 0,
+    "props": {
+      "layoutMode": "HORIZONTAL",
+      "fills": [
+        {
+          "opacity": 0.0,
+          "blendMode": "NORMAL",
+          "type": "SOLID",
+          "color": {
+            "r": 1.0,
+            "g": 1.0,
+            "b": 1.0,
+            "a": 1.0
+          }
+        }
+      ]
+    },
+    "figma_node_type": "COMPONENT",
+    "width": 73.0,
+    "height": 40.0,
+    "status": "active",
+    "last_synced": "2025-07-14T01:37:30.758055+00:00"
+  },
+  {
+    "figma_id": "13:911",
+    "name": "button - type=ghost, state=hover",
+    "description": "Variant of button",
+    "category_id": "67c515c4-87e1-44a6-997f-0773c9b82669",
+    "figma_url": "https://www.figma.com/file/JGMQqO02q6wLSyk29RDsgh?node-id=13%3A911",
+    "component_type": "button",
+    "tags": [
+      "hover",
+      "ghost",
+      "button"
+    ],
+    "complexity_score": 1,
+    "popularity_score": 0,
+    "props": {
+      "layoutMode": "HORIZONTAL",
+      "fills": [
+        {
+          "blendMode": "NORMAL",
+          "type": "SOLID",
+          "color": {
+            "r": 0.9450980424880981,
+            "g": 0.9607843160629272,
+            "b": 0.9764705896377563,
+            "a": 1.0
+          }
+        }
+      ]
+    },
+    "figma_node_type": "COMPONENT",
+    "width": 73.0,
+    "height": 40.0,
+    "status": "active",
+    "last_synced": "2025-07-14T01:37:30.758064+00:00"
+  },
+  {
+    "figma_id": "1:92",
+    "name": "button - type=link, state=Default",
+    "description": "Variant of button",
+    "category_id": "67c515c4-87e1-44a6-997f-0773c9b82669",
+    "figma_url": "https://www.figma.com/file/JGMQqO02q6wLSyk29RDsgh?node-id=1%3A92",
+    "component_type": "button",
+    "tags": [
+      "button",
+      "link",
+      "default"
+    ],
+    "complexity_score": 1,
+    "popularity_score": 0,
+    "props": {
+      "layoutMode": "HORIZONTAL",
+      "fills": [
+        {
+          "opacity": 0.0,
+          "blendMode": "NORMAL",
+          "type": "SOLID",
+          "color": {
+            "r": 1.0,
+            "g": 1.0,
+            "b": 1.0,
+            "a": 1.0
+          }
+        }
+      ]
+    },
+    "figma_node_type": "COMPONENT",
+    "width": 60.0,
+    "height": 40.0,
+    "status": "active",
+    "last_synced": "2025-07-14T01:37:30.758073+00:00"
+  },
+  {
+    "figma_id": "13:913",
+    "name": "button - type=link, state=hover",
+    "description": "Variant of button",
+    "category_id": "67c515c4-87e1-44a6-997f-0773c9b82669",
+    "figma_url": "https://www.figma.com/file/JGMQqO02q6wLSyk29RDsgh?node-id=13%3A913",
+    "component_type": "button",
+    "tags": [
+      "hover",
+      "button",
+      "link"
+    ],
+    "complexity_score": 1,
+    "popularity_score": 0,
+    "props": {
+      "layoutMode": "HORIZONTAL",
+      "fills": [
+        {
+          "opacity": 0.0,
+          "blendMode": "NORMAL",
+          "type": "SOLID",
+          "color": {
+            "r": 1.0,
+            "g": 1.0,
+            "b": 1.0,
+            "a": 1.0
+          }
+        }
+      ]
+    },
+    "figma_node_type": "COMPONENT",
+    "width": 60.0,
+    "height": 40.0,
+    "status": "active",
+    "last_synced": "2025-07-14T01:37:30.758082+00:00"
+  },
+  {
+    "figma_id": "1:94",
+    "name": "button - type=with icon, state=Default",
+    "description": "Variant of button",
+    "category_id": "67c515c4-87e1-44a6-997f-0773c9b82669",
+    "figma_url": "https://www.figma.com/file/JGMQqO02q6wLSyk29RDsgh?node-id=1%3A94",
+    "component_type": "button",
+    "tags": [
+      "button",
+      "default"
+    ],
+    "complexity_score": 1,
+    "popularity_score": 0,
+    "props": {
+      "layoutMode": "HORIZONTAL",
+      "fills": [
+        {
+          "blendMode": "NORMAL",
+          "type": "SOLID",
+          "color": {
+            "r": 0.05882352963089943,
+            "g": 0.09019608050584793,
+            "b": 0.16470588743686676,
+            "a": 1.0
+          }
+        }
+      ]
+    },
+    "figma_node_type": "COMPONENT",
+    "width": 165.0,
+    "height": 40.0,
+    "status": "active",
+    "last_synced": "2025-07-14T01:37:30.758093+00:00"
+  },
+  {
+    "figma_id": "13:2231",
+    "name": "button - type=just icon, state=Default",
+    "description": "Variant of button",
+    "category_id": "67c515c4-87e1-44a6-997f-0773c9b82669",
+    "figma_url": "https://www.figma.com/file/JGMQqO02q6wLSyk29RDsgh?node-id=13%3A2231",
+    "component_type": "button",
+    "tags": [
+      "button",
+      "default"
+    ],
+    "complexity_score": 1,
+    "popularity_score": 0,
+    "props": {
+      "layoutMode": "HORIZONTAL",
+      "fills": [
+        {
+          "blendMode": "NORMAL",
+          "type": "SOLID",
+          "color": {
+            "r": 1.0,
+            "g": 1.0,
+            "b": 1.0,
+            "a": 1.0
+          }
+        }
+      ]
+    },
+    "figma_node_type": "COMPONENT",
+    "width": 32.0,
+    "height": 32.0,
+    "status": "active",
+    "last_synced": "2025-07-14T01:37:30.758103+00:00"
+  },
+  {
+    "figma_id": "13:2239",
+    "name": "button - type=just icon, state=hover",
+    "description": "Variant of button",
+    "category_id": "67c515c4-87e1-44a6-997f-0773c9b82669",
+    "figma_url": "https://www.figma.com/file/JGMQqO02q6wLSyk29RDsgh?node-id=13%3A2239",
+    "component_type": "button",
+    "tags": [
+      "hover",
+      "button"
+    ],
+    "complexity_score": 1,
+    "popularity_score": 0,
+    "props": {
+      "layoutMode": "HORIZONTAL",
+      "fills": [
+        {
+          "blendMode": "NORMAL",
+          "type": "SOLID",
+          "color": {
+            "r": 0.9450980424880981,
+            "g": 0.9607843160629272,
+            "b": 0.9764705896377563,
+            "a": 1.0
+          }
+        }
+      ]
+    },
+    "figma_node_type": "COMPONENT",
+    "width": 32.0,
+    "height": 32.0,
+    "status": "active",
+    "last_synced": "2025-07-14T01:37:30.758112+00:00"
+  },
+  {
+    "figma_id": "13:2247",
+    "name": "button - type=just icon circle, state=Default",
+    "description": "Variant of button",
+    "category_id": "67c515c4-87e1-44a6-997f-0773c9b82669",
+    "figma_url": "https://www.figma.com/file/JGMQqO02q6wLSyk29RDsgh?node-id=13%3A2247",
+    "component_type": "button",
+    "tags": [
+      "button",
+      "default"
+    ],
+    "complexity_score": 1,
+    "popularity_score": 0,
+    "props": {
+      "layoutMode": "HORIZONTAL",
+      "fills": [
+        {
+          "blendMode": "NORMAL",
+          "type": "SOLID",
+          "color": {
+            "r": 1.0,
+            "g": 1.0,
+            "b": 1.0,
+            "a": 1.0
+          }
+        }
+      ]
+    },
+    "figma_node_type": "COMPONENT",
+    "width": 40.0,
+    "height": 40.0,
+    "status": "active",
+    "last_synced": "2025-07-14T01:37:30.758121+00:00"
+  },
+  {
+    "figma_id": "13:2257",
+    "name": "button - type=just icon circle, state=hover",
+    "description": "Variant of button",
+    "category_id": "67c515c4-87e1-44a6-997f-0773c9b82669",
+    "figma_url": "https://www.figma.com/file/JGMQqO02q6wLSyk29RDsgh?node-id=13%3A2257",
+    "component_type": "button",
+    "tags": [
+      "hover",
+      "button"
+    ],
+    "complexity_score": 1,
+    "popularity_score": 0,
+    "props": {
+      "layoutMode": "HORIZONTAL",
+      "fills": [
+        {
+          "blendMode": "NORMAL",
+          "type": "SOLID",
+          "color": {
+            "r": 0.9450980424880981,
+            "g": 0.9607843160629272,
+            "b": 0.9764705896377563,
+            "a": 1.0
+          }
+        }
+      ]
+    },
+    "figma_node_type": "COMPONENT",
+    "width": 40.0,
+    "height": 40.0,
+    "status": "active",
+    "last_synced": "2025-07-14T01:37:30.758130+00:00"
+  },
+  {
+    "figma_id": "13:936",
+    "name": "button - type=with icon, state=hover",
+    "description": "Variant of button",
+    "category_id": "67c515c4-87e1-44a6-997f-0773c9b82669",
+    "figma_url": "https://www.figma.com/file/JGMQqO02q6wLSyk29RDsgh?node-id=13%3A936",
+    "component_type": "button",
+    "tags": [
+      "hover",
+      "button"
+    ],
+    "complexity_score": 1,
+    "popularity_score": 0,
+    "props": {
+      "layoutMode": "HORIZONTAL",
+      "fills": [
+        {
+          "blendMode": "NORMAL",
+          "type": "SOLID",
+          "color": {
+            "r": 0.20000000298023224,
+            "g": 0.2549019753932953,
+            "b": 0.3333333432674408,
+            "a": 1.0
+          }
+        }
+      ]
+    },
+    "figma_node_type": "COMPONENT",
+    "width": 165.0,
+    "height": 40.0,
+    "status": "active",
+    "last_synced": "2025-07-14T01:37:30.758141+00:00"
+  },
+  {
+    "figma_id": "1:99",
+    "name": "button - type=loading, state=Default",
+    "description": "Variant of button",
+    "category_id": "67c515c4-87e1-44a6-997f-0773c9b82669",
+    "figma_url": "https://www.figma.com/file/JGMQqO02q6wLSyk29RDsgh?node-id=1%3A99",
+    "component_type": "button",
+    "tags": [
+      "loading",
+      "button",
+      "default"
+    ],
+    "complexity_score": 1,
+    "popularity_score": 0,
+    "props": {
+      "layoutMode": "HORIZONTAL",
+      "fills": [
+        {
+          "opacity": 0.5,
+          "blendMode": "NORMAL",
+          "type": "SOLID",
+          "color": {
+            "r": 0.05882352963089943,
+            "g": 0.09019608050584793,
+            "b": 0.16470588743686676,
+            "a": 1.0
+          }
+        }
+      ]
+    },
+    "figma_node_type": "COMPONENT",
+    "width": 110.0000228881836,
+    "height": 40.0,
+    "status": "active",
+    "last_synced": "2025-07-14T01:37:30.758152+00:00"
+  },
+  {
+    "figma_id": "1:72",
+    "name": "type=default, state=Default",
+    "description": "",
+    "category_id": "0b25761c-856d-4306-8d4e-6888b09c286b",
+    "figma_url": "https://www.figma.com/file/JGMQqO02q6wLSyk29RDsgh?node-id=1%3A72",
+    "component_type": "component",
+    "tags": [
+      "component",
+      "default"
+    ],
+    "complexity_score": 1,
+    "popularity_score": 0,
+    "props": {
+      "layoutMode": "HORIZONTAL",
+      "fills": [
+        {
+          "blendMode": "NORMAL",
+          "type": "SOLID",
+          "color": {
+            "r": 0.05882352963089943,
+            "g": 0.09019608050584793,
+            "b": 0.16470588743686676,
+            "a": 1.0
+          }
+        }
+      ]
+    },
+    "figma_node_type": "COMPONENT",
+    "width": 93.0,
+    "height": 40.0,
+    "status": "active",
+    "last_synced": "2025-07-14T01:37:30.758169+00:00"
+  },
+  {
+    "figma_id": "13:903",
+    "name": "type=primary button, state=hover",
+    "description": "",
+    "category_id": "67c515c4-87e1-44a6-997f-0773c9b82669",
+    "figma_url": "https://www.figma.com/file/JGMQqO02q6wLSyk29RDsgh?node-id=13%3A903",
+    "component_type": "button",
+    "tags": [
+      "hover",
+      "button",
+      "primary"
+    ],
+    "complexity_score": 1,
+    "popularity_score": 0,
+    "props": {
+      "layoutMode": "HORIZONTAL",
+      "fills": [
+        {
+          "blendMode": "NORMAL",
+          "type": "SOLID",
+          "color": {
+            "r": 0.20000000298023224,
+            "g": 0.2549019753932953,
+            "b": 0.3333333432674408,
+            "a": 1.0
+          }
+        }
+      ]
+    },
+    "figma_node_type": "COMPONENT",
+    "width": 93.0,
+    "height": 40.0,
+    "status": "active",
+    "last_synced": "2025-07-14T01:37:30.758182+00:00"
+  },
+  {
+    "figma_id": "1:86",
+    "name": "type=destructive, state=Default",
+    "description": "",
+    "category_id": "0b25761c-856d-4306-8d4e-6888b09c286b",
+    "figma_url": "https://www.figma.com/file/JGMQqO02q6wLSyk29RDsgh?node-id=1%3A86",
+    "component_type": "component",
+    "tags": [
+      "component",
+      "default",
+      "destructive"
+    ],
+    "complexity_score": 1,
+    "popularity_score": 0,
+    "props": {
+      "layoutMode": "HORIZONTAL",
+      "fills": [
+        {
+          "blendMode": "NORMAL",
+          "type": "SOLID",
+          "color": {
+            "r": 0.9372549057006836,
+            "g": 0.2666666805744171,
+            "b": 0.2666666805744171,
+            "a": 1.0
+          }
+        }
+      ]
+    },
+    "figma_node_type": "COMPONENT",
+    "width": 110.0,
+    "height": 40.0,
+    "status": "active",
+    "last_synced": "2025-07-14T01:37:30.758197+00:00"
+  },
+  {
+    "figma_id": "13:905",
+    "name": "type=destructive, state=hover",
+    "description": "",
+    "category_id": "0b25761c-856d-4306-8d4e-6888b09c286b",
+    "figma_url": "https://www.figma.com/file/JGMQqO02q6wLSyk29RDsgh?node-id=13%3A905",
+    "component_type": "component",
+    "tags": [
+      "hover",
+      "component",
+      "destructive"
+    ],
+    "complexity_score": 1,
+    "popularity_score": 0,
+    "props": {
+      "layoutMode": "HORIZONTAL",
+      "fills": [
+        {
+          "blendMode": "NORMAL",
+          "type": "SOLID",
+          "color": {
+            "r": 0.8627451062202454,
+            "g": 0.14901961386203766,
+            "b": 0.14901961386203766,
+            "a": 1.0
+          }
+        }
+      ]
+    },
+    "figma_node_type": "COMPONENT",
+    "width": 110.0,
+    "height": 40.0,
+    "status": "active",
+    "last_synced": "2025-07-14T01:37:30.758211+00:00"
+  },
+  {
+    "figma_id": "1:73",
+    "name": "type=outline, state=Default",
+    "description": "",
+    "category_id": "0b25761c-856d-4306-8d4e-6888b09c286b",
+    "figma_url": "https://www.figma.com/file/JGMQqO02q6wLSyk29RDsgh?node-id=1%3A73",
+    "component_type": "component",
+    "tags": [
+      "outline",
+      "component",
+      "default"
+    ],
+    "complexity_score": 1,
+    "popularity_score": 0,
+    "props": {
+      "layoutMode": "HORIZONTAL",
+      "fills": [
+        {
+          "blendMode": "NORMAL",
+          "type": "SOLID",
+          "color": {
+            "r": 1.0,
+            "g": 1.0,
+            "b": 1.0,
+            "a": 1.0
+          }
+        }
+      ]
+    },
+    "figma_node_type": "COMPONENT",
+    "width": 79.0,
+    "height": 40.0,
+    "status": "active",
+    "last_synced": "2025-07-14T01:37:30.758225+00:00"
+  },
+  {
+    "figma_id": "13:901",
+    "name": "type=outline, state=hover",
+    "description": "",
+    "category_id": "0b25761c-856d-4306-8d4e-6888b09c286b",
+    "figma_url": "https://www.figma.com/file/JGMQqO02q6wLSyk29RDsgh?node-id=13%3A901",
+    "component_type": "component",
+    "tags": [
+      "outline",
+      "component",
+      "hover"
+    ],
+    "complexity_score": 1,
+    "popularity_score": 0,
+    "props": {
+      "layoutMode": "HORIZONTAL",
+      "fills": [
+        {
+          "blendMode": "NORMAL",
+          "type": "SOLID",
+          "color": {
+            "r": 0.9450980424880981,
+            "g": 0.9607843160629272,
+            "b": 0.9764705896377563,
+            "a": 1.0
+          }
+        }
+      ]
+    },
+    "figma_node_type": "COMPONENT",
+    "width": 79.0,
+    "height": 40.0,
+    "status": "active",
+    "last_synced": "2025-07-14T01:37:30.758241+00:00"
+  },
+  {
+    "figma_id": "1:88",
+    "name": "type=subtle, state=Default",
+    "description": "",
+    "category_id": "0b25761c-856d-4306-8d4e-6888b09c286b",
+    "figma_url": "https://www.figma.com/file/JGMQqO02q6wLSyk29RDsgh?node-id=1%3A88",
+    "component_type": "component",
+    "tags": [
+      "component",
+      "default"
+    ],
+    "complexity_score": 1,
+    "popularity_score": 0,
+    "props": {
+      "layoutMode": "HORIZONTAL",
+      "fills": [
+        {
+          "blendMode": "NORMAL",
+          "type": "SOLID",
+          "color": {
+            "r": 0.9450980424880981,
+            "g": 0.9607843160629272,
+            "b": 0.9764705896377563,
+            "a": 1.0
+          }
+        }
+      ]
+    },
+    "figma_node_type": "COMPONENT",
+    "width": 76.0,
+    "height": 40.0,
+    "status": "active",
+    "last_synced": "2025-07-14T01:37:30.758254+00:00"
+  },
+  {
+    "figma_id": "13:907",
+    "name": "type=subtle, state=hover",
+    "description": "",
+    "category_id": "0b25761c-856d-4306-8d4e-6888b09c286b",
+    "figma_url": "https://www.figma.com/file/JGMQqO02q6wLSyk29RDsgh?node-id=13%3A907",
+    "component_type": "component",
+    "tags": [
+      "hover",
+      "component"
+    ],
+    "complexity_score": 1,
+    "popularity_score": 0,
+    "props": {
+      "layoutMode": "HORIZONTAL",
+      "fills": [
+        {
+          "blendMode": "NORMAL",
+          "type": "SOLID",
+          "color": {
+            "r": 0.886274516582489,
+            "g": 0.9098039269447327,
+            "b": 0.9411764740943909,
+            "a": 1.0
+          }
+        }
+      ]
+    },
+    "figma_node_type": "COMPONENT",
+    "width": 76.0,
+    "height": 40.0,
+    "status": "active",
+    "last_synced": "2025-07-14T01:37:30.758268+00:00"
+  },
+  {
+    "figma_id": "1:90",
+    "name": "type=ghost, state=Default",
+    "description": "",
+    "category_id": "0b25761c-856d-4306-8d4e-6888b09c286b",
+    "figma_url": "https://www.figma.com/file/JGMQqO02q6wLSyk29RDsgh?node-id=1%3A90",
+    "component_type": "component",
+    "tags": [
+      "ghost",
+      "component",
+      "default"
+    ],
+    "complexity_score": 1,
+    "popularity_score": 0,
+    "props": {
+      "layoutMode": "HORIZONTAL",
+      "fills": [
+        {
+          "opacity": 0.0,
+          "blendMode": "NORMAL",
+          "type": "SOLID",
+          "color": {
+            "r": 1.0,
+            "g": 1.0,
+            "b": 1.0,
+            "a": 1.0
+          }
+        }
+      ]
+    },
+    "figma_node_type": "COMPONENT",
+    "width": 73.0,
+    "height": 40.0,
+    "status": "active",
+    "last_synced": "2025-07-14T01:37:30.758281+00:00"
+  },
+  {
+    "figma_id": "13:911",
+    "name": "type=ghost, state=hover",
+    "description": "",
+    "category_id": "0b25761c-856d-4306-8d4e-6888b09c286b",
+    "figma_url": "https://www.figma.com/file/JGMQqO02q6wLSyk29RDsgh?node-id=13%3A911",
+    "component_type": "component",
+    "tags": [
+      "hover",
+      "ghost",
+      "component"
+    ],
+    "complexity_score": 1,
+    "popularity_score": 0,
+    "props": {
+      "layoutMode": "HORIZONTAL",
+      "fills": [
+        {
+          "blendMode": "NORMAL",
+          "type": "SOLID",
+          "color": {
+            "r": 0.9450980424880981,
+            "g": 0.9607843160629272,
+            "b": 0.9764705896377563,
+            "a": 1.0
+          }
+        }
+      ]
+    },
+    "figma_node_type": "COMPONENT",
+    "width": 73.0,
+    "height": 40.0,
+    "status": "active",
+    "last_synced": "2025-07-14T01:37:30.758294+00:00"
+  }
+]
