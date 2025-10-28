@@ -1,0 +1,7 @@
+# TODO: Fill in exact dependencies for routing-http-mcp
+# Suggested baseline (uncomment as needed):
+# fastmcp>=0.1.0
+# uvicorn>=0.20.0
+# python-dotenv>=1.0.0
+# httpx>=0.24.0
+
