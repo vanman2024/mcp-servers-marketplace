@@ -16,7 +16,6 @@
         "email": "noreply@ai-dev-marketplace.dev"
       },
       "source": "./plugins/fastmcp",
-      "category": "development",
       "keywords": [
         "fastmcp",
         "mcp",
