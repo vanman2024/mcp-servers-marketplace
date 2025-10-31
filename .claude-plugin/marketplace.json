@@ -1,5 +1,5 @@
 {
-  "name": "mcp-servers-marketplace",
+  "name": "mcp-servers",
   "version": "1.0.0",
   "description": "Marketplace for FastMCP plugin - used to build and deploy MCP servers",
   "owner": {
