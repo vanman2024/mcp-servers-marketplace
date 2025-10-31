@@ -1,0 +1,6 @@
+{
+  "name": "mcp-servers",
+  "version": "1.0.0",
+  "description": "Registry of FastMCP servers",
+  "servers": {}
+}

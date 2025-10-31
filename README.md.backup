@@ -1,0 +1,85 @@
+# MCP Servers
+
+This directory contains FastMCP servers built for this project. All servers are developed in this monorepo for convenience.
+
+## Important: Deployment Architecture
+
+**Development**: All servers live here in `mcp-servers/` monorepo
+**Production**: Choose deployment based on needs (see [DEPLOYMENT.md](./DEPLOYMENT.md))
+
+### Quick Decision Guide
+
+- **STDIO** (local IDEs): Keep in monorepo ✅
+- **HTTP** (your infrastructure): Keep in monorepo ✅
+- **FastMCP Cloud**: Extract to separate repo when ready for production
+
+**TL;DR**: FastMCP Cloud requires one server per GitHub repo, but you develop all servers here and extract only when needed for cloud deployment.
+
+## Structure
+
+Each MCP server has its own directory:
+
+```
+mcp-servers/
+├── my-server/
+│   ├── server.py           # Main server file
+│   ├── fastmcp.json        # (Optional) FastMCP Cloud deployment config
+│   ├── requirements.txt    # Python dependencies
+│   ├── .env.example        # Environment variables template
+│   └── README.md           # Server documentation
+├── another-server/
+│   └── ...
+└── marketplace.json        # Registry of all servers
+```
+
+**Note**: `.mcp.json` files are CLIENT-SIDE (go in projects that USE the server, not here)
+
+## Creating a New MCP Server
+
+Use the FastMCP plugin to create servers:
+
+```bash
+# From the project root
+cd mcp-servers
+/fastmcp:new-server my-server
+```
+
+## Deployment Options
+
+### 1. Local Development (STDIO)
+For use with Claude Desktop, Cursor, or Claude Code:
+
+```bash
+# Test the server
+python my-server/server.py
+
+# Add to your IDE's .mcp.json
+```
+
+### 2. HTTP Server (Local/Remote)
+For web-based access or remote clients:
+
+```bash
+# Run locally
+python my-server/server.py  # Configure for HTTP in code
+
+# Deploy to your infrastructure
+```
+
+### 3. FastMCP Cloud
+For managed hosting:
+
+```bash
+# Deploy to FastMCP Cloud
+# Use fastmcp.json configuration
+```
+
+## Server Registry (marketplace.json)
+
+The `marketplace.json` file tracks all servers in this directory for easy discovery and management.
+
+## Documentation
+
+- FastMCP Plugin: `/home/gotime2022/.claude/plugins/marketplaces/ai-dev-marketplace/plugins/fastmcp/`
+- FastMCP Docs: https://gofastmcp.com/
+- Templates: `plugins/fastmcp/skills/mcp-server-config/templates/`

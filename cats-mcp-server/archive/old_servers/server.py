@@ -94,73 +94,73 @@ def load_toolsets(toolsets: Set[str]):
 
     # DEFAULT TOOLSETS (89 tools)
     if 'candidates' in toolsets or 'all' in toolsets:
-        register_candidates_tools(mcp, make_request)
+        register_candidates_tools()
         print("  ✓ candidates (28 tools)")
 
     if 'jobs' in toolsets or 'all' in toolsets:
-        register_jobs_tools(mcp, make_request)
+        register_jobs_tools()
         print("  ✓ jobs (40 tools)")
 
     if 'pipelines' in toolsets or 'all' in toolsets:
-        register_pipelines_tools(mcp, make_request)
+        register_pipelines_tools()
         print("  ✓ pipelines (13 tools)")
 
     if 'context' in toolsets or 'all' in toolsets:
-        register_context_tools(mcp, make_request)
+        register_context_tools()
         print("  ✓ context (3 tools)")
 
     if 'tasks' in toolsets or 'all' in toolsets:
-        register_tasks_tools(mcp, make_request)
+        register_tasks_tools()
         print("  ✓ tasks (5 tools)")
 
     # RECRUITING TOOLSETS (52 tools)
     if 'companies' in toolsets or 'all' in toolsets:
-        register_companies_tools(mcp, make_request)
+        register_companies_tools()
         print("  ✓ companies (18 tools)")
 
     if 'contacts' in toolsets or 'all' in toolsets:
-        register_contacts_tools(mcp, make_request)
+        register_contacts_tools()
         print("  ✓ contacts (18 tools)")
 
     if 'activities' in toolsets or 'all' in toolsets:
-        register_activities_tools(mcp, make_request)
+        register_activities_tools()
         print("  ✓ activities (6 tools)")
 
     if 'portals' in toolsets or 'all' in toolsets:
-        register_portals_tools(mcp, make_request)
+        register_portals_tools()
         print("  ✓ portals (8 tools)")
 
     if 'work_history' in toolsets or 'all' in toolsets:
-        register_work_history_tools(mcp, make_request)
+        register_work_history_tools()
         print("  ✓ work_history (3 tools)")
 
     # DATA & CONFIG TOOLSETS (21 tools)
     if 'tags' in toolsets or 'all' in toolsets:
-        register_tags_tools(mcp)
+        register_tags_tools()
         print("  ✓ tags (2 tools)")
 
     if 'webhooks' in toolsets or 'all' in toolsets:
-        register_webhooks_tools(mcp)
+        register_webhooks_tools()
         print("  ✓ webhooks (4 tools)")
 
     if 'users' in toolsets or 'all' in toolsets:
-        register_users_tools(mcp)
+        register_users_tools()
         print("  ✓ users (2 tools)")
 
     if 'triggers' in toolsets or 'all' in toolsets:
-        register_triggers_tools(mcp)
+        register_triggers_tools()
         print("  ✓ triggers (2 tools)")
 
     if 'attachments' in toolsets or 'all' in toolsets:
-        register_attachments_tools(mcp)
+        register_attachments_tools()
         print("  ✓ attachments (4 tools)")
 
     if 'backups' in toolsets or 'all' in toolsets:
-        register_backups_tools(mcp)
+        register_backups_tools()
         print("  ✓ backups (3 tools)")
 
     if 'events' in toolsets or 'all' in toolsets:
-        register_events_tools(mcp)
+        register_events_tools()
         print("  ✓ events (5 tools)")
 
     # Calculate and display total
