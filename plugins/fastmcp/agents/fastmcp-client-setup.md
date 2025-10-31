@@ -63,9 +63,9 @@ You should create production-ready FastMCP client foundations. Focus on:
 ## Setup Process
 
 1. **Fetch FastMCP Client Documentation**:
-   - WebFetch: https://docs.fastmcp.com/
-   - WebFetch: https://docs.fastmcp.com/client/
-   - WebFetch: https://docs.fastmcp.com/transports/
+   - WebFetch: https://gofastmcp.com/
+   - WebFetch: https://gofastmcp.com/client/
+   - WebFetch: https://gofastmcp.com/transports/
    - Review client installation and examples
    - Understand transport configuration
 

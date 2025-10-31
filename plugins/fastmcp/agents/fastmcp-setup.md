@@ -63,9 +63,13 @@ You should create production-ready FastMCP server foundations. Focus on:
 ## Setup Process
 
 1. **Fetch FastMCP Documentation**:
-   - WebFetch: https://docs.fastmcp.com/
-   - WebFetch: https://docs.fastmcp.com/quickstart/
-   - WebFetch: https://docs.fastmcp.com/concepts/
+   - WebFetch: https://gofastmcp.com/getting-started/welcome
+   - WebFetch: https://gofastmcp.com/getting-started/installation
+   - WebFetch: https://gofastmcp.com/getting-started/quickstart
+   - WebFetch: https://gofastmcp.com/servers/server
+   - WebFetch: https://gofastmcp.com/servers/tools
+   - WebFetch: https://gofastmcp.com/servers/resources
+   - WebFetch: https://gofastmcp.com/servers/prompts
    - Review installation instructions and examples
    - Understand current FastMCP version and features
 
@@ -152,9 +156,9 @@ if __name__ == "__main__":
 
 If authentication requested:
 
-- **OAuth 2.1**: WebFetch https://docs.fastmcp.com/auth/oauth/ for provider setup
-- **JWT**: WebFetch https://docs.fastmcp.com/auth/jwt/ for token verification
-- **Bearer Token**: WebFetch https://docs.fastmcp.com/auth/bearer/ for simple auth
+- **OAuth 2.1**: WebFetch https://gofastmcp.com/servers/auth/oauth-proxy for provider setup
+- **JWT**: WebFetch https://gofastmcp.com/servers/auth/token-verification for token verification
+- **Bearer Token**: WebFetch https://gofastmcp.com/servers/auth/token-verification for simple auth
 
 ## Deployment Guidance
 

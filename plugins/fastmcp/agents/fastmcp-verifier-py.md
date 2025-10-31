@@ -93,8 +93,8 @@ Actions:
 ### Step 2: Check SDK Documentation Adherence
 
 Actions:
-- WebFetch: https://docs.fastmcp.com/
-- WebFetch: https://docs.fastmcp.com/concepts/
+- WebFetch: https://gofastmcp.com/
+- WebFetch: https://gofastmcp.com/servers/
 - Compare implementation against official patterns
 - Note deviations from documented best practices
 
@@ -112,12 +112,12 @@ Actions:
 - Check server configuration matches documentation
 - Validate patterns follow official examples
 - If features found, fetch specific docs:
-  - If tools: WebFetch https://docs.fastmcp.com/concepts/tools/
-  - If resources: WebFetch https://docs.fastmcp.com/concepts/resources/
-  - If prompts: WebFetch https://docs.fastmcp.com/concepts/prompts/
-  - If OAuth: WebFetch https://docs.fastmcp.com/auth/oauth/
-  - If middleware: WebFetch https://docs.fastmcp.com/concepts/middleware/
-  - If HTTP deployment: WebFetch https://docs.fastmcp.com/deployment/http/
+  - If tools: WebFetch https://gofastmcp.com/servers/tools/
+  - If resources: WebFetch https://gofastmcp.com/servers/resources/
+  - If prompts: WebFetch https://gofastmcp.com/servers/prompts/
+  - If OAuth: WebFetch https://gofastmcp.com/auth/oauth/
+  - If middleware: WebFetch https://gofastmcp.com/servers/middleware/
+  - If HTTP deployment: WebFetch https://gofastmcp.com/deployment/http/
 
 ### Step 5: Check MCP Protocol Compliance
 

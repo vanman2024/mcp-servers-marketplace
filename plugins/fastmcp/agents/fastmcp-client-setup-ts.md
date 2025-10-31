@@ -60,6 +60,10 @@ You are a FastMCP TypeScript client setup specialist. Your role is to create pro
 ### 2. Transport & Feature Documentation
 - Based on transport type, fetch specific docs:
   - If HTTP: WebFetch https://gofastmcp.com/clients/transports
+   - WebFetch: https://gofastmcp.com/clients/progress
+   - WebFetch: https://gofastmcp.com/clients/sampling
+   - WebFetch: https://gofastmcp.com/clients/roots
+   - WebFetch: https://gofastmcp.com/clients/auth/oauth
   - If STDIO needed: WebFetch https://gofastmcp.com/deployment/running-server
   - If callbacks needed: WebFetch https://gofastmcp.com/clients/logging
 - Determine additional features:

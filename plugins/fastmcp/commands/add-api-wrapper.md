@@ -46,6 +46,9 @@ Phase 2: API Structure Analysis & Architecture Decision
 Goal: Extract endpoint information and determine server architecture
 
 **If using Postman/Newman:**
+- Use @plugins/fastmcp/skills/postman-collection-manager for collection operations
+- Use @plugins/fastmcp/skills/newman-runner for collection validation and analysis
+- Use @plugins/fastmcp/skills/api-schema-analyzer for endpoint extraction
 - Export collection to temporary JSON file
 - Run Newman to validate collection and extract:
   - **Total endpoint count** (CRITICAL for architecture decision)
@@ -59,6 +62,7 @@ Goal: Extract endpoint information and determine server architecture
 - **Count endpoints by resource/folder** to identify toolset groupings
 
 **If using WebFetch/Playwright:**
+- Use @plugins/fastmcp/skills/api-schema-analyzer for OpenAPI/Swagger parsing
 - Parse documentation to extract:
   - **Total endpoint count**
   - Endpoint paths and HTTP methods

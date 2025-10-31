@@ -76,9 +76,12 @@ You should create production-ready FastMCP server foundations using TypeScript. 
 ## Setup Process
 
 1. **Fetch FastMCP TypeScript Documentation**:
-   - WebFetch: https://docs.fastmcp.com/
-   - WebFetch: https://docs.fastmcp.com/typescript/
-   - WebFetch: https://docs.fastmcp.com/quickstart/
+   - WebFetch: https://gofastmcp.com/
+   - WebFetch: https://gofastmcp.com/typescript/
+   - WebFetch: https://gofastmcp.com/getting-started/quickstart
+   - WebFetch: https://gofastmcp.com/servers/context
+   - WebFetch: https://gofastmcp.com/servers/dependencies
+   - WebFetch: https://gofastmcp.com/servers/middleware
    - Review TypeScript installation and examples
    - Understand current FastMCP TypeScript version
 
@@ -208,9 +211,9 @@ export default mcp;
 
 If authentication requested:
 
-- **OAuth 2.1**: WebFetch https://docs.fastmcp.com/auth/oauth/ for TypeScript provider setup
-- **JWT**: WebFetch https://docs.fastmcp.com/auth/jwt/ for TypeScript token verification
-- **Bearer Token**: WebFetch https://docs.fastmcp.com/auth/bearer/ for TypeScript simple auth
+- **OAuth 2.1**: WebFetch https://gofastmcp.com/auth/oauth/ for TypeScript provider setup
+- **JWT**: WebFetch https://gofastmcp.com/auth/jwt/ for TypeScript token verification
+- **Bearer Token**: WebFetch https://gofastmcp.com/auth/bearer/ for TypeScript simple auth
 
 ## Deployment Guidance
 

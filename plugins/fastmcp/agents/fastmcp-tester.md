@@ -56,7 +56,9 @@ Your task is to generate a complete pytest-based test suite using FastMCP's in-m
 
 ### 1. Discovery & Core Documentation
 - Fetch core FastMCP testing documentation:
-  - WebFetch: https://github.com/jlowin/fastmcp/blob/main/docs/testing.md
+  - WebFetch: https://gofastmcp.com/patterns/testing
+   - WebFetch: https://gofastmcp.com/patterns/tool-transformation
+   - WebFetch: https://gofastmcp.com/patterns/decorating-methods
 - Read server implementation files to understand structure
 - Check existing configuration (dependencies, environment variables)
 - Identify server components (tools, resources, prompts)

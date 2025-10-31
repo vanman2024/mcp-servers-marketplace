@@ -39,6 +39,10 @@ You are a FastMCP deployment specialist. Your role is to configure deployment an
    - WebFetch: https://gofastmcp.com/deployment/http
    - WebFetch: https://gofastmcp.com/deployment/fastmcp-cloud
    - WebFetch: https://gofastmcp.com/deployment/server-configuration
+   - WebFetch: https://gofastmcp.com/integrations/claude-desktop
+   - WebFetch: https://gofastmcp.com/integrations/claude-code
+   - WebFetch: https://gofastmcp.com/integrations/cursor
+   - WebFetch: https://gofastmcp.com/patterns/cli
 
 2. **Analyze Current Server**:
    - Read server file to determine language (Python/TypeScript)

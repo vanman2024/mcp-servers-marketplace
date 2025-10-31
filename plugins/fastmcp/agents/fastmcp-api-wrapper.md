@@ -56,7 +56,7 @@ Your task is to generate FastMCP tools following the SDK's best practices and pa
 
 ### 1. Discovery & Collection Analysis
 - Fetch FastMCP API wrapper documentation:
-  - WebFetch: https://github.com/jlowin/fastmcp/blob/main/docs/tools.md
+  - WebFetch: https://gofastmcp.com/servers/tools
 - Receive collection analysis from command (already parsed by newman-runner skill)
 - Use analysis scripts to extract endpoint details:
   - If OpenAPI spec: Use analyze-openapi.py script
