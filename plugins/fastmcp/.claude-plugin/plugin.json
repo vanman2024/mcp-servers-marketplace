@@ -6,8 +6,8 @@
     "name": "ai-dev-marketplace",
     "email": "noreply@ai-dev-marketplace.dev"
   },
-  "homepage": "https://github.com/vanman2024/Mcp-Servers",
-  "repository": "https://github.com/vanman2024/Mcp-Servers",
+  "homepage": "https://github.com/vanman2024/mcp-servers-marketplace",
+  "repository": "https://github.com/vanman2024/mcp-servers-marketplace",
   "license": "MIT",
   "keywords": [
     "fastmcp",
