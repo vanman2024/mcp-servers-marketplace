@@ -20,25 +20,68 @@ This directory contains FastMCP servers built for this project. All servers are 
 ```
 mcp-servers/
 ├── .claude-plugin/
-│   └── marketplace.json        # Marketplace registry
+│   └── marketplace.json           # Marketplace registry with categorized servers
 ├── plugins/
-│   └── fastmcp/                # FastMCP plugin for building MCP servers
-│       ├── commands/           # /fastmcp:* slash commands
-│       ├── agents/             # Specialized agents (setup, verifier, etc.)
-│       ├── skills/             # Reusable templates and scripts
-│       └── docs/               # FastMCP documentation
-│           ├── DEPLOYMENT.md   # Deployment strategy guide
-│           ├── fastmcp-documentation.md
-│           └── fastmcp-links-organized.md
-├── docs/                       # Project-level documentation
-├── my-server/
-│   ├── server.py               # Main server file
-│   ├── fastmcp.json            # (Optional) FastMCP Cloud deployment config
-│   ├── requirements.txt        # Python dependencies
-│   ├── .env.example            # Environment variables template
-│   └── README.md               # Server documentation
-└── another-server/
-    └── ...
+│   └── fastmcp/                   # FastMCP plugin for building MCP servers
+│       ├── commands/              # /fastmcp:* slash commands
+│       ├── agents/                # Specialized agents (setup, verifier, etc.)
+│       ├── skills/                # Reusable templates and scripts
+│       └── docs/                  # FastMCP documentation
+├── docs/                          # Project-level documentation
+├── servers/                       # All MCP servers organized by category
+│   ├── ai-llm/                   # AI & LLM Services
+│   │   ├── anthropic-comprehensive-http-mcp
+│   │   ├── context7-http-mcp
+│   │   ├── gemini-http-mcp
+│   │   ├── openai-tools-http-mcp
+│   │   └── sequential-thinking-http-mcp
+│   ├── cloud-infrastructure/      # Cloud & Infrastructure
+│   │   ├── digitalocean-http-mcp
+│   │   ├── docker-http-mcp
+│   │   ├── hostinger-http-mcp
+│   │   └── vercel-deploy-http-mcp
+│   ├── design-tools/              # Design & UI/UX
+│   │   ├── figma-mcp
+│   │   ├── figma-mcp-application
+│   │   ├── figma-mcp-ecommerce
+│   │   ├── figma-mcp-marketing
+│   │   ├── miro-http-mcp
+│   │   ├── mui-http-mcp
+│   │   ├── tailwind-ui-mcp
+│   │   ├── uiux-design-http-mcp
+│   │   ├── vercel-v0-mcp
+│   │   └── vercel-v0-enhanced-mcp
+│   ├── development-tools/         # Development & Coding
+│   │   ├── claude-code-http-mcp
+│   │   ├── documentation-analyzer-http-mcp
+│   │   ├── git-advanced-http-mcp
+│   │   ├── github-http-mcp
+│   │   └── ngrok-http-mcp
+│   ├── databases-storage/         # Databases & Storage
+│   │   ├── airtable-http-mcp
+│   │   ├── filesystem-http-mcp
+│   │   ├── memory-http-mcp
+│   │   ├── redis-http-mcp
+│   │   └── supabase-http-mcp
+│   ├── content-media/             # Content & Media
+│   │   ├── brave-search-http-mcp
+│   │   └── content-image-generation-mcp
+│   ├── business-productivity/     # Business & Productivity
+│   │   ├── ayrshare-mcp
+│   │   ├── cats-mcp-server
+│   │   ├── google-workspace-mcp
+│   │   ├── signalhire
+│   │   └── slack-http-mcp
+│   ├── workflow-orchestration/    # Workflow & Orchestration
+│   │   ├── everything-http-mcp
+│   │   ├── routing-http-mcp
+│   │   └── synapseai-workflow-mcp
+│   └── web-automation/            # Web & Browser Automation
+│       ├── browserbase-http-mcp
+│       └── fetch-http-mcp
+├── scripts/                       # Build and deployment scripts
+├── templates/                     # Server templates
+└── config/                        # Configuration files
 ```
 
 **Note**: `.mcp.json` files are CLIENT-SIDE (go in projects that USE the server, not here)

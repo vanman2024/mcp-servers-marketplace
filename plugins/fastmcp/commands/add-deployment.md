@@ -1,70 +1,67 @@
 ---
 description: Configure deployment for FastMCP server (HTTP, STDIO, FastMCP Cloud, production config)
 argument-hint: [deployment-type] [--server-path=path]
-allowed-tools: Task, Read, Write, Edit, Bash, Glob, Grep, AskUserQuestion
+allowed-tools: Task
 ---
 
 **Arguments**: $ARGUMENTS
 
-Goal: Configure deployment and transport for an existing FastMCP server. Supports HTTP, STDIO (Claude Desktop/Cursor), FastMCP Cloud, and production configuration.
+Goal: Configure deployment and transport for an existing FastMCP server. Supports HTTP, STDIO (Claude Desktop/Cursor/Claude Code), FastMCP Cloud, and production configuration.
 
-Phase 1: Discovery
+## Overview
 
-Actions:
-- Parse $ARGUMENTS for deployment type and server path
-- Use AskUserQuestion to gather deployment targets (can select multiple):
-  - HTTP/HTTPS: port, host, CORS, SSL/TLS
-  - STDIO: Target IDE (Claude Desktop, Cursor, Claude Code), logging
-  - FastMCP Cloud: server name, auth, environment vars
-  - Production: environment, monitoring, error reporting, rate limiting
-- Load FastMCP deployment docs: @plugins/fastmcp/docs/fastmcp-documentation.md
+This command delegates to the specialized FastMCP deployment agent which handles:
+- Transport configuration (STDIO, HTTP, FastMCP Cloud)
+- IDE integration (Claude Desktop, Cursor, Claude Code)
+- Production features (monitoring, logging, error handling, rate limiting)
+- Security setup (CORS, SSL/TLS, authentication)
+- Deployment scripts and documentation
 
-Phase 2: Analysis
+## Reference Documentation
 
-Actions:
-- Find server file and determine language (Python/TypeScript)
-- Read existing transport configuration
-- Check for conflicts
+The deployment agent references:
+- Deployment strategy: @plugins/fastmcp/docs/DEPLOYMENT.md
+- FastMCP documentation: @plugins/fastmcp/docs/fastmcp-documentation.md
+- Official FastMCP docs via WebFetch:
+  - https://gofastmcp.com/deployment/running-server
+  - https://gofastmcp.com/deployment/http
+  - https://gofastmcp.com/deployment/fastmcp-cloud
+  - https://gofastmcp.com/deployment/server-configuration
 
-Phase 3: Implementation
+## Implementation
 
-Actions:
+Use Task tool to launch the fastmcp-deployment agent:
 
-Implement directly or use Task with general-purpose agent for complex cases for each deployment target.
+```
+Task(
+  subagent_type: "general-purpose",
+  description: "Configure FastMCP server deployment",
+  prompt: "Use the @plugins/fastmcp/agents/fastmcp-deployment.md agent to configure deployment for the FastMCP server.
 
-Agent should WebFetch:
-- Running Servers: https://gofastmcp.com/deployment/running-server
-- HTTP: https://gofastmcp.com/deployment/http
-- Cloud: https://gofastmcp.com/deployment/fastmcp-cloud
-- Config: https://gofastmcp.com/deployment/server-configuration
+  Arguments provided: $ARGUMENTS
 
-HTTP Transport: Configure HTTP, CORS, SSL/TLS, reverse proxy, startup script
-STDIO Transport: Configure stdin/stdout, stderr logging, generate IDE configs (claude_desktop_config.json, .cursor/mcp_config.json, .claude/mcp.json)
-FastMCP Cloud: Configure fastmcp.json, auth, environment mapping, deployment scripts
+  The agent should:
+  1. Discover current server configuration
+  2. Gather deployment requirements from the user
+  3. Configure requested transport protocols (STDIO, HTTP, FastMCP Cloud)
+  4. Generate IDE configuration files as needed
+  5. Add production features (logging, monitoring, error handling)
+  6. Create deployment scripts and documentation
+  7. Verify the deployment configuration works
 
-Phase 4: IDE Integration & Production Config
+  Follow all phases in the fastmcp-deployment agent systematically."
+)
+```
 
-Actions:
-- Generate IDE config files for selected targets
-- Create environment-specific configs (.env.development, .env.production)
-- Add production middleware (error handling, timing, rate limiting, health checks)
-- Configure logging (structured format, levels, rotation)
-- Add monitoring hooks (metrics, error reporting, uptime)
+## Expected Outputs
 
-Phase 5: Documentation & Verification
-
-Actions:
-- Add deployment section to README (how to run, endpoints, IDE setup, cloud deployment)
-- Document environment variables
-- Add troubleshooting guide
-- Run syntax check for language
-- Test HTTP server starts, STDIO mode works, IDE config files valid
-- Verify environment variables documented
-
-Phase 6: Summary
-
-Actions:
-- Display deployment configurations (port/host for HTTP, IDE files for STDIO, command for Cloud)
-- Show run commands for each transport
-- Provide testing instructions
-- Suggest production checklist (env vars set, auth configured, CORS configured, error handling, logging, health checks)
+After the agent completes, the server should have:
+- ✅ Configured transport protocols based on requirements
+- ✅ IDE configuration files for selected targets
+- ✅ Production middleware (logging, monitoring, error handling)
+- ✅ Environment-specific configs (.env.development, .env.production)
+- ✅ Security features (CORS, SSL/TLS, rate limiting)
+- ✅ Health check endpoint
+- ✅ Deployment scripts (start.sh, deploy.sh)
+- ✅ Updated README with deployment instructions
+- ✅ Documented environment variables
