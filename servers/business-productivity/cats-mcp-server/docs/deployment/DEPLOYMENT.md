@@ -4,11 +4,41 @@ This guide covers all deployment modes for the CATS MCP server.
 
 ## Deployment Modes
 
-The CATS MCP server supports three deployment scenarios:
+The CATS MCP server supports four deployment scenarios:
 
-1. **STDIO (Local Integration)** - For Claude Desktop, Claude Code, Cursor
-2. **HTTP (Remote Services)** - For web applications, cloud deployment, multiple clients
-3. **Auth-Required** - Add OAuth/JWT authentication to either STDIO or HTTP
+1. **FastMCP Cloud** - Managed hosting with automatic deployments (RECOMMENDED)
+2. **STDIO (Local Integration)** - For Claude Desktop, Claude Code, Cursor
+3. **HTTP (Self-Hosted)** - For web applications, cloud deployment, multiple clients
+4. **Auth-Required** - Add OAuth/JWT authentication to either STDIO or HTTP
+
+---
+
+## 0. FastMCP Cloud Deployment (RECOMMENDED)
+
+**Use case**: Managed hosting with automatic GitHub deployments, zero infrastructure management
+
+**For detailed instructions, see**: [FASTMCP_CLOUD_DEPLOYMENT.md](./FASTMCP_CLOUD_DEPLOYMENT.md)
+
+### Quick Start
+
+1. Ensure `fastmcp.json` exists in repository (already created)
+2. Push code to GitHub
+3. Create project at https://fastmcp.app
+4. Set `CATS_API_KEY` environment variable
+5. Deploy automatically
+
+**Access at**: `https://your-project-name.fastmcp.app/mcp`
+
+**Benefits**:
+- Automatic deployments from GitHub
+- PR preview environments
+- Managed infrastructure
+- HTTPS/TLS included
+- Health monitoring
+- Structured logging
+- Zero server management
+
+See [FASTMCP_CLOUD_DEPLOYMENT.md](./FASTMCP_CLOUD_DEPLOYMENT.md) for complete guide.
 
 ---
 

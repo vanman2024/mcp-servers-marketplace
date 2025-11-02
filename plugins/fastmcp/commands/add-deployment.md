@@ -34,7 +34,7 @@ Use Task tool to launch the fastmcp-deployment agent:
 
 ```
 Task(
-  subagent_type: "general-purpose",
+  subagent_type: "fastmcp-deployment",
   description: "Configure FastMCP server deployment",
   prompt: "Use the @plugins/fastmcp/agents/fastmcp-deployment.md agent to configure deployment for the FastMCP server.
 

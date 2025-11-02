@@ -6,13 +6,24 @@ Use --toolsets flag or CATS_TOOLSETS env var to control which tools load.
 """
 
 import os
+import sys
 import argparse
+import logging
 from typing import Any, Optional, Set
 import httpx
 from dotenv import load_dotenv
 from fastmcp import FastMCP
 
 load_dotenv()
+
+# Configure structured logging
+LOG_LEVEL = os.getenv("LOG_LEVEL", "INFO").upper()
+logging.basicConfig(
+    level=getattr(logging, LOG_LEVEL),
+    format="%(asctime)s - %(name)s - %(levelname)s - %(message)s",
+    handlers=[logging.StreamHandler(sys.stdout)]
+)
+logger = logging.getLogger("cats-mcp-server")
 
 mcp = FastMCP("CATS API v3")
 
@@ -39,8 +50,9 @@ async def make_request(
     params: dict = None,
     json_data: dict = None
 ) -> dict:
-    """Make authenticated request to CATS API"""
+    """Make authenticated request to CATS API with enhanced error handling and logging"""
     if not CATS_API_KEY:
+        logger.error("CATS_API_KEY not configured")
         raise CATSAPIError("CATS_API_KEY not configured")
 
     url = f"{CATS_API_BASE_URL.rstrip('/')}/{endpoint.lstrip('/')}"
@@ -51,6 +63,7 @@ async def make_request(
 
     async with httpx.AsyncClient(timeout=30.0) as client:
         try:
+            logger.debug(f"Making {method} request to {endpoint}")
             response = await client.request(
                 method,
                 url,
@@ -59,13 +72,45 @@ async def make_request(
                 json=json_data
             )
             response.raise_for_status()
+
+            # Log rate limit information if available
+            if "X-Rate-Limit-Remaining" in response.headers:
+                remaining = response.headers["X-Rate-Limit-Remaining"]
+                logger.debug(f"Rate limit remaining: {remaining}")
+
             return response.json()
+        except httpx.HTTPStatusError as e:
+            logger.error(f"HTTP error {e.response.status_code} for {endpoint}: {e.response.text}")
+            raise CATSAPIError(f"API HTTP error {e.response.status_code}: {e.response.text}")
+        except httpx.TimeoutException as e:
+            logger.error(f"Timeout error for {endpoint}: {e}")
+            raise CATSAPIError(f"API timeout error: {e}")
         except httpx.HTTPError as e:
+            logger.error(f"HTTP error for {endpoint}: {e}")
             raise CATSAPIError(f"API error: {e}")
 
 
+@mcp.custom_route("/health", methods=["GET"])
+async def health_check(request):
+    """Health check endpoint for monitoring and load balancers"""
+    from fastmcp.server.http import Response
+
+    health_status = {
+        "status": "healthy",
+        "service": "CATS MCP Server",
+        "api_configured": bool(CATS_API_KEY),
+        "api_base_url": CATS_API_BASE_URL,
+    }
+
+    return Response(
+        status_code=200,
+        content=health_status,
+        headers={"Content-Type": "application/json"}
+    )
+
+
 def load_toolsets(toolsets: Set[str]):
-    """Load specified toolsets"""
+    """Load specified toolsets with structured logging"""
     from toolsets_default import (
         register_candidates_tools,
         register_jobs_tools,
@@ -90,82 +135,82 @@ def load_toolsets(toolsets: Set[str]):
         register_events_tools
     )
 
-    print(f"Loading toolsets: {', '.join(sorted(toolsets))}")
+    logger.info(f"Loading toolsets: {', '.join(sorted(toolsets))}")
 
     # DEFAULT TOOLSETS (89 tools)
     if 'candidates' in toolsets or 'all' in toolsets:
         register_candidates_tools(mcp, make_request)
-        print("  ✓ candidates (28 tools)")
+        logger.info("  ✓ candidates (28 tools)")
 
     if 'jobs' in toolsets or 'all' in toolsets:
         register_jobs_tools(mcp, make_request)
-        print("  ✓ jobs (40 tools)")
+        logger.info("  ✓ jobs (40 tools)")
 
     if 'pipelines' in toolsets or 'all' in toolsets:
         register_pipelines_tools(mcp, make_request)
-        print("  ✓ pipelines (13 tools)")
+        logger.info("  ✓ pipelines (13 tools)")
 
     if 'context' in toolsets or 'all' in toolsets:
         register_context_tools(mcp, make_request)
-        print("  ✓ context (3 tools)")
+        logger.info("  ✓ context (3 tools)")
 
     if 'tasks' in toolsets or 'all' in toolsets:
         register_tasks_tools(mcp, make_request)
-        print("  ✓ tasks (5 tools)")
+        logger.info("  ✓ tasks (5 tools)")
 
     # RECRUITING TOOLSETS (52 tools)
     if 'companies' in toolsets or 'all' in toolsets:
         register_companies_tools(mcp, make_request)
-        print("  ✓ companies (18 tools)")
+        logger.info("  ✓ companies (18 tools)")
 
     if 'contacts' in toolsets or 'all' in toolsets:
         register_contacts_tools(mcp, make_request)
-        print("  ✓ contacts (18 tools)")
+        logger.info("  ✓ contacts (18 tools)")
 
     if 'activities' in toolsets or 'all' in toolsets:
         register_activities_tools(mcp, make_request)
-        print("  ✓ activities (6 tools)")
+        logger.info("  ✓ activities (6 tools)")
 
     if 'portals' in toolsets or 'all' in toolsets:
         register_portals_tools(mcp, make_request)
-        print("  ✓ portals (8 tools)")
+        logger.info("  ✓ portals (8 tools)")
 
     if 'work_history' in toolsets or 'all' in toolsets:
         register_work_history_tools(mcp, make_request)
-        print("  ✓ work_history (3 tools)")
+        logger.info("  ✓ work_history (3 tools)")
 
     # DATA & CONFIG TOOLSETS (21 tools)
     if 'tags' in toolsets or 'all' in toolsets:
         register_tags_tools(mcp)
-        print("  ✓ tags (2 tools)")
+        logger.info("  ✓ tags (2 tools)")
 
     if 'webhooks' in toolsets or 'all' in toolsets:
         register_webhooks_tools(mcp)
-        print("  ✓ webhooks (4 tools)")
+        logger.info("  ✓ webhooks (4 tools)")
 
     if 'users' in toolsets or 'all' in toolsets:
         register_users_tools(mcp)
-        print("  ✓ users (2 tools)")
+        logger.info("  ✓ users (2 tools)")
 
     if 'triggers' in toolsets or 'all' in toolsets:
         register_triggers_tools(mcp)
-        print("  ✓ triggers (2 tools)")
+        logger.info("  ✓ triggers (2 tools)")
 
     if 'attachments' in toolsets or 'all' in toolsets:
         register_attachments_tools(mcp)
-        print("  ✓ attachments (4 tools)")
+        logger.info("  ✓ attachments (4 tools)")
 
     if 'backups' in toolsets or 'all' in toolsets:
         register_backups_tools(mcp)
-        print("  ✓ backups (3 tools)")
+        logger.info("  ✓ backups (3 tools)")
 
     if 'events' in toolsets or 'all' in toolsets:
         register_events_tools(mcp)
-        print("  ✓ events (5 tools)")
+        logger.info("  ✓ events (5 tools)")
 
     # Calculate and display total
     loaded_count = len(toolsets) if 'all' not in toolsets else len(ALL_TOOLSETS)
-    print(f"\nTotal toolsets loaded: {loaded_count}")
+    logger.info(f"\nTotal toolsets loaded: {loaded_count}")
 
 
 if __name__ == "__main__":
@@ -227,9 +272,9 @@ if __name__ == "__main__":
     if 'all' not in requested:
         invalid_toolsets = requested - set(ALL_TOOLSETS)
         if invalid_toolsets:
-            print(f"Error: Invalid toolsets specified: {', '.join(invalid_toolsets)}")
-            print(f"Valid toolsets: {', '.join(ALL_TOOLSETS)}")
-            print("Use --list-toolsets to see all available toolsets")
+            logger.error(f"Invalid toolsets specified: {', '.join(invalid_toolsets)}")
+            logger.error(f"Valid toolsets: {', '.join(ALL_TOOLSETS)}")
+            logger.error("Use --list-toolsets to see all available toolsets")
             exit(1)
 
     # Load toolsets
@@ -238,22 +283,24 @@ if __name__ == "__main__":
     # Determine transport mode
     transport = os.getenv('CATS_TRANSPORT', 'stdio').lower()
 
-    print("\nStarting CATS MCP Server...")
-    print(f"Transport: {transport.upper()}")
-    print(f"API Base URL: {CATS_API_BASE_URL}")
-    print(f"API Key configured: {'Yes' if CATS_API_KEY else 'No'}")
+    logger.info("\nStarting CATS MCP Server...")
+    logger.info(f"Transport: {transport.upper()}")
+    logger.info(f"API Base URL: {CATS_API_BASE_URL}")
+    logger.info(f"API Key configured: {'Yes' if CATS_API_KEY else 'No'}")
 
     if transport == 'stdio':
         # STDIO transport for Claude Desktop, Claude Code, Cursor
         # Configured via .mcp.json or IDE config files
+        logger.info("Server ready for STDIO connections")
         mcp.run()
     elif transport == 'http':
         # HTTP transport for remote services, web applications
         port = int(os.getenv('CATS_PORT', '8000'))
         host = os.getenv('CATS_HOST', '0.0.0.0')
-        print(f"HTTP Server: http://{host}:{port}/mcp")
+        logger.info(f"HTTP Server starting at http://{host}:{port}/mcp")
+        logger.info(f"Health check endpoint: http://{host}:{port}/health")
         mcp.run(transport="http", host=host, port=port)
     else:
-        print(f"Error: Invalid transport '{transport}'. Use 'stdio' or 'http'")
-        print("Set CATS_TRANSPORT environment variable to 'stdio' or 'http'")
+        logger.error(f"Invalid transport '{transport}'. Use 'stdio' or 'http'")
+        logger.error("Set CATS_TRANSPORT environment variable to 'stdio' or 'http'")
         exit(1)

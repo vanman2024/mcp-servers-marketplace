@@ -38,8 +38,8 @@ mcp = FastMCP(name=os.getenv("MCP_SERVER_NAME", "Content & Image Generation"))
 # Configuration
 PROJECT_ID = os.getenv("GOOGLE_CLOUD_PROJECT")
 LOCATION = os.getenv("GOOGLE_CLOUD_LOCATION", "us-central1")
-OUTPUT_DIR = Path("output")
-OUTPUT_DIR.mkdir(exist_ok=True)
+OUTPUT_DIR = Path(os.getenv("OUTPUT_DIR", "output"))
+OUTPUT_DIR.mkdir(parents=True, exist_ok=True)
 
 # Initialize Google Cloud AI Platform
 if PROJECT_ID:
