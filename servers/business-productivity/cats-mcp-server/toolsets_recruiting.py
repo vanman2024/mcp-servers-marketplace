@@ -2,6 +2,7 @@
 CATS MCP Server - Recruiting Toolsets
 Complete recruiting-focused toolsets for CATS API v3
 """
+from __future__ import annotations
 
 from typing import Any, Optional
 from fastmcp import FastMCP

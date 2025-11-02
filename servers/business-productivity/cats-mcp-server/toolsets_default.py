@@ -3,6 +3,7 @@ CATS MCP Server - Default Toolsets
 Comprehensive toolset registration functions for candidates, jobs, pipelines, context, and tasks.
 Based on CATS API v3: https://api.catsone.com/v3
 """
+from __future__ import annotations
 
 from typing import Any, Optional
 from fastmcp import FastMCP
