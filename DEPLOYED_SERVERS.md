@@ -1,0 +1,35 @@
+# Deployed MCP Servers
+
+Tracking of servers deployed to FastMCP Cloud with their standalone repos.
+
+## Active Deployments
+
+### cats-mcp-server
+- **Monorepo Path**: `servers/business-productivity/cats-mcp-server/`
+- **Standalone Repo**: https://github.com/vanman2024/cats-mcp-server
+- **FastMCP Cloud**: https://fastmcp.app (project: cats-mcp-server)
+- **Status**: ✅ Active - 164 tools
+- **Last Synced**: 2025-11-01
+- **Sync Command**: `./scripts/sync-to-standalone.sh cats-mcp-server`
+
+---
+
+## Sync Workflow
+
+When you make changes to a deployed server in the monorepo:
+
+1. Make changes in monorepo: `servers/business-productivity/cats-mcp-server/`
+2. Test locally
+3. Commit to monorepo: `git commit -m "feat: ..."`
+4. Sync to standalone repo: `./scripts/sync-to-standalone.sh cats-mcp-server`
+5. FastMCP Cloud auto-deploys from standalone repo
+
+## Adding New Deployments
+
+When deploying a new server to FastMCP Cloud:
+
+1. Create standalone repo on GitHub
+2. Run: `./scripts/setup-standalone-repo.sh <server-path> <repo-url>`
+3. Add entry to this file
+4. Push to standalone repo
+5. Connect to FastMCP Cloud
