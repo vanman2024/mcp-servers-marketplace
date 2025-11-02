@@ -13,6 +13,11 @@ fi
 
 # Map server name to paths
 case "$SERVER_NAME" in
+    "signalhire-mcp")
+        MONOREPO_PATH="servers/business-productivity/signalhire"
+        STANDALONE_REPO="https://github.com/vanman2024/signalhire-mcp.git"
+        STANDALONE_DIR="/tmp/signalhire-mcp-sync"
+        ;;
     "cats-mcp-server")
         MONOREPO_PATH="servers/business-productivity/cats-mcp-server"
         STANDALONE_REPO="https://github.com/vanman2024/cats-mcp-server.git"

@@ -1,14 +1,25 @@
-# Deployed MCP Servers
+# Extracted MCP Servers
 
-Tracking of servers deployed to FastMCP Cloud with their standalone repos.
+Tracking of servers extracted from monorepo to standalone GitHub repos for FastMCP Cloud deployment.
 
-## Active Deployments
+## Extracted & Ready for Deployment
+
+### signalhire-mcp
+- **Monorepo Path**: `servers/business-productivity/signalhire/`
+- **Standalone Repo**: https://github.com/vanman2024/signalhire-mcp
+- **Production Dir**: `~/Projects/signalhire-mcp-production/`
+- **FastMCP Cloud**: Ready to deploy
+- **Status**: 🟡 Extracted - Ready for deployment
+- **Capabilities**: 13 tools, 7 resources, 8 prompts
+- **Extracted**: 2025-11-02
+- **Sync Command**: `./scripts/sync-to-standalone.sh signalhire-mcp`
 
 ### cats-mcp-server
 - **Monorepo Path**: `servers/business-productivity/cats-mcp-server/`
 - **Standalone Repo**: https://github.com/vanman2024/cats-mcp-server
+- **Production Dir**: N/A
 - **FastMCP Cloud**: https://fastmcp.app (project: cats-mcp-server)
-- **Status**: ✅ Active - 164 tools
+- **Status**: ✅ Deployed & Active - 164 tools
 - **Last Synced**: 2025-11-01
 - **Sync Command**: `./scripts/sync-to-standalone.sh cats-mcp-server`
 
