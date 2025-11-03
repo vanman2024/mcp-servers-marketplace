@@ -7,10 +7,10 @@ Tracking of servers extracted from monorepo to standalone GitHub repos for FastM
 ### signalhire-mcp
 - **Monorepo Path**: `servers/business-productivity/signalhire/`
 - **Standalone Repo**: https://github.com/vanman2024/signalhire-mcp
-- **FastMCP Cloud**: https://signalhire.fastmcp.app (deploying)
-- **Status**: 🟡 Deploying to FastMCP Cloud (commit 0d48b69)
+- **FastMCP Cloud**: https://signalhire.fastmcp.app ✅ **LIVE**
+- **Status**: ✅ Deployed & Running (commit 0d48b69)
 - **Capabilities**: 13 tools, 7 resources, 8 prompts
-- **Extracted**: 2025-11-02
+- **Deployed**: 2025-11-02
 - **Last Synced**: 2025-11-02 16:36
 - **Sync Command**: `./scripts/sync-to-standalone.sh signalhire-mcp`
 - **Workflow**: ⚠️ Edit in monorepo ONLY, then sync to GitHub
