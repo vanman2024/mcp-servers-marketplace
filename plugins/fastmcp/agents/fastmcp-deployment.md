@@ -106,7 +106,83 @@ For production deployments, fetch additional documentation:
 - Add metrics collection (Prometheus or custom)
 - Configure environment-specific settings
 
-### Phase 4: Monorepo to GitHub Sync Setup (FastMCP Cloud Only)
+### Phase 4: Secure Secrets Management (CRITICAL)
+
+**NEVER HARDCODE API KEYS OR SECRETS IN FILES**
+
+All secrets MUST be managed through GitHub Secrets, not hardcoded in YAML/config files.
+
+**Security-First Sync Script**:
+
+Use `./scripts/sync-to-standalone-secure.sh` (NOT the old sync-to-standalone.sh):
+- ✅ Installs git hooks in temp clone for secret scanning
+- ✅ Scans ALL files for API keys/secrets before push
+- ✅ BLOCKS sync if any secrets detected
+- ✅ Provides remediation instructions
+- ✅ Never creates persistent project directories
+
+**Managing Secrets with GitHub CLI**:
+
+```bash
+# Set a single secret
+./scripts/manage-github-secrets.sh set signalhire-mcp SIGNALHIRE_API_KEY "your-key"
+
+# Set all secrets from .env file
+./scripts/manage-github-secrets.sh set-from-env signalhire-mcp servers/business-productivity/signalhire/.env
+
+# List all secrets for a server
+./scripts/manage-github-secrets.sh list signalhire-mcp
+
+# Delete a secret
+./scripts/manage-github-secrets.sh delete signalhire-mcp OLD_SECRET
+```
+
+**Using Secrets in YAML Files**:
+
+```yaml
+# ❌ WRONG - Hardcoded key (WILL BE BLOCKED)
+envs:
+  - key: SIGNALHIRE_API_KEY
+    value: "202.R6cmAKCaf7FHPPstzfP2Vnh5XOBo"  # NEVER DO THIS
+
+# ✅ CORRECT - Reference GitHub Secret
+envs:
+  - key: SIGNALHIRE_API_KEY
+    value: ${{ secrets.SIGNALHIRE_API_KEY }}
+```
+
+**Workflow with Secrets**:
+
+```
+┌─────────────────────────────────────────────────────────────┐
+│  SECURE DEPLOYMENT WORKFLOW                                │
+├─────────────────────────────────────────────────────────────┤
+│  1. Edit code in MONOREPO:                                  │
+│     servers/business-productivity/<server-name>/            │
+│                                                              │
+│  2. Store secrets in .env (gitignored, local only):         │
+│     servers/business-productivity/<server-name>/.env        │
+│                                                              │
+│  3. Upload secrets to GitHub:                               │
+│     ./scripts/manage-github-secrets.sh set-from-env \       │
+│       <server-name> path/to/.env                            │
+│                                                              │
+│  4. Update YAML files to use GitHub Secrets:                │
+│     value: ${{ secrets.SECRET_NAME }}                       │
+│                                                              │
+│  5. Sync to GitHub using SECURE script:                     │
+│     ./scripts/sync-to-standalone-secure.sh <server-name>    │
+│     (Blocks if any secrets detected!)                       │
+│                                                              │
+│  6. FastMCP Cloud auto-deploys with secrets from GitHub     │
+│                                                              │
+│  ✅ .env files NEVER synced (excluded)                      │
+│  ✅ Secrets stored securely in GitHub                       │
+│  ✅ All syncs scanned for leaked secrets                    │
+└─────────────────────────────────────────────────────────────┘
+```
+
+### Phase 5: Monorepo to GitHub Sync Setup
 
 **CRITICAL WORKFLOW - Edit in Monorepo ONLY**:
 
@@ -117,21 +193,25 @@ For production deployments, fetch additional documentation:
 │  1. Edit in MONOREPO:                                       │
 │     servers/business-productivity/<server-name>/            │
 │                                                              │
-│  2. Sync to GitHub using global script:                     │
-│     ./scripts/sync-to-standalone.sh <server-name>           │
+│  2. Sync to GitHub using SECURE global script:              │
+│     ./scripts/sync-to-standalone-secure.sh <server-name>    │
 │                                                              │
 │  3. Script handles:                                         │
-│     - Creates temp directory                                │
+│     - Creates temp directory in /tmp/                       │
 │     - Clones standalone GitHub repo                         │
+│     - Installs security hooks in temp clone                 │
 │     - Copies files from monorepo                            │
+│     - Scans for secrets (BLOCKS if found!)                  │
 │     - Commits and pushes to GitHub                          │
 │     - Cleans up temp directory                              │
 │                                                              │
 │  4. FastMCP Cloud auto-deploys from GitHub                  │
 │                                                              │
-│  ❌ NEVER edit in ~/Projects/<server-name>-production/      │
+│  ❌ NEVER edit in ~/Projects/ directories                   │
 │  ❌ NEVER make changes directly in GitHub repo              │
+│  ❌ NEVER hardcode secrets in files                         │
 │  ✅ ALWAYS edit in monorepo and sync                        │
+│  ✅ ALWAYS use GitHub Secrets for sensitive values          │
 └─────────────────────────────────────────────────────────────┘
 ```
 
@@ -305,23 +385,33 @@ For production deployments, fetch additional documentation:
 Before considering deployment configuration complete:
 - ✅ Fetched relevant deployment documentation URLs using WebFetch
 - ✅ Transport configurations match patterns from fetched docs
+- ✅ **Secrets Management (CRITICAL)**:
+  - ✅ NO hardcoded API keys in any YAML/config files
+  - ✅ All secrets uploaded to GitHub Secrets using `manage-github-secrets.sh`
+  - ✅ YAML files reference secrets via `${{ secrets.SECRET_NAME }}`
+  - ✅ `.env` files in gitignore (never synced)
+  - ✅ Used `sync-to-standalone-secure.sh` (NOT old sync script)
+  - ✅ Verified sync script scans for secrets before push
 - ✅ **For FastMCP Cloud from monorepo**:
-  - ✅ Used `scripts/extract-server-to-repo.sh` to extract server
-  - ✅ Guided GitHub repo creation with `gh repo create`
-  - ✅ Documented sync workflow using `scripts/sync-to-standalone.sh`
-  - ✅ Created `.fastmcp-sync.json` with all metadata
+  - ✅ GitHub repo created with `gh repo create`
+  - ✅ Server mapped in `scripts/sync-to-standalone-secure.sh`
+  - ✅ Documented sync workflow using secure script
+  - ✅ NO persistent directories in `~/Projects/`
+  - ✅ All syncs use `/tmp/` temporary clones only
 - ✅ **Exact FastMCP Cloud configuration displayed**:
   - ✅ Server entrypoint determined (e.g., `server.py:mcp`)
   - ✅ Required vs optional env vars separated
   - ✅ Copy-paste ready configuration shown
   - ✅ Step-by-step UI guide with exact values
+  - ✅ GitHub Secrets instructions provided
 - ✅ IDE configuration files generated for selected targets (if needed)
 - ✅ Production features implemented (logging, monitoring, error handling)
 - ✅ Organized docs structure created (`docs/deployment/`, `docs/setup/`, `docs/testing/`)
 - ✅ Environment configs in proper locations (`.env.production` in docs/deployment/)
 - ✅ Security features configured appropriately for environment
 - ✅ README updated with links to organized documentation
-- ✅ All environment variables documented with examples
+- ✅ All environment variables documented with examples in `.env.example`
+- ✅ Security workflow documented (GitHub Secrets, secret scanning)
 
 ## Collaboration in Multi-Agent Systems
 

@@ -1,5 +1,5 @@
 ---
-name: Newman Runner
+name: newman-runner
 description: Run and analyze Newman (Postman CLI) tests. Use when running API tests, validating Postman collections, testing HTTP endpoints, or when user mentions Newman, Postman tests, API validation.
 allowed-tools: Bash, Read, Write
 ---

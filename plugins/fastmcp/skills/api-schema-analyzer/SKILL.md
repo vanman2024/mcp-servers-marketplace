@@ -1,5 +1,5 @@
 ---
-name: API Schema Analyzer
+name: api-schema-analyzer
 description: Analyze OpenAPI and Postman schemas for MCP tool generation. Use when analyzing API specifications, extracting endpoint information, generating tool signatures, or when user mentions OpenAPI, Swagger, API schema, endpoint analysis.
 allowed-tools: Bash, Read, Write
 ---

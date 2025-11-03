@@ -1,5 +1,5 @@
 ---
-name: Postman Collection Manager
+name: postman-collection-manager
 description: Import, export, and manage Postman collections. Use when working with Postman collections, importing OpenAPI specs, exporting collections, or when user mentions Postman import, collection management, API collections.
 allowed-tools: Bash, Read, Write
 ---

@@ -1,5 +1,5 @@
 ---
-name: MCP Server Config
+name: mcp-server-config
 description: Manage .mcp.json MCP server configurations. Use when configuring MCP servers, adding server entries, managing MCP config files, or when user mentions .mcp.json, MCP server setup, server configuration.
 allowed-tools: Bash, Read, Write, Edit
 ---

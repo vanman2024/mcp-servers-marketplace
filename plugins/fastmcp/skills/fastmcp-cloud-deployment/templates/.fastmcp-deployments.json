@@ -1,0 +1,107 @@
+{
+  "version": "1.0.0",
+  "deployments": [
+    {
+      "id": "deployment-uuid-here",
+      "serverName": "my-server",
+      "serverPath": "./mcp-servers/my-server",
+      "environment": "production",
+      "target": "fastmcp-cloud",
+      "url": "https://my-server.fastmcp.app/mcp",
+      "healthEndpoint": "https://my-server.fastmcp.app/health",
+      "status": "active",
+      "deployedAt": "2025-01-15T10:30:00Z",
+      "deployedBy": "user@example.com",
+      "version": "1.0.0",
+      "metadata": {
+        "gitCommit": "abc123def456",
+        "gitBranch": "main",
+        "buildNumber": "42",
+        "deploymentDuration": "45s"
+      },
+      "environmentVariables": [
+        {
+          "name": "DATABASE_URL",
+          "isSet": true,
+          "source": "fastmcp-cloud-secrets"
+        },
+        {
+          "name": "API_KEY",
+          "isSet": true,
+          "source": "fastmcp-cloud-secrets"
+        }
+      ],
+      "validationResults": {
+        "preDeployment": {
+          "syntaxCheck": "passed",
+          "dependencyCheck": "passed",
+          "envVarCheck": "passed",
+          "timestamp": "2025-01-15T10:25:00Z"
+        },
+        "postDeployment": {
+          "healthCheck": "passed",
+          "mcpEndpoint": "passed",
+          "sslCertificate": "passed",
+          "responseTime": "0.245s",
+          "timestamp": "2025-01-15T10:32:00Z"
+        }
+      }
+    },
+    {
+      "id": "deployment-uuid-staging",
+      "serverName": "my-server",
+      "serverPath": "./mcp-servers/my-server",
+      "environment": "staging",
+      "target": "http",
+      "url": "https://staging.example.com/mcp",
+      "healthEndpoint": "https://staging.example.com/health",
+      "status": "active",
+      "deployedAt": "2025-01-14T15:20:00Z",
+      "deployedBy": "user@example.com",
+      "version": "0.9.5",
+      "metadata": {
+        "gitCommit": "xyz789abc123",
+        "gitBranch": "develop",
+        "buildNumber": "41"
+      },
+      "environmentVariables": [
+        {
+          "name": "DATABASE_URL",
+          "isSet": true,
+          "source": "environment-file"
+        }
+      ]
+    },
+    {
+      "id": "deployment-uuid-local",
+      "serverName": "my-server",
+      "serverPath": "./mcp-servers/my-server",
+      "environment": "development",
+      "target": "stdio",
+      "status": "active",
+      "deployedAt": "2025-01-15T09:00:00Z",
+      "deployedBy": "developer@example.com",
+      "version": "0.10.0-dev",
+      "metadata": {
+        "gitCommit": "local-uncommitted",
+        "gitBranch": "feature/new-tool"
+      }
+    }
+  ],
+  "deploymentHistory": [
+    {
+      "id": "deployment-uuid-old",
+      "serverName": "my-server",
+      "environment": "production",
+      "status": "replaced",
+      "deployedAt": "2025-01-10T12:00:00Z",
+      "replacedAt": "2025-01-15T10:30:00Z",
+      "version": "0.9.0"
+    }
+  ],
+  "metadata": {
+    "lastUpdated": "2025-01-15T10:32:00Z",
+    "totalDeployments": 3,
+    "activeDeployments": 3
+  }
+}

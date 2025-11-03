@@ -1,12 +1,25 @@
 ---
 description: Deploy MCP server from monorepo to FastMCP Cloud using sync workflow
 argument-hint: <server-name>
-allowed-tools: Bash, Read, Write, Glob, AskUserQuestion, TodoWrite
+allowed-tools: Bash, Read, Write, Glob, AskUserQuestion, TodoWrite, Skill
 ---
 
 **Arguments**: $ARGUMENTS
 
 Goal: Deploy an MCP server from the monorepo to its standalone repo, then to FastMCP Cloud
+
+## Load Deployment Skill
+
+INVOKE the deployment skill to load validation, testing, and verification patterns:
+
+!{skill fastmcp-cloud-deployment}
+
+This provides:
+- Pre-deployment validation scripts
+- Local testing patterns
+- Environment variable verification
+- Post-deployment health checks
+- Deployment tracking templates
 
 ## Usage
 

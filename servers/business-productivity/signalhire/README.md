@@ -4,6 +4,21 @@
 
 ## 🚀 Quick Start
 
+### Deployment Options
+
+Choose your deployment method:
+
+1. **FastMCP Cloud** (Recommended for production): Managed hosting with automatic scaling
+   - Quick start: [docs/deployment/DEPLOY.md](docs/deployment/DEPLOY.md) (5-step guide)
+   - Complete guide: [docs/deployment/FASTMCP_CLOUD_DEPLOYMENT.md](docs/deployment/FASTMCP_CLOUD_DEPLOYMENT.md)
+   - Requires: GitHub account, SignalHire API key, external callback server
+
+2. **Local Development** (For testing and development): Run on your machine
+   - Quick start: [docs/setup/QUICKSTART.md](docs/setup/QUICKSTART.md)
+   - Requires: Python 3.10+, SignalHire API key
+
+### Local Development Setup
+
 ### 1. Install Dependencies
 
 ```bash
@@ -277,6 +292,27 @@ ngrok http 8000
    ```
 
 ## 📚 Documentation
+
+### Organized Documentation
+
+All documentation is organized in the `docs/` directory:
+
+**Deployment:**
+- [docs/deployment/DEPLOY.md](docs/deployment/DEPLOY.md) - Quick 5-step deployment guide
+- [docs/deployment/FASTMCP_CLOUD_DEPLOYMENT.md](docs/deployment/FASTMCP_CLOUD_DEPLOYMENT.md) - Complete FastMCP Cloud guide
+- [docs/deployment/DEPLOYMENT_CHECKLIST.md](docs/deployment/DEPLOYMENT_CHECKLIST.md) - Comprehensive checklist
+- [docs/deployment/DEPLOYMENT_SUMMARY.md](docs/deployment/DEPLOYMENT_SUMMARY.md) - Configuration overview
+
+**Setup & Configuration:**
+- [docs/setup/QUICKSTART.md](docs/setup/QUICKSTART.md) - Local development quick start
+- [docs/setup/EXTERNAL_CALLBACK_SETUP.md](docs/setup/EXTERNAL_CALLBACK_SETUP.md) - Callback server deployment
+- [docs/setup/STANDALONE_BUILD_REPORT.md](docs/setup/STANDALONE_BUILD_REPORT.md) - Build verification report
+
+**Testing:**
+- [docs/testing/TESTING.md](docs/testing/TESTING.md) - Testing guide
+- [docs/testing/TESTING_REPORT.md](docs/testing/TESTING_REPORT.md) - Test results
+
+### External Resources
 
 - **SignalHire API Docs**: https://www.signalhire.com/api-docs
 - **FastMCP Docs**: https://gofastmcp.com

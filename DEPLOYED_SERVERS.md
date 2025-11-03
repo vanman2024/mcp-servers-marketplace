@@ -11,7 +11,7 @@ Tracking of servers extracted from monorepo to standalone GitHub repos for FastM
 - **Status**: ✅ Deployed & Running (commit 0d48b69)
 - **Capabilities**: 13 tools, 7 resources, 8 prompts
 - **Deployed**: 2025-11-02
-- **Last Synced**: 2025-11-02 16:36
+- **Last Synced**: 2025-11-02 18:24
 - **Sync Command**: `./scripts/sync-to-standalone.sh signalhire-mcp`
 - **Workflow**: ⚠️ Edit in monorepo ONLY, then sync to GitHub
 
@@ -21,7 +21,7 @@ Tracking of servers extracted from monorepo to standalone GitHub repos for FastM
 - **Production Dir**: N/A
 - **FastMCP Cloud**: https://fastmcp.app (project: cats-mcp-server)
 - **Status**: ✅ Deployed & Active - 164 tools
-- **Last Synced**: 2025-11-01
+- **Last Synced**: 2025-11-02 18:24
 - **Sync Command**: `./scripts/sync-to-standalone.sh cats-mcp-server`
 
 ---

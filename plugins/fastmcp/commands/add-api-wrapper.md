@@ -1,13 +1,28 @@
 ---
 description: Generate MCP tools from Postman collections to wrap existing APIs. Falls back to WebFetch/Playwright if Postman unavailable. Uses Postman MCP server and Newman to analyze API structure and create FastMCP tool wrappers.
 argument-hint: <collection-name-or-id> [--server-path=path]
-allowed-tools: Task, Read, Write, Edit, Bash, Glob, Grep, AskUserQuestion, WebFetch, WebSearch, mcp__postman
+allowed-tools: Task, Read, Write, Edit, Bash, Glob, Grep, AskUserQuestion, WebFetch, WebSearch, mcp__postman, Skill
 mcp-servers: postman
 ---
 
 **Arguments**: $ARGUMENTS
 
 Goal: Automatically generate FastMCP tools that wrap existing REST APIs. Uses Postman collections as primary source, but falls back to WebFetch/Playwright if Postman MCP is unavailable or collection doesn't exist.
+
+## Load Skills
+
+INVOKE skills to load all API analysis patterns, templates, and examples:
+
+!{skill api-schema-analyzer}
+!{skill newman-runner}
+!{skill postman-collection-manager}
+
+These skills provide:
+- OpenAPI/Swagger parsing scripts and templates
+- Newman collection analysis and test patterns
+- Postman collection management utilities
+- Tool signature generation examples
+- API endpoint mapping templates
 
 Phase 1: Discovery & API Source Determination
 Goal: Find API structure from best available source
@@ -46,9 +61,9 @@ Phase 2: API Structure Analysis & Architecture Decision
 Goal: Extract endpoint information and determine server architecture
 
 **If using Postman/Newman:**
-- Use @plugins/fastmcp/skills/postman-collection-manager for collection operations
-- Use @plugins/fastmcp/skills/newman-runner for collection validation and analysis
-- Use @plugins/fastmcp/skills/api-schema-analyzer for endpoint extraction
+- Use skills loaded above (postman-collection-manager, newman-runner, api-schema-analyzer)
+- Refer to scripts from newman-runner skill for collection analysis
+- Refer to templates from api-schema-analyzer skill for endpoint extraction
 - Export collection to temporary JSON file
 - Run Newman to validate collection and extract:
   - **Total endpoint count** (CRITICAL for architecture decision)
@@ -62,7 +77,8 @@ Goal: Extract endpoint information and determine server architecture
 - **Count endpoints by resource/folder** to identify toolset groupings
 
 **If using WebFetch/Playwright:**
-- Use @plugins/fastmcp/skills/api-schema-analyzer for OpenAPI/Swagger parsing
+- Use api-schema-analyzer skill (loaded above) for OpenAPI/Swagger parsing
+- Refer to scripts and templates from skill for parsing patterns
 - Parse documentation to extract:
   - **Total endpoint count**
   - Endpoint paths and HTTP methods
