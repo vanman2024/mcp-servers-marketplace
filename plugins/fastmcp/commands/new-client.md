@@ -4,6 +4,19 @@ argument-hint: <client-name>
 allowed-tools: Task, Read, Write, Bash, Glob, Grep, AskUserQuestion
 ---
 
+## Security Requirements
+
+**CRITICAL:** All generated files must follow security rules:
+
+@docs/security/SECURITY-RULES.md
+
+**Key requirements:**
+- Never hardcode API keys or secrets
+- Use placeholders: `your_service_key_here`
+- Protect `.env` files with `.gitignore`
+- Create `.env.example` with placeholders only
+- Document key acquisition for users
+
 **Arguments**: $ARGUMENTS
 
 Goal: Create a FastMCP client project for connecting to and interacting with MCP servers. Supports both Python and TypeScript.

@@ -1,5 +1,0 @@
-fastmcp>=2.9.0
-httpx
-python-dotenv
-pydantic
-uvicorn

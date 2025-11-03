@@ -5,17 +5,30 @@ allowed-tools: Task, Read, Write, Edit, Bash, Glob, Grep, AskUserQuestion, WebFe
 mcp-servers: postman
 ---
 
+## Security Requirements
+
+**CRITICAL:** All generated files must follow security rules:
+
+@docs/security/SECURITY-RULES.md
+
+**Key requirements:**
+- Never hardcode API keys or secrets
+- Use placeholders: `your_service_key_here`
+- Protect `.env` files with `.gitignore`
+- Create `.env.example` with placeholders only
+- Document key acquisition for users
+
 **Arguments**: $ARGUMENTS
 
 Goal: Automatically generate FastMCP tools that wrap existing REST APIs. Uses Postman collections as primary source, but falls back to WebFetch/Playwright if Postman MCP is unavailable or collection doesn't exist.
 
 ## Load Skills
 
-INVOKE skills to load all API analysis patterns, templates, and examples:
+INVOKE skills from quality plugin to load all API analysis patterns, templates, and examples:
 
-!{skill api-schema-analyzer}
-!{skill newman-runner}
-!{skill postman-collection-manager}
+!{skill quality:api-schema-analyzer}
+!{skill quality:newman-runner}
+!{skill quality:postman-collection-manager}
 
 These skills provide:
 - OpenAPI/Swagger parsing scripts and templates

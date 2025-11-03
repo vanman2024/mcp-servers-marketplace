@@ -1,7 +1,0 @@
-# TODO: Fill in exact dependencies for slack-http-mcp
-# Suggested baseline (uncomment as needed):
-# fastmcp>=0.1.0
-# uvicorn>=0.20.0
-# python-dotenv>=1.0.0
-# slack_sdk>=3.26.0
-
