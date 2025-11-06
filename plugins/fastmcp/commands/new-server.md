@@ -1,7 +1,7 @@
 ---
-description: Create and setup a new FastMCP server project with Python or TypeScript. Use add-* commands to add features.
-argument-hint: <server-name> [--language=python|typescript] [--purpose="description"] [--skip-questions]
-allowed-tools: Task, Read, Write, Bash, Glob, Grep
+description: Create complete FastMCP server with all features - orchestrates setup, components, auth, deployment, verification, and testing
+argument-hint: <server-name> [--language=python|typescript] [--purpose="description"] [--collection=path] [--auth=type] [--deployment=type] [--skip-questions]
+allowed-tools: Task, Read, Write, Bash, Glob, Grep, TodoWrite, SlashCommand
 ---
 
 ## Security Requirements
@@ -19,138 +19,316 @@ allowed-tools: Task, Read, Write, Bash, Glob, Grep
 
 **Arguments**: $ARGUMENTS
 
-Goal: Create a production-ready FastMCP server project foundation with proper structure, FastMCP dependencies, and minimal starter code. Supports both Python and TypeScript. Additional features (tools, auth, deployment) can be added with add-* commands.
+## Command Purpose
 
-Core Principles:
-- Accept parameters from parent commands (like build-full-server)
-- Ask questions only if parameters not provided
-- Route to correct setup agent based on language
-- Follow FastMCP SDK documentation patterns
-- Create functional starter code, not placeholders
+`/fastmcp:new-server` is the MAIN ORCHESTRATOR for building complete FastMCP servers.
 
-**Parameter Detection:**
-- Check if $ARGUMENTS contains `--language=python` or `--language=typescript`
-- Check if $ARGUMENTS contains `--purpose="..."`
-- Check if $ARGUMENTS contains `--skip-questions`
-- If ALL parameters provided OR `--skip-questions` flag present: Skip Phase 1, go directly to Phase 2
-- If parameters missing: Run Phase 1 to gather them
+It chains multiple slash commands sequentially to build a production-ready server:
+1. Creates base server structure (Python or TypeScript)
+2. Adds API wrapper tools (if Postman collection provided)
+3. Adds additional components (if specified)
+4. Configures authentication (if specified)
+5. Sets up deployment (if specified)
+6. Verifies server structure and compliance
+7. Generates and runs comprehensive tests
+8. Provides complete summary and next steps
 
-Phase 1: Discovery & Education (SKIP if --skip-questions or all params provided)
-Goal: Understand what the user wants to build through interactive conversation
+**This command ORCHESTRATES other commands - it does NOT invoke agents directly!**
 
-Actions:
-- Parse $ARGUMENTS for project name and optional parameters
-- Load FastMCP documentation for reference:
-  @plugins/fastmcp/docs/fastmcp-documentation.md
-- **ONLY if language not provided**: Ask language preference
+## Phase 1: Parse Arguments and Gather Requirements
 
-  **Language Selection:**
-  - Ask: "Which language do you prefer: Python or TypeScript?"
-  - Explain differences: Python for simplicity, TypeScript for type safety
-  - Store choice for Phase 4
+**Parse $ARGUMENTS to extract:**
+- `server-name` - First positional argument
+- `--language=python|typescript` - Language choice
+- `--purpose="description"` - Server purpose
+- `--collection=/path/to/collection.json` - Optional Postman collection
+- `--auth=oauth|jwt|bearer` - Optional authentication type
+- `--deployment=stdio|http|cloud` - Optional deployment type
+- `--skip-questions` - Skip interactive questions
 
-- **ONLY if purpose not provided**: Ask about server purpose
+**If `--skip-questions` provided OR all parameters present:**
+- Skip to Phase 2 immediately
+- Use provided parameters
 
-  **Start with Purpose:**
-  - Ask: "What will this MCP server do? (e.g., 'access my database', 'process documents', 'integrate with APIs')"
-  - Based on their answer, suggest relevant MCP components:
-    - If they mention data/database → Suggest Resources with URI templates
-    - If they mention actions/operations → Suggest Tools with functions
-    - If they mention LLM interactions → Suggest Prompts with templates
+**If parameters missing:**
+- Use TodoWrite to track requirements gathering
+- Ask interactive questions:
+  - Language: "Which language: Python or TypeScript?"
+  - Purpose: "What will this MCP server do?"
+  - Components: "What features do you need? (tools, resources, prompts)"
+  - Authentication: "Do you need authentication? (OAuth, JWT, Bearer, none)"
+  - Deployment: "Where will you deploy? (STDIO/local, HTTP/remote, FastMCP Cloud)"
 
-- Store all choices for Phase 4
-- If called from build-full-server: Skip all questions, use provided requirements
+**Update TodoWrite with detected/gathered parameters**
 
-Phase 2: Validation
-Goal: Verify project doesn't exist and environment is ready
+## Phase 2: Create Base Server Structure
 
-Actions:
-- Check if directory already exists
-- If Python chosen:
-  - Verify Python is installed (Python 3.10+)
-  - Check if uv or pip is available
-- If TypeScript chosen:
-  - Verify Node.js is installed (Node 18+)
-  - Check if npm/yarn/pnpm is available
-- Confirm project location is appropriate
+**Action: Invoke new-server-base setup agent**
 
-Phase 3: Planning & Documentation Guidance
-Goal: Design project structure and educate on FastMCP patterns
+**For Python servers:**
 
-Actions:
-- Based on their requirements, explain the FastMCP server structure they'll get
-- Show them relevant documentation sections:
-  - If using Tools: Point to https://gofastmcp.com/servers/tools and explain @mcp.tool() decorator
-  - If using Resources: Point to https://gofastmcp.com/servers/resources and explain URI templates
-  - If using Prompts: Point to https://gofastmcp.com/servers/prompts and explain template strings
-  - If auth chosen: Point to specific auth docs (OAuth, JWT, Bearer)
-  - If HTTP/Cloud: Point to deployment docs
-- Outline directory structure based on requirements
-- Explain what starter code will be generated and why
-- Present complete plan with documentation references
-- Confirm they understand the architecture before proceeding
+Use Task tool NOW to invoke the fastmcp-setup agent:
 
-Phase 4: Implementation
-Goal: Create project with language-specific agent
+```
+Task(
+  subagent_type="fastmcp:fastmcp-setup",
+  description="Create Python FastMCP server structure",
+  prompt="Create FastMCP Python server with these requirements:
 
-Actions:
+**Project name:** {server-name}
+**Purpose:** {purpose from Phase 1}
+**Location:** {current-directory}/{server-name}
 
-**If Python was chosen in Phase 1:**
+Create complete Python FastMCP server with:
+- Project directory structure
+- pyproject.toml with fastmcp dependency
+- server.py with FastMCP initialization
+- .env.example with placeholders
+- .gitignore for Python projects
+- README.md with setup instructions
 
-Launch the fastmcp-setup agent to create the FastMCP server application.
+Follow FastMCP SDK best practices. Generate functional starter code, not placeholders."
+)
+```
 
-Provide the agent with a detailed prompt including:
-- Project name from $ARGUMENTS
-- Server purpose and functionality
-- Number and types of MCP components (tools, resources, prompts)
-- Authentication requirements (if any)
-- Deployment targets (STDIO, HTTP, Cloud)
-- Any specification file contents or API documentation
-- Expected output: Complete working FastMCP server application with:
-  - Python project structure with proper package layout
-  - pyproject.toml with FastMCP dependencies
-  - Starter server code with FastMCP decorators
-  - Example tools, resources, or prompts
-  - README with setup and usage instructions
-  - .gitignore for Python projects
-  - .env.example for environment variables
+**For TypeScript servers:**
 
-**If TypeScript was chosen in Phase 1:**
+Use Task tool NOW to invoke the fastmcp-setup-ts agent:
 
-Launch the fastmcp-setup-ts agent to create the FastMCP server application.
+```
+Task(
+  subagent_type="fastmcp:fastmcp-setup-ts",
+  description="Create TypeScript FastMCP server structure",
+  prompt="Create FastMCP TypeScript server with these requirements:
 
-Provide the agent with a detailed prompt including:
-- Project name from $ARGUMENTS
-- Server purpose and functionality
-- Number and types of MCP components (tools, resources, prompts)
-- Authentication requirements (if any)
-- Deployment targets (STDIO, HTTP, Cloud)
-- Any specification file contents or API documentation
-- Expected output: Complete working FastMCP server application with TypeScript:
-  - Node.js/TypeScript project structure with proper layout
-  - package.json with FastMCP TypeScript dependencies
-  - tsconfig.json with ES modules support
-  - Starter server code with TypeScript types
-  - Example tools, resources, or prompts
-  - README with setup and TypeScript build instructions
-  - .gitignore for Node.js/TypeScript projects
-  - .env.example for environment variables
+**Project name:** {server-name}
+**Purpose:** {purpose from Phase 1}
+**Location:** {current-directory}/{server-name}
 
-Phase 5: Post-Setup
-Goal: Initialize Python environment and verify setup
+Create complete TypeScript FastMCP server with:
+- Project directory structure
+- package.json with fastmcp dependency
+- tsconfig.json with proper configuration
+- src/server.ts with FastMCP initialization
+- .env.example with placeholders
+- .gitignore for Node.js/TypeScript
+- README.md with setup instructions
 
-Actions:
-- Create virtual environment if needed
-- Install dependencies
-- Run basic validation that server starts
-- Display setup summary with next steps
+Follow FastMCP SDK best practices. Generate functional starter code, not placeholders."
+)
+```
 
-Phase 6: Summary
-Goal: Guide user on next steps
+**WAIT for agent completion.**
 
-Actions:
-- Show project location and structure
-- Display commands to run the server
-- Explain how to add tools, resources, and prompts
-- Provide FastMCP documentation links
-- Suggest deployment options
+**After completion:**
+- Verify server directory was created
+- Confirm server files exist
+- Update TodoWrite: mark "Create base server" as completed
+- Capture server path for next phases
+
+**If agent failed:**
+- Report error to user
+- STOP workflow - do not proceed to Phase 3
+
+## Phase 3: Add API Wrapper Tools (if --collection provided)
+
+**Check if `--collection` parameter was provided in Phase 1.**
+
+**If YES:**
+
+Use SlashCommand tool NOW to invoke add-api-wrapper command:
+
+```
+SlashCommand(command="/fastmcp:add-api-wrapper {server-name} --collection={collection-path}")
+```
+
+**WAIT for command completion.**
+
+**After completion:**
+- Verify tools were generated
+- Update TodoWrite: mark "Add API wrapper tools" as completed
+
+**If NO collection provided:**
+- Skip to Phase 4
+
+## Phase 4: Add Additional Components (if needed)
+
+**Check if additional components needed beyond API wrapper.**
+
+Common scenarios:
+- User wants custom tools beyond API wrapper
+- User wants resources for data access
+- User wants prompts for LLM interactions
+
+**If additional components needed:**
+
+Use SlashCommand tool NOW:
+
+```
+SlashCommand(command="/fastmcp:add-components {component-types} --server-path={detected-path}")
+```
+
+Where `{component-types}` might be: `tools`, `resources`, `prompts`, or combinations.
+
+**WAIT for command completion.**
+
+**After completion:**
+- Update TodoWrite: mark "Add components" as completed
+
+**If no additional components needed:**
+- Skip to Phase 5
+
+## Phase 5: Configure Authentication (if --auth provided)
+
+**Check if `--auth` parameter was provided in Phase 1.**
+
+**If YES:**
+
+Use SlashCommand tool NOW:
+
+```
+SlashCommand(command="/fastmcp:add-auth {auth-type} --server-path={detected-path}")
+```
+
+Where `{auth-type}` is: `oauth`, `jwt`, or `bearer`
+
+**WAIT for command completion.**
+
+**After completion:**
+- Verify authentication was configured
+- Update TodoWrite: mark "Configure authentication" as completed
+
+**If NO auth specified:**
+- Skip to Phase 6
+
+## Phase 6: Set Up Deployment (if --deployment provided)
+
+**Check if `--deployment` parameter was provided in Phase 1.**
+
+**If YES:**
+
+Use SlashCommand tool NOW:
+
+```
+SlashCommand(command="/fastmcp:add-deployment {deployment-type} --server-path={detected-path}")
+```
+
+Where `{deployment-type}` is: `stdio`, `http`, or `cloud`
+
+**WAIT for command completion.**
+
+**After completion:**
+- Verify deployment configuration created
+- Update TodoWrite: mark "Set up deployment" as completed
+
+**If NO deployment specified:**
+- Default to STDIO (already in base server)
+- Skip to Phase 7
+
+## Phase 7: Verify Server Structure
+
+**Action: Verify server compliance**
+
+Use SlashCommand tool NOW:
+
+```
+SlashCommand(command="/fastmcp:fastmcp-verify {detected-path}")
+```
+
+**WAIT for command completion.**
+
+**After completion:**
+- Review verification report
+- Check for compliance issues
+- Update TodoWrite: mark "Verify server" as completed
+
+**If verification found critical issues:**
+- Report issues to user
+- Suggest fixes
+- Allow user to decide whether to continue
+
+## Phase 8: Generate and Run Tests
+
+**Action: Create comprehensive test suite**
+
+Use SlashCommand tool NOW:
+
+```
+SlashCommand(command="/fastmcp:test --server-path={detected-path} --run --coverage")
+```
+
+**WAIT for command completion.**
+
+**After completion:**
+- Review test results
+- Check test coverage
+- Update TodoWrite: mark "Run tests" as completed
+
+**If tests failed:**
+- Report failures to user
+- Suggest fixes
+- Server is created but may need adjustments
+
+## Phase 9: Complete Summary
+
+**Display comprehensive summary:**
+
+```
+✅ FastMCP Server Created Successfully!
+
+**Server Details:**
+- Name: {server-name}
+- Language: {Python|TypeScript}
+- Location: {full-path}
+- Purpose: {purpose}
+
+**Components Added:**
+- Base server structure ✓
+- API wrapper tools (if applicable) ✓
+- Additional components (if applicable) ✓
+- Authentication (if applicable) ✓
+- Deployment configuration (if applicable) ✓
+
+**Verification:**
+- Structure validation: {PASSED|FAILED}
+- Test results: {PASSED|FAILED}
+- Test coverage: {percentage}%
+
+**Next Steps:**
+1. Navigate to server: cd {server-name}
+2. Review and customize server.py (or src/server.ts)
+3. Run server locally: {command based on language}
+4. Test with MCP client
+5. Deploy to {deployment-target}
+
+**Documentation:**
+- FastMCP Docs: https://gofastmcp.com
+- Server README: {server-name}/README.md
+```
+
+**Update TodoWrite: mark all tasks completed**
+
+## Error Handling
+
+At each phase, if a command or agent fails:
+1. Report the specific error to user
+2. Explain what went wrong
+3. Suggest remediation steps
+4. Ask if they want to:
+   - Retry the failed step
+   - Skip the step and continue
+   - Abort the workflow
+
+Do NOT silently continue past errors.
+
+## Command Execution Rules
+
+**CRITICAL:**
+- Use SlashCommand tool for invoking commands
+- Use Task tool for invoking agents
+- WAIT for each step to complete before proceeding
+- Do NOT run commands in parallel
+- Do NOT describe what "will happen" - actually INVOKE the tools
+- Update TodoWrite after each phase
+
+This ensures the orchestration actually executes, not just describes the workflow.

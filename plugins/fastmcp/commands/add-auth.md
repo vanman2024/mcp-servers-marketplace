@@ -83,10 +83,19 @@ Goal: Add authentication
 
 Actions:
 
-Implement directly or use Task with general-purpose agent for complex cases to add authentication.
+**Use Task tool NOW to implement authentication:**
 
-The agent should:
-- WebFetch relevant authentication documentation:
+```
+Task(
+  subagent_type="general-purpose",
+  description="Add authentication to FastMCP server",
+  prompt="Add {auth-type} authentication to FastMCP server at {server-path}.
+
+**Authentication Type:** {selected-auth-type}
+**Server Language:** {detected-language}
+**Configuration:** {auth-config from Phase 1}
+
+WebFetch relevant authentication documentation:
   - OAuth Proxy: https://gofastmcp.com/servers/auth/oauth-proxy
   - Remote OAuth: https://gofastmcp.com/servers/auth/remote-oauth
   - Token Verification: https://gofastmcp.com/servers/auth/token-verification

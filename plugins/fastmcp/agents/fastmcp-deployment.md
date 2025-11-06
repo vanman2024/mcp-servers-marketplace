@@ -1,9 +1,8 @@
 ---
 name: fastmcp-deployment
-description: Use this agent to configure deployment and transport options for FastMCP servers. Handles HTTP, STDIO (Claude Desktop/Cursor/Claude Code), FastMCP Cloud, and production configuration with proper monitoring, logging, and security.
+description: Use this agent to configure deployment and transport options for FastMCP servers. Handles HTTP, STDIO, FastMCP Cloud, and production configuration with monitoring, logging, and security.
 model: inherit
-color: blue
-tools: Bash, Read, Write, Edit, WebFetch, AskUserQuestion, Skill
+color: orange
 ---
 
 ## Security: API Key Handling

@@ -93,11 +93,17 @@ For simple cases (<=10 components), implement directly:
 - Add error handling
 - Follow existing code style
 
-For complex cases (>50 components), use Task agent:
-- Launch general-purpose agent with context about:
-- Context: Component specifications from Phase 1
-- Target: Server file path
-- Language: Python or TypeScript
+For complex cases (>50 components), use Task tool NOW:
+
+```
+Task(
+  subagent_type="general-purpose",
+  description="Add MCP components to FastMCP server",
+  prompt="Add {count} MCP components to FastMCP server at {server-path}.
+
+**Component Specifications:** {specs from Phase 1}
+**Server Language:** {detected-language}
+**Target File:** {server-file-path}
 - Expected output: Component(s) added to server
 
 Phase 4: Verification

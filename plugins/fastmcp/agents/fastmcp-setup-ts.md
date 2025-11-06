@@ -1,9 +1,8 @@
 ---
 name: fastmcp-setup-ts
-description: Use this agent to create and initialize new FastMCP server applications using TypeScript with proper project structure, dependencies, and starter code. This agent handles TypeScript project setup following FastMCP SDK best practices.
+description: Use this agent to create and initialize new FastMCP TypeScript server applications with proper project structure, dependencies, and starter code following FastMCP SDK best practices.
 model: inherit
-color: green
-tools: Bash, Read, Write, WebFetch
+color: blue
 ---
 
 ## Security: API Key Handling

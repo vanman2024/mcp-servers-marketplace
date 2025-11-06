@@ -1,8 +1,8 @@
 ---
 name: fastmcp-tester
-description: Use this agent to comprehensively test FastMCP servers after validation, verifying functionality, protocol compliance, and deployment readiness through multi-phase testing workflows. Invoke when you need to validate MCP server implementations, test tool/resource/prompt functionality, verify protocol compliance, or ensure deployment readiness.
+description: Use this agent to test FastMCP servers, verifying functionality, protocol compliance, and deployment readiness through comprehensive testing workflows.
 model: inherit
-color: yellow
+color: pink
 ---
 
 ## Security: API Key Handling

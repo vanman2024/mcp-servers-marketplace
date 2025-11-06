@@ -1,9 +1,8 @@
 ---
 name: fastmcp-verifier-ts
-description: Use this agent to verify that a TypeScript FastMCP application is properly configured, follows SDK best practices and documentation recommendations, and is ready for deployment or testing. This agent should be invoked after a TypeScript FastMCP app has been created or modified.
+description: Use this agent to verify that a TypeScript FastMCP application is properly configured, follows SDK best practices, and is ready for deployment or testing.
 model: inherit
 color: yellow
-tools: Bash, Read, Grep, Glob
 ---
 
 ## Security: API Key Handling
