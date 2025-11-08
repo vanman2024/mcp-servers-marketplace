@@ -24,6 +24,29 @@ This file tracks all MCP servers deployed to FastMCP Cloud and other platforms.
   - `CATS_API_KEY`
   - `PORT`
 
+### Multi-Lead MCP Server
+- **Status**: 🔧 Configured (Ready for deployment)
+- **Platform**: FastMCP Cloud
+- **GitHub**: https://github.com/vanman2024/multilead-mcp
+- **Local**: `~/Projects/mcp-servers/multilead-mcp/`
+- **Server Entrypoint**: `server.py:mcp`
+- **Deployed**: Auto-deploy from master branch
+- **Deployment URL**: https://multilead-mcp.fastmcp.app/mcp (when deployed)
+- **Health Check**: https://multilead-mcp.fastmcp.app/health (when deployed)
+- **Environment Variables**: Set in FastMCP Cloud dashboard
+  - `MULTILEAD_API_KEY` (required) - Get from https://app.multilead.co/settings/api
+  - `TRANSPORT=http` (optional)
+  - `LOG_LEVEL=INFO` (optional)
+  - `LOG_FORMAT=json` (optional)
+  - `RATE_LIMIT_PER_MINUTE=100` (optional)
+  - `RATE_LIMIT_PER_HOUR=1000` (optional)
+- **Capabilities**: 77 tools, 2 resources, 2 prompts
+- **Tests**: ✅ 82 passing tests
+- **Documentation**:
+  - Quick Start: `FASTMCP_CLOUD_QUICK_START.md`
+  - Complete Guide: `docs/deployment/FASTMCP_CLOUD_DEPLOYMENT.md`
+  - Status: `DEPLOYMENT_STATUS.md`
+
 ## DigitalOcean Droplet Deployments
 
 ### SignalHire Callback Server
@@ -43,7 +66,17 @@ This file tracks all MCP servers deployed to FastMCP Cloud and other platforms.
 ### FastMCP Cloud
 ```bash
 # Servers auto-deploy when pushed to GitHub
+
+# SignalHire MCP
 cd ~/Projects/mcp-servers/business-productivity/signalhire-mcp
+git push
+
+# CATS MCP
+cd ~/Projects/mcp-servers/business-productivity/cats-mcp-server
+git push
+
+# Multi-Lead MCP
+cd ~/Projects/mcp-servers/multilead-mcp
 git push
 
 # FastMCP Cloud pulls latest and redeploys automatically
@@ -75,6 +108,7 @@ doctl compute ssh 137.184.196.101 --ssh-command 'journalctl -u signalhire-callba
   5. Revoke old key
 
 ### Planned Deployments
+- [x] ~~Multi-Lead MCP server~~ - ✅ Configured and ready for FastMCP Cloud deployment
 - [ ] CATS callback server (if needed)
 - [ ] Ayrshare MCP server
 - [ ] Google Workspace MCP server
@@ -87,5 +121,5 @@ doctl compute ssh 137.184.196.101 --ssh-command 'journalctl -u signalhire-callba
 
 ---
 
-*Last Updated: 2025-11-02*
+*Last Updated: 2025-11-07*
 *Auto-managed by deployment scripts*

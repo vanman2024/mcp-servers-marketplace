@@ -1,7 +1,6 @@
 ---
 description: Create complete FastMCP server with all features - orchestrates setup, components, auth, deployment, verification, and testing
 argument-hint: <server-name> [--language=python|typescript] [--purpose="description"] [--collection=path] [--auth=type] [--deployment=type] [--skip-questions]
-allowed-tools: Task, Read, Write, Bash, Glob, Grep, TodoWrite, SlashCommand
 ---
 
 ## Security Requirements

@@ -1,7 +1,6 @@
 ---
 description: Generate MCP tools from Postman collections to wrap existing APIs. Falls back to WebFetch/Playwright if Postman unavailable. Uses Postman MCP server and Newman to analyze API structure and create FastMCP tool wrappers.
 argument-hint: <collection-name-or-id> [--server-path=path]
-allowed-tools: Task, Read, Write, Edit, Bash, Glob, Grep, AskUserQuestion, WebFetch, WebSearch, mcp__postman, Skill
 mcp-servers: postman
 ---
 

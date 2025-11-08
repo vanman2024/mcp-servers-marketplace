@@ -1,7 +1,6 @@
 ---
 description: Add MCP components to existing FastMCP server (tools, resources, prompts, middleware, context, dependencies)
 argument-hint: [component-type] [--server-path=path]
-allowed-tools: Task, Read, Write, Edit, Bash, Glob, Grep, AskUserQuestion
 ---
 
 ## Security Requirements
@@ -97,9 +96,7 @@ For complex cases (>50 components), use Task tool NOW:
 
 ```
 Task(
-  subagent_type="general-purpose",
-  description="Add MCP components to FastMCP server",
-  prompt="Add {count} MCP components to FastMCP server at {server-path}.
+  subagent_type="general-purpose", description="Add MCP components to FastMCP server", prompt="Add {count} MCP components to FastMCP server at {server-path}.
 
 **Component Specifications:** {specs from Phase 1}
 **Server Language:** {detected-language}

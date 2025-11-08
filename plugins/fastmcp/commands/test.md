@@ -1,7 +1,6 @@
 ---
 description: Generate and run comprehensive test suite for FastMCP server using in-memory testing pattern
 argument-hint: [--server-path=path] [--run] [--coverage]
-allowed-tools: Task, Read, Write, Bash, Glob, Grep
 ---
 
 ## Security Requirements

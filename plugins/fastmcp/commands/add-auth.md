@@ -1,7 +1,6 @@
 ---
 description: Add authentication to FastMCP server (OAuth 2.1, JWT, Bearer Token, all providers)
 argument-hint: [auth-type] [--server-path=path]
-allowed-tools: Task, Read, Write, Edit, Bash, Glob, Grep, AskUserQuestion
 ---
 
 ## Security Requirements
@@ -87,9 +86,7 @@ Actions:
 
 ```
 Task(
-  subagent_type="general-purpose",
-  description="Add authentication to FastMCP server",
-  prompt="Add {auth-type} authentication to FastMCP server at {server-path}.
+  subagent_type="general-purpose", description="Add authentication to FastMCP server", prompt="Add {auth-type} authentication to FastMCP server at {server-path}.
 
 **Authentication Type:** {selected-auth-type}
 **Server Language:** {detected-language}

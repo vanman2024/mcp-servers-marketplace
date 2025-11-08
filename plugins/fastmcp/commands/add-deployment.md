@@ -1,7 +1,6 @@
 ---
 description: Configure deployment for FastMCP server (HTTP, STDIO, FastMCP Cloud, production config)
 argument-hint: [deployment-type] [--server-path=path]
-allowed-tools: Task
 ---
 
 ## Security Requirements

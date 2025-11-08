@@ -1,7 +1,6 @@
 ---
 description: Verify MCP servers follow proper FastMCP framework structure and conventions
 argument-hint: [server-path or "all"]
-allowed-tools: Task, Read, Write, Bash(*), Glob, Grep, AskUserQuestion, TodoWrite
 ---
 
 ## Security Requirements
