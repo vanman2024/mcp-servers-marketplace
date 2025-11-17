@@ -360,6 +360,30 @@ envs:
 - Validate logging and monitoring functionality
 - Test error handling if middleware added
 
+**Sync from Airtable (Post-Deployment)**:
+
+After deployment completes successfully, sync server metadata from Airtable:
+
+```bash
+# Check if sync script exists and run it
+SYNC_SCRIPT="/home/gotime2022/Projects/mcp-servers/.shared-scripts/sync-from-airtable.sh"
+if [ -f "$SYNC_SCRIPT" ]; then
+    echo "📥 Syncing server data from Airtable..."
+    bash "$SYNC_SCRIPT" || echo "⚠️  Airtable sync skipped (optional)"
+else
+    echo "ℹ️  Airtable sync script not found (optional)"
+fi
+```
+
+This will:
+- Find this server's record in Airtable (with smart name matching)
+- Save metadata to `.airtable/server-metadata.json`
+- Display FastMCP Cloud URL if deployed
+- Keep local configuration in sync with Airtable source of truth
+- **Silently skip if script not found or token missing (won't fail deployment)**
+
+**Note**: The sync script requires `MCP_AIRTABLE_TOKEN` environment variable (should already be set in ~/.bashrc)
+
 ## Decision-Making Framework
 
 ### Transport Selection
@@ -427,6 +451,7 @@ Before considering deployment configuration complete:
 - ✅ README updated with links to organized documentation
 - ✅ All environment variables documented with examples in `.env.example`
 - ✅ Security workflow documented (GitHub Secrets, secret scanning)
+- ✅ **Airtable sync completed** (run `/home/gotime2022/Projects/mcp-servers/.shared-scripts/sync-from-airtable.sh`)
 
 ## Collaboration in Multi-Agent Systems
 

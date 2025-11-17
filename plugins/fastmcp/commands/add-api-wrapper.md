@@ -4,6 +4,26 @@ argument-hint: <collection-name-or-id> [--server-path=path]
 mcp-servers: postman
 ---
 
+---
+🚨 **EXECUTION NOTICE FOR CLAUDE**
+
+When you invoke this command via SlashCommand, the system returns THESE INSTRUCTIONS below.
+
+**YOU are the executor. This is NOT an autonomous subprocess.**
+
+- ✅ The phases below are YOUR execution checklist
+- ✅ YOU must run each phase immediately using tools (Bash, Read, Write, Edit, TodoWrite)
+- ✅ Complete ALL phases before considering this command done
+- ❌ DON't wait for "the command to complete" - YOU complete it by executing the phases
+- ❌ DON't treat this as status output - it IS your instruction set
+
+**Immediately after SlashCommand returns, start executing Phase 0, then Phase 1, etc.**
+
+See `@CLAUDE.md` section "SlashCommand Execution - YOU Are The Executor" for detailed explanation.
+
+---
+
+
 ## Security Requirements
 
 **CRITICAL:** All generated files must follow security rules:
